@@ -10,6 +10,14 @@ header {
 nav {
  color: #343642;
  background-color: #979C9C;
+ padding: 5px 10px;
+ font-size: 14pt;
+ font-weight: bold;
+}
+
+nav a {
+ text-decoration: none;
+ color: #343642;
 }
 
 main {
