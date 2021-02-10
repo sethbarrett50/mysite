@@ -23,6 +23,11 @@ nav a {
 main {
  color: #17354A;
  background-color: #F2EBC7;
+ padding: 10px;
+}
+
+main a {
+	color: #17354A;
 }
 
 body {
@@ -50,7 +55,11 @@ h2 {
 footer {
  color: #348899;
  background-color: #343642;
+ padding: 5px 10px;
+ font-size: 10pt;
+ font-style: italic;
 }
+
 .details { color: #F2EBC7; background-color: #962D3E; }
 header, section, footer, aside, nav, main, article, figure {
  display: block;
