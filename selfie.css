@@ -1,0 +1,27 @@
+/* COLOR SCHEME: Gettysburg */
+header {
+ color: #348899;
+ background-color: #343642;
+ background-image: url("HeaderPic.png");
+ background-repeat: no-repeat;
+ background-position: right;
+}
+
+nav {
+ color: #343642;
+ background-color: #979C9C;
+}
+
+main {
+ color: #17354A;
+ background-color: #F2EBC7;
+}
+
+footer {
+ color: #348899;
+ background-color: #343642;
+}
+.details { color: #F2EBC7; background-color: #962D3E; }
+header, section, footer, aside, nav, main, article, figure {
+ display: block;
+}
