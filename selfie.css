@@ -35,6 +35,13 @@ body {
 	Background-color:#348899;
 }
 
+#wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
 h1 {
 	margin: 0;
 	padding: 5px 10px;
