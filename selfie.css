@@ -5,6 +5,7 @@ header {
  background-image: url("HeaderPic.png");
  background-repeat: no-repeat;
  background-position: right;
+ border-radius: 10px 10px 0 0;
 }
 
 nav {
@@ -13,6 +14,8 @@ nav {
  padding: 5px 10px;
  font-size: 14pt;
  font-weight: bold;
+ box-shadow: 0 10px 5px -5px #962D3E;
+ position: relative;
 }
 
 nav a {
@@ -24,6 +27,7 @@ main {
  color: #17354A;
  background-color: #F2EBC7;
  padding: 10px;
+ z-index: 0;
 }
 
 main a {
@@ -65,6 +69,7 @@ footer {
  padding: 5px 10px;
  font-size: 10pt;
  font-style: italic;
+ border-radius: 0 0 10px 10px;
 }
 
 .details { color: #F2EBC7; background-color: #962D3E; }
