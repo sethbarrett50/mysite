@@ -72,6 +72,53 @@ footer {
  border-radius: 0 0 10px 10px;
 }
 
+h3 {
+	font-size: 24pt;
+	font-weight: lighter;
+	margin: 0;
+}
+
+.experience h4 {
+	font-size: 18pt;
+	font-weight: lighter;
+	margin: 0;
+}
+.experience .title {
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+.experience .dates {
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: italic;
+	float: right;
+}
+.experience .description {
+	font-size: 11pt;
+}
+.experience ul {
+	margin: 0;
+}
+.experience .responsibilites {
+	font-size: 10pt;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+}
+.experience {
+	border-left: 10px solid #17354A;
+	border-top: 1px dashed #17354A;
+	border-bottom: 1px dashed #17354A;
+	border-right: 1px dashed #17354A;
+	margin: 20px;
+	padding: 5px 10px;
+	overflow: auto;
+}
+	
+
+
 .details { color: #F2EBC7; background-color: #962D3E; }
 header, section, footer, aside, nav, main, article, figure {
  display: block;
