@@ -116,8 +116,10 @@ h3 {
 	padding: 5px 10px;
 	overflow: auto;
 }
+.me > img {
+	float: right;
+}
 	
-
 .details { 
 	color: #F2EBC7; 
 	background-color: #962D3E; 
