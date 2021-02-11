@@ -107,7 +107,7 @@ h3 {
 	-moz-column-count: 2;
 	column-count: 2;
 }
-.experience {
+.experience, .school {
 	border-left: 10px solid #17354A;
 	border-top: 1px dashed #17354A;
 	border-bottom: 1px dashed #17354A;
@@ -118,8 +118,29 @@ h3 {
 }
 	
 
+.details { 
+	color: #F2EBC7; 
+	background-color: #962D3E; 
+	float: right; 
+	padding: 5px 10px;
+}
+.school > img {
+	float: left;
+}
+.school h3 {
+	margin: 0 0 0 120px;
+}
+.school h4 {
+	font-size: 14pt;
+	font-weight: lighter;
+	margin: 0 0 0 120px;
+}
+.school ul {
+	margin: 0 0 0 120px;
+}
 
-.details { color: #F2EBC7; background-color: #962D3E; }
+
+
 header, section, footer, aside, nav, main, article, figure {
  display: block;
 }
