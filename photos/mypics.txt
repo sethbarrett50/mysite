@@ -1,0 +1,1 @@
+This subfolder contains all of the images for my project.
