@@ -101,6 +101,6 @@ nav a:active{
     padding-left: 20px;
 }
 
-.mobileme img{
-    text-align: center;
+.mobileme > img{
+    float: center;
 }

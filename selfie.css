@@ -177,8 +177,8 @@ header {
 	   border-bottom: 1px;
    }
    
-   .mobileme img{
-	   text-align: right;
+   .mobileme > img{
+	   float: right;
    }
    
    header, section, footer, aside, nav, main, article, figure {
