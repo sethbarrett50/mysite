@@ -1,0 +1,106 @@
+header {
+    background-image: none;
+}
+
+h1{
+    font-size: 24pt;
+    line-height: 18pt;
+}
+
+h2{
+    font-size: 14pt;
+    line-height: 18pt;
+}
+
+h3{
+    font-size: 16pt;
+}
+
+.experience h4{
+    font-size: 14pt;
+}
+
+nav {
+    padding: 5px 0;
+    font-size: 11pt;
+    text-align: center;
+    box-shadow: 0 2px 4px #962D3E;
+}
+
+nav li{
+    border: 2px solid #343642;
+    margin: 3px;
+    display: inline-block;
+    width: 45%;
+}
+
+nav a{
+    display: block;
+    padding: 2px;
+}
+
+nav a:hover{
+    border:none;
+}
+
+nav a:active{
+    color:#cbc9bd;
+    background-color: #686363;
+}
+
+.gallery figure {
+    margin: 10px;
+    width: 140px;
+}
+
+.experience {
+    margin: 5px 0;
+}
+
+.experience .dates{
+    float: none;
+    font-size: 11pt;
+}
+
+.experience .title {
+    font-size: 11pt;
+}
+
+.details {
+    float: none;
+}
+
+.experience .responsibilities {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+}
+
+.experience ul {
+    padding-left: 20px;
+}
+
+.school {
+    margin: 5px 0;
+}
+
+.school img {
+    display: none;
+}
+
+.school h3{
+    margin: 0;
+}
+
+.school h4 {
+    margin: 0;
+}
+
+.school ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.mobileme img{
+    text-align: center;
+}
