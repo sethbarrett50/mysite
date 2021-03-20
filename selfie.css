@@ -1,186 +1,205 @@
 /* COLOR SCHEME: Gettysburg */
 header {
-	color: #348899;
-	background-color: #343642;
-	background-image: url("photos/headerpic.png");
-	background-repeat: no-repeat;
-	background-position: right;
-	border-radius: 10px 10px 0 0;
-   }
-   
-   nav {
-	color: #343642;
-	background-color: #979C9C;
-	padding: 5px 10px;
-	font-size: 14pt;
-	font-weight: bold;
-	box-shadow: 0 10px 5px -5px #962D3E;
-	position: relative;
-   }
-   
-   nav a {
-	text-decoration: none;
-	color: #343642;
-   }
-   
-   main {
+ color: #348899;
+ background-color: #343642;
+ background-image: url("photos/headerpic.png");
+ background-repeat: no-repeat;
+ background-position: right;
+ border-radius: 10px 10px 0 0;
+}
+
+nav {
+ color: #343642;
+ background-color: #979C9C;
+ padding: 5px 10px;
+ font-size: 14pt;
+ font-weight: bold;
+ box-shadow: 0 10px 5px -5px #962D3E;
+ position: relative;
+}
+
+nav a {
+ text-decoration: none;
+ color: #343642;
+ transition: background-color 0.25s ease, color 0.25s ease;
+ padding: 0px 5px;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav li{
+	display: inline;
+	margin-right: 10px;
+}
+
+nav a:hover{
+	/*border-top: 1px;
+	border-bottom: 1px;*/
+	color: #F2EBC7; 
+	background-color: #962D3E; 
+	transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+
+main {
+ color: #17354A;
+ background-color: #F2EBC7;
+ padding: 10px;
+ z-index: 0;
+}
+
+main a {
 	color: #17354A;
-	background-color: #F2EBC7;
-	padding: 10px;
-	z-index: 0;
-   }
-   
-   main a {
-	   color: #17354A;
-   }
-   
-   body {
-	   font-family: Calibri, Helvetica, Arial, sans-serif;
-	   Background-color:#348899;
-   }
-   
-   #wrapper {
-	   width: 1000px;
-	   margin-left: auto;
-	   margin-right: auto;
-	   margin-top: 10px;
-   }
-   
-   h1 {
-	   margin: 0;
-	   padding: 5px 10px;
-	   font-size: 42pt;
-	   line-height: 36pt;
-	   font-weight: lighter;
-   }
-   
-   h2 {
-	   margin: 0;
-	   padding: 0 10px 5px;
-	   font-size: 18pt;
-	   line-height: 22pt;
-	   font-weight: lighter;
-	   font-style: italic;
-   }
-   
-   footer {
-	color: #348899;
-	background-color: #343642;
+}
+
+body {
+	font-family: Calibri, Helvetica, Arial, sans-serif;
+	Background-color:#348899;
+}
+
+#wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+h1 {
+	margin: 0;
 	padding: 5px 10px;
-	font-size: 10pt;
+	font-size: 42pt;
+	line-height: 36pt;
+	font-weight: lighter;
+}
+
+h2 {
+	margin: 0;
+	padding: 0 10px 5px;
+	font-size: 18pt;
+	line-height: 22pt;
+	font-weight: lighter;
 	font-style: italic;
-	border-radius: 0 0 10px 10px;
-   }
-   
-   h3 {
-	   font-size: 24pt;
-	   font-weight: lighter;
-	   margin: 0;
-   }
-   
-   .experience h4 {
-	   font-size: 18pt;
-	   font-weight: lighter;
-	   margin: 0;
-   }
-   .experience .title {
-	   font-size: 12pt;
-	   font-weight: bold;
-	   font-style: italic;
-	   margin-bottom: 10px;
-   }
-   .experience .dates {
-	   font-size: 12pt;
-	   font-weight: bold;
-	   font-style: italic;
-	   float: right;
-   }
-   .experience .description {
-	   font-size: 11pt;
-   }
-   .experience ul {
-	   margin: 0;
-   }
-   .experience .responsibilites {
-	   font-size: 10pt;
-	   -webkit-column-count: 2;
-	   -moz-column-count: 2;
-	   column-count: 2;
-   }
-   .experience, .school {
-	   border-left: 10px solid #17354A;
-	   border-top: 1px dashed #17354A;
-	   border-bottom: 1px dashed #17354A;
-	   border-right: 1px dashed #17354A;
-	   margin: 20px;
-	   padding: 5px 10px;
-	   overflow: auto;
-   }
-   .me > img {
-	   float: right;
-   }
-	   
-   .details { 
-	   color: #F2EBC7; 
-	   background-color: #962D3E; 
-	   float: right; 
-	   padding: 5px 10px;
-   }
-   .school > img {
-	   float: left;
-   }
-   .school h3 {
-	   margin: 0 0 0 120px;
-   }
-   .school h4 {
-	   font-size: 14pt;
-	   font-weight: lighter;
-	   margin: 0 0 0 120px;
-   }
-   .school ul {
-	   margin: 0 0 0 120px;
-   }
-   
-   img {
-	   max-width: 100%;
-	   height: auto;
-   }
-   
-   .gallery {
-	   text-align: center;
-   }
-   
-   .gallery figure {
-	   margin: 10px 20px;
-	   width: 150px;
-	   display: inline-block;
-	   vertical-align: middle;
-   }
-   
-   .gallery figcaption {
-	   text-align: center;
-	   font-size: 11pt;
-   }
-   
-   nav ul{
-	   list-style-type: none;
-	   margin: 0;
-	   padding: 0;
-   }
-   nav li{
-	   display: inline;
-	   margin-right: 10px;
-   }
-   
-   nav a:hover{
-	   border-top: 1px;
-	   border-bottom: 1px;
-   }
-   
-   .mobileme > img{
-	   float: right;
-   }
-   
-   header, section, footer, aside, nav, main, article, figure {
-	display: block;
-   }
+}
+
+footer {
+ color: #348899;
+ background-color: #343642;
+ padding: 5px 10px;
+ font-size: 10pt;
+ font-style: italic;
+ border-radius: 0 0 10px 10px;
+}
+
+h3 {
+	font-size: 24pt;
+	font-weight: lighter;
+	margin: 0;
+}
+
+.experience h4 {
+	font-size: 18pt;
+	font-weight: lighter;
+	margin: 0;
+}
+.experience .title {
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+.experience .dates {
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: italic;
+	float: right;
+}
+.experience .description {
+	font-size: 11pt;
+}
+.experience ul {
+	margin: 0;
+}
+.experience .responsibilites {
+	font-size: 10pt;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+}
+.experience, .school {
+	border-left: 10px solid #17354A;
+	border-top: 1px dashed #17354A;
+	border-bottom: 1px dashed #17354A;
+	border-right: 1px dashed #17354A;
+	margin: 20px;
+	padding: 5px 10px;
+	overflow: auto;
+}
+.me > img {
+	float: right;
+}
+	
+.details { 
+	color: #F2EBC7; 
+	background-color: #962D3E; 
+	float: right; 
+	padding: 5px 10px;
+}
+.school > img {
+	float: left;
+}
+.school h3 {
+	margin: 0 0 0 120px;
+}
+.school h4 {
+	font-size: 14pt;
+	font-weight: lighter;
+	margin: 0 0 0 120px;
+}
+.school ul {
+	margin: 0 0 0 120px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.gallery {
+	text-align: center;
+}
+
+.gallery figure {
+	margin: 10px 20px;
+	width: 150px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.gallery figcaption {
+	text-align: center;
+	font-size: 11pt;
+}
+
+.gallery img:hover {
+	transform: rotate(5deg) scale(1.1);
+	box-shadow: 5px 5px 10px #348899;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery img {
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+
+
+.mobileme > img{
+	float: right;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+ display: block;
+}
