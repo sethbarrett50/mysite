@@ -54,6 +54,27 @@ main {
 main a {
 	color: #17354A;
 }
+main table 
+{
+	border: 1px solid #962D3E;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+main td 
+{
+	border: 1px solid #962D3E;
+	padding: 5px;
+}
+
+main th 
+{
+	border: 1px solid #962D3E;
+	padding: 5px;
+	color: #F2EBC7;
+	background-color: #962D3E;
+	text-align: left;
+}
 
 body {
 	font-family: Calibri, Helvetica, Arial, sans-serif;
