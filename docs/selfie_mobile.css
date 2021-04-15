@@ -104,3 +104,10 @@ nav a:active{
 .mobileme > img{
     text-align: center;
 }
+label {
+    float: none;
+
+}
+input {
+    width: 60%;
+}

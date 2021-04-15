@@ -214,7 +214,22 @@ img {
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+label {
+	display: block;
+	float: left;
+	width: 150px;
+	font-weight: bold;
+}
 
+input, textarea, select{
+	display: block;
+	width: 300px;
+	margin-bottom: 5px;
+	margin-left: 150px;
+}
+textarea {
+	height: 75px;
+}
 
 
 .mobileme > img{
