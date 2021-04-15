@@ -57,6 +57,32 @@
                     </td>
                 </tr>
             </table>
+            <!--Start of Contact Form-->
+            <h3>Feedback Form</h3>
+            <form method="POST" action="http://webdevbasics.net/scripts/demo.php">
+                <label for="contact_name">Name:</label>
+                <input type="text" name="contact_name" id="contact_name" maxlength="50" required>
+
+                <label for="contact_email">Email Address:</label>
+                <input type="email" name="contact_name" id="contact_email" maxlength="50" required>
+
+                <label for="contact_phone">Phone  Number:</label>
+                <input type="tel" name="contact_phone" id="contact_name" maxlength="50" required>
+
+                <label for="contact_purpose">Purpose:</label>
+                <select name="contact_purpose" id="contact_purpose">
+                    <option value="">Please Select a Purpose</option>
+                    <option value="comment">Site Comment</option>
+                    <option value="question">General Question</option>
+                    <option value="employment">Employment Opportunity</option>
+                    <option value="message">Personal Message</option>
+                </select>
+
+                <label for="contact_message">Message:</label>
+                <textarea></textarea>
+
+                <input type="submit">
+            </form>
         </main>
         <footer>
             Copyright &copy; [2021], [Seth Barrett]
