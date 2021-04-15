@@ -1,131 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Seth Barrett - Photo Gallery</title>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Seth Barrett - Photo Gallery</title>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <link rel="stylesheet" href="selfie.css" />
+        <link rel="stylesheet" href="selfie_tablet.css" media="only screen and (max-width: 1000px)" />
+        <link rel="stylesheet" href="selfie_mobile.css" media="only screen and (max-width: 600px)" />
+    </head>
 
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Seth Barrett</h1>
+                <h2>Photo Gallery</h2>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+            <main>
+                <div class="gallery">
+                    <figure>
+                        <a href="photos/gal1.jpg" data-fancybox="gallery" data-caption="Buddy">
+                            <img src="photos/gal1_thumb.jpg" alt="Buddy" />
+                        </a>
+                        <figcaption>Buddy</figcaption>
+                    </figure>
 
+                    <figure>
+                        <a href="photos/gal2.jpg" data-fancybox="gallery" data-caption="Fire">
+                            <img src="photos/gal2_thumb.jpg" alt="Fire" />
+                        </a>
+                        <figcaption>Fire</figcaption>
+                    </figure>
 
-    <link rel="stylesheet" href="selfie.css">
-    <link rel="stylesheet" href="selfie_tablet.css" media="only screen and (max-width: 1000px)">
-    <link rel="stylesheet" href="selfie_mobile.css" media="only screen and (max-width: 600px)">
-</head>
+                    <figure>
+                        <a href="photos/gal3.jpeg" data-fancybox="gallery" data-caption="Sky">
+                            <img src="photos/gal3_thumb.jpeg" alt="Sky" />
+                        </a>
+                        <figcaption>Sky</figcaption>
+                    </figure>
 
-<body>
-    <div id='wrapper'>
-        <header>
-            <h1> Seth Barrett </h1>
-            <h2> Photo Gallery </h2>
-        </header>
-        <nav>
-            <ul>
-                <li><a href=index.html>Home</a>
-                </li>
-                <li><a href=experience.html>Experience</a>
-                </li>
-                <li><a href=education.html>Education</a>
-                </li>
-                <li><a href=gallery.html>Photo Gallery</a>
-                </li>
-                <li><a href=contact.html>Contact Me</a>
-            </ul>
-        </nav>
-        <main>
-            <div class="gallery">
+                    <figure>
+                        <a href="photos/gal4.jpeg" data-fancybox="row" data-caption="Row Life Pt1">
+                            <img src="photos/gal4_thumb.jpeg" alt="Row Life Pt1" />
+                        </a>
+                        <figcaption>Row Life Pt1</figcaption>
+                    </figure>
 
-                <figure>
-                    <a href="photos/gal1.jpg" data-fancybox="gallery" data-caption="Buddy">
-                        <img src="photos/gal1_thumb.jpg" alt="Buddy">
-                    </a>
-                    <figcaption>Buddy</figcaption>
-                </figure>
+                    <figure>
+                        <a href="photos/gal5.jpg" data-fancybox="row" data-caption="Row Life Pt2">
+                            <img src="photos/gal5_thumb.jpg" alt="Row Life Pt2" />
+                        </a>
+                        <figcaption>Row Life Pt2</figcaption>
+                    </figure>
 
-                <figure>
-                    <a href="photos/gal2.jpg" data-fancybox="gallery" data-caption="Fire">
-                        <img src="photos/gal2_thumb.jpg" alt="Fire">
-                    </a>
-                    <figcaption>Fire</figcaption>
-                </figure>
+                    <figure>
+                        <a href="photos/gal6.jpg" data-fancybox="gallery" data-caption="Redwood">
+                            <img src="photos/gal6_thumb.jpg" alt="Redwood" />
+                        </a>
+                        <figcaption>Redwood</figcaption>
+                    </figure>
 
-                <figure>
-                    <a href="photos/gal3.jpeg" data-fancybox="gallery" data-caption="Sky">
-                        <img src="photos/gal3_thumb.jpeg" alt="Sky">
-                    </a>
-                    <figcaption>Sky</figcaption>
-                </figure>
+                    <figure>
+                        <a href="photos/gal7.jpg" data-fancybox="gallery" data-caption="Blazer">
+                            <img src="photos/gal7_thumb.jpg" alt="Blazer" />
+                        </a>
+                        <figcaption>Blazer</figcaption>
+                    </figure>
 
-                <figure>
-                    <a href="photos/gal4.jpeg" data-fancybox="row" data-caption="Row Life Pt1">
-                        <img src="photos/gal4_thumb.jpeg" alt="Row Life Pt1">
-                    </a>
-                    <figcaption>Row Life Pt1</figcaption>
-                </figure>
+                    <figure>
+                        <a href="photos/gal8.jpg" data-fancybox="gallery" data-caption="Mehra Tree">
+                            <img src="photos/gal8_thumb.jpg" alt="Mehra Tree" />
+                        </a>
+                        <figcaption>Mehra Tree</figcaption>
+                    </figure>
 
-                <figure>
-                    <a href="photos/gal5.jpg" data-fancybox="row" data-caption="Row Life Pt2">
-                        <img src="photos/gal5_thumb.jpg" alt="Row Life Pt2">
-                    </a>
-                    <figcaption>Row Life Pt2</figcaption>
-                </figure>
-
-                <figure>
-                    <a href="photos/gal6.jpg" data-fancybox="gallery" data-caption="Redwood">
-                        <img src="photos/gal6_thumb.jpg" alt="Redwood">
-                    </a>
-                    <figcaption>Redwood</figcaption>
-                </figure>
-
-                <figure>
-                    <a href="photos/gal7.jpg" data-fancybox="gallery" data-caption="Blazer">
-                        <img src="photos/gal7_thumb.jpg" alt="Blazer">
-                    </a>
-                    <figcaption>Blazer</figcaption>
-                </figure>
-
-                <figure>
-                    <a href="photos/gal8.jpg" data-fancybox="gallery" data-caption="Mehra Tree">
-                        <img src="photos/gal8_thumb.jpg" alt="Mehra Tree">
-                    </a>
-                    <figcaption>Mehra Tree</figcaption>
-                </figure>
-
-
-                <figure>
-                    <a href="https://www.youtube.com/watch?v=CxyUsm9jftA" data-fancybox="gallery" data-caption="SuperFly">
-                        <img src="https://i.ytimg.com/vi/CxyUsm9jftA/hqdefault.jpg" alt="Superfly">
-                    </a>
-                    <figcaption>SuperFly</figcaption>
-                </figure>
-
-
-
-
-
-
-
-
-
-            </div>
-        </main>
-        <footer>
-            Copyright &copy; [2021], [Seth Barrett]
-            <br>
-            <b>
-    Email:
-  </b>
-            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
-            <br>
-            <b>
-    Profile:
-  </b>
-            <a href="https://www.linkedin.com/in/seth-b-975833b1/">LinkedIn</a>
-        </footer>
-    </div>
-</body>
-
+                    <figure>
+                        <a href="https://www.youtube.com/watch?v=CxyUsm9jftA" data-fancybox="gallery" data-caption="SuperFly">
+                            <img src="https://i.ytimg.com/vi/CxyUsm9jftA/hqdefault.jpg" alt="Superfly" />
+                        </a>
+                        <figcaption>SuperFly</figcaption>
+                    </figure>
+                </div>
+            </main>
+            <footer>
+                Copyright &copy; [2021], [Seth Barrett]
+                <br />
+                <b>
+                    Email:
+                </b>
+                <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+                <br />
+                <b>
+                    Profile:
+                </b>
+                <a href="https://www.linkedin.com/in/seth-b-975833b1/">LinkedIn</a>
+                <br />
+                <b>
+                    Selfie Site:
+                </b>
+                <a href="https://sethbarrett50.github.io/MySite">Github Selfie Site</a>
+            </footer>
+        </div>
+    </body>
 </html>
