@@ -1,84 +1,83 @@
-/* COLOR SCHEME: Gettysburg */
+/* COLOR SCHEME: Modern */
 header {
- color: #348899;
- background-color: #343642;
- background-image: url("photos/headerpic.png");
- background-repeat: no-repeat;
- background-position: right;
- border-radius: 10px 10px 0 0;
+	color: #000000;
+	background-color: #ffffff;
+	background-image: url("photos/headerpic.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	border-radius: 10px 10px 0 0;
 }
 
 nav {
- color: #343642;
- background-color: #979C9C;
- padding: 5px 10px;
- font-size: 14pt;
- font-weight: bold;
- box-shadow: 0 10px 5px -5px #962D3E;
- position: relative;
+	color: #ffffff;
+	background-color: #808080;
+	padding: 5px 10px;
+	font-size: 14pt;
+	font-weight: bold;
+	box-shadow: 0 10px 5px -5px #000000;
+	position: relative;
 }
 
 nav a {
- text-decoration: none;
- color: #343642;
- transition: background-color 0.25s ease, color 0.25s ease;
- padding: 0px 5px;
+	text-decoration: none;
+	color: #ffffff;
+	transition: background-color 0.25s ease, color 0.25s ease;
+	padding: 0px 5px;
 }
 
-nav ul{
+nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-nav li{
+
+nav li {
 	display: inline;
 	margin-right: 10px;
 }
 
-nav a:hover{
+nav a:hover {
 	/*border-top: 1px;
 	border-bottom: 1px;*/
-	color: #F2EBC7; 
-	background-color: #962D3E; 
+	color: #ffffff;
+	background-color: #000000;
 	transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 
 main {
- color: #17354A;
- background-color: #F2EBC7;
- padding: 10px;
- z-index: 0;
+	color: #ffffff;
+	background-color: #808080;
+	padding: 10px;
+	z-index: 0;
 }
 
 main a {
-	color: #17354A;
+	color: #ffffff;
 }
-main table 
-{
-	border: 1px solid #962D3E;
+
+main table {
+	border: 1px solid #000000;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
 
-main td 
-{
-	border: 1px solid #962D3E;
+main td {
+	border: 1px solid #000000;
 	padding: 5px;
 }
 
-main th 
-{
-	border: 1px solid #962D3E;
+main th {
+	border: 1px solid #000000;
 	padding: 5px;
 	color: #F2EBC7;
-	background-color: #962D3E;
+	background-color: #000000;
 	text-align: left;
 }
 
 body {
 	font-family: Calibri, Helvetica, Arial, sans-serif;
-	Background-color:#348899;
+	Background-color: #ffffff;
 }
 
 #wrapper {
@@ -106,12 +105,12 @@ h2 {
 }
 
 footer {
- color: #348899;
- background-color: #343642;
- padding: 5px 10px;
- font-size: 10pt;
- font-style: italic;
- border-radius: 0 0 10px 10px;
+	color: #000000;
+	background-color: #ffffff;
+	padding: 5px 10px;
+	font-size: 10pt;
+	font-style: italic;
+	border-radius: 0 0 10px 10px;
 }
 
 h3 {
@@ -125,60 +124,74 @@ h3 {
 	font-weight: lighter;
 	margin: 0;
 }
+
 .experience .title {
 	font-size: 12pt;
 	font-weight: bold;
 	font-style: italic;
 	margin-bottom: 10px;
 }
+
 .experience .dates {
 	font-size: 12pt;
 	font-weight: bold;
 	font-style: italic;
 	float: right;
 }
+
 .experience .description {
 	font-size: 11pt;
+	/*Check This*/
+	margin-bottom: 10px;
 }
+
 .experience ul {
 	margin: 0;
 }
+
 .experience .responsibilites {
 	font-size: 10pt;
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
 	column-count: 2;
 }
-.experience, .school {
-	border-left: 10px solid #17354A;
-	border-top: 1px dashed #17354A;
-	border-bottom: 1px dashed #17354A;
-	border-right: 1px dashed #17354A;
+
+.experience,
+.school {
+	border-left: 10px solid #2C3E50;
+	border-top: 1px dashed #2C3E50;
+	border-bottom: 1px dashed #2C3E50;
+	border-right: 1px dashed #2C3E50;
 	margin: 20px;
 	padding: 5px 10px;
 	overflow: auto;
 }
-.me > img {
+
+.me>img {
 	float: right;
 }
-	
-.details { 
-	color: #F2EBC7; 
-	background-color: #962D3E; 
-	float: right; 
+
+.details {
+	color: #F2EBC7;
+	background-color: #962D3E;
+	float: right;
 	padding: 5px 10px;
 }
-.school > img {
+
+.school>img {
 	float: left;
 }
+
 .school h3 {
 	margin: 0 0 0 120px;
 }
+
 .school h4 {
 	font-size: 14pt;
 	font-weight: lighter;
 	margin: 0 0 0 120px;
 }
+
 .school ul {
 	margin: 0 0 0 120px;
 }
@@ -221,21 +234,31 @@ label {
 	font-weight: bold;
 }
 
-input, textarea, select{
+input,
+textarea,
+select {
 	display: block;
 	width: 300px;
 	margin-bottom: 5px;
 	margin-left: 150px;
 }
+
 textarea {
 	height: 75px;
 }
 
 
-.mobileme > img{
+.mobileme>img {
 	float: right;
 }
 
-header, section, footer, aside, nav, main, article, figure {
- display: block;
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+	display: block;
 }

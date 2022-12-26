@@ -24,11 +24,11 @@ nav {
     padding: 5px 0;
     font-size: 11pt;
     text-align: center;
-    box-shadow: 0 2px 4px #962D3E;
+    box-shadow: 0 2px 4px #000000;
 }
 
 nav li{
-    border: 2px solid #343642;
+    border: 2px solid #ffffff;
     margin: 3px;
     display: inline-block;
     width: 45%;
