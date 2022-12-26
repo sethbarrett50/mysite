@@ -228,7 +228,7 @@ img {
 	height: auto;
 }
 
-.gallery {
+/* .gallery {
 	text-align: center;
 }
 
@@ -252,7 +252,7 @@ img {
 
 .gallery img {
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+} */
 
 label {
 	display: block;
