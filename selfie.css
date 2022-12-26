@@ -1,7 +1,7 @@
 /* COLOR SCHEME: Modern */
 header {
 	color: #000000;
-	background-color: #ffffff;
+	background-color: #d0d0d0;
 	background-image: url("photos/headerpic.png");
 	background-repeat: no-repeat;
 	background-position: right;
@@ -77,7 +77,7 @@ main th {
 
 body {
 	font-family: Calibri, Helvetica, Arial, sans-serif;
-	Background-color: #ffffff;
+	Background-color: #a0a0a0;
 }
 
 #wrapper {
@@ -106,7 +106,7 @@ h2 {
 
 footer {
 	color: #000000;
-	background-color: #a0a0a0;
+	background-color: #d0d0d0;
 	padding: 5px 10px;
 	font-size: 10pt;
 	font-style: italic;
