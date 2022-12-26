@@ -172,8 +172,8 @@ h3 {
 }
 
 .details {
-	color: #F2EBC7;
-	background-color: #962D3E;
+	color: #808080;
+	background-color: #373737;
 	float: right;
 	padding: 5px 10px;
 }
@@ -219,7 +219,7 @@ img {
 
 .gallery img:hover {
 	transform: rotate(5deg) scale(1.1);
-	box-shadow: 5px 5px 10px #348899;
+	box-shadow: 5px 5px 10px #ffffff;
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
