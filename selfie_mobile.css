@@ -105,6 +105,10 @@ nav a:active{
     float: left;
     margin: 5px;
 }
+.blog > img{
+    float: left;
+    margin: 5px;
+}
 .me p {
     text-align: justify;
 }
