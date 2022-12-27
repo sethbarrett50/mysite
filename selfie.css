@@ -197,6 +197,9 @@ h3 {
 .me>img {
 	float: right;
 }
+.blog>img {
+	float: right
+}
 
 .details {
 	color: #808080;
