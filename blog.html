@@ -62,11 +62,44 @@
                         Have blocks of blogs
                         Have title, date for each entry
                         Below will be the main content for the posts
-                     -->
+                -->
+                <div class="blog">
+                    <h4>December 28th, 2022</h4>
+                    <div class='title'>Using C# and Regular Expressions for Data Analysis in My Vault Research Project</div>
+                    <img src="photos/regEx.jpeg" alt="C# Regular Expression Language" width="250" height="445" />
+                    <p>
+                        I've recently been using C#'s regular expression language for my Vault research project, specifically for finding Android permissions data and Java encryption and security package imports within the java files of decompiled apks from the aptoide store.
+                    </p>
+                    <p>
+                        One of the main benefits of using regular expressions is the ability to easily search through large amounts of data and pull out specific patterns or groups of characters. 
+                        In this case, I'm using the regex function to search through all the files within each directory related to each decompiled application and find instances of "java.security." or "javax.crypto.".
+                    </p>
+                    <p>
+                        To do this, I'm using the following piece of C# code:
+                        <span style="font-family: monospace; color: #333;"><code>Regex packEx = new Regex(@"(java.security.\w*|javax.crypto.\w*)");</code></span>
+                        The use of grouping in this regular expression is essential for finding these specific patterns within the data.
+                        By using the parentheses, we are able to group together the "java.security." and "javax.crypto." patterns, and the use of the pipe symbol (|) allows us to search for either of these patterns. 
+                        The \w* characters at the end of each group allow for any combination of alphanumeric characters to follow these patterns.
+                    </p>
+                    <p>
+                        Compiling the regular expression before using it in loops is also an important consideration for efficiency. 
+                        When a regular expression is compiled, it is converted into an optimized form that is faster to execute. 
+                        This is especially important when running the regex function on a large number of files within a loop.
+                    </p>
+                    <p>
+                        As an undergraduate, I had the opportunity to learn C# with Dr. Dowell, and I have continued to enjoy using this language in my research and professional endeavors. 
+                        In my recent work on the Vault project, I found C#'s regular expression language and the ability to walk through file trees recursively to be particularly useful tools.
+                    </p>
+                    <p>
+                        While using C# on a Mac has presented some challenges, such as the lack of a fully-featured visual studio edition, I have found that the benefits of using this language far outweigh any difficulties. 
+                        I am grateful for the opportunity to have learned C# during my undergraduate studies, and I continue to enjoy using it in my work.
+                    </p>
+                </div>
+                    
+                
                 <div class="blog">
                     <h4>December 27th, 2022</h4>
-                    <div class='title'>Progress Report on PhD Research Project: Detecting Vault Apps using Machine
-                        Learning</div>
+                    <div class='title'>Progress Report on PhD Research Project: Detecting Vault Apps using Machine Learning</div>
                     <img src="photos/aptoide.png" alt="Aptoide Logo" width="250" height="445" />
                     <p>
                         Hi everyone,
