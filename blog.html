@@ -99,20 +99,75 @@
 
                 <!-- <div class="blog">
                     <h4>December 30th, 2022</h4>
-                    <div class='title'>automating</div>
+                    <div class='title'>Streamlining Website Maintenance with Shell Scripts and Cronjobs</div>
                     <p>
-                        Automation
-    
-                        Used updateSite script, chmod +x, add site alias
-                        Commits changes to mySite repository using command argument for message
-                        Pushes commit to remote repository
-                        Logs into remote server using expect, send etc.
-                            Uses ssh keys -> key gen, ssh-copy-id
-                        Cds into /var/www/mysite/
-                        pulls from repository
-                        exits remote server
+                        As we saw in yesterday's post, it's important to keep your website up to date in order to maintain security and ensure that everything is running smoothly. 
+                        One way to automate this process is by using a shell script. 
+                        In this post, we'll go over how to set up a script that will automatically update your website whenever you make changes.
                     </p>
-                    Desc:
+                    <p>
+                        First, you'll need to set up SSH keys for your server. 
+                        This will allow you to securely connect to the server and run commands remotely.
+                        To do this, you can use the `ssh-keygen` command to generate a new SSH key, and then use `ssh-copy-id` to connect the key to your site's SSH.
+                    </p>
+                    <p>
+                        Once you have your SSH keys set up, you can create a shell script that takes an argument representing your commit message. 
+                        This script will commit and push any updates to your website's repository, log in to the remote server using the expect command and your new SSH key, change to your website repository location, and pull the update. 
+                        Finally, the script will exit the server.
+                    </p>
+                    <p>
+                        Here's the shell script in action:
+                    </p>
+                    <p>
+                        <pre>
+                            #!/bin/bash
+                            
+                            # Run git commit with the -a and -m flags
+                            #Uses the command line argument as the commit message
+                            git commit -a -m "$1"
+                            
+                            # Push the committed changes to the remote repository
+                            git push
+                            
+                            # Use expect to automate the login process
+                            expect <<- DONE
+                              # Wait for the login prompt and send the login command
+                              spawn ssh root@sethbarrett.xyz
+                            
+                              # Wait for the command prompt and send the cd command
+                              expect "$"
+                              send "cd /var/www/mysite/\r"
+                            
+                              # Wait for the command prompt and send the git pull command
+                              expect "$"
+                              send "git pull\r"
+                            
+                              # Exit remote server
+                              expect "$"
+                              send "exit"
+                              
+                              # Exit the expect script
+                              expect eof
+                            DONE
+                        </pre>                            
+                    </p>
+                    <p>
+                        With this script in place, you can easily update your website whenever you make changes, without having to log in to the server manually. 
+                        This can save you a lot of time and effort, and ensures that your website is always up to date.
+                    </p>
+                    <p>
+                        Cronjobs are a powerful tool for automating tasks on a Linux server. 
+                        By using cron, you can schedule a script or command to run at specific intervals, such as every hour, day, week, or month. 
+                        This can be especially useful for tasks that need to be run on a regular basis, such as website updates or backups.
+                        Yesterday, I used it to set up a cronjob to automatically renew my websites certificate monthly so I don't have to check all the time.
+                    </p>
+                    <p>
+                        In the future, I plan on utilizing cronjobs to further automate the maintenance and management of my website. 
+                        For example, I could set up a cronjob to run the shell script we discussed above every day at a certain time, to ensure that my website is always up to date. 
+                        I could also set up cronjobs for other tasks, such as cleaning up old log files or sending notifications when certain events occur. 
+                        By using cronjobs, I can save time and effort by automating these tasks, and ensure that my website is always running smoothly.
+                    </p>
+                    Desc: In this blog post, we will discuss how to automate the process of updating your website using a shell script. We will go over the steps for setting up SSH keys for your server and creating a shell script that can commit and push updates to your website's repository, log in to the server, and pull the updates. We will also provide an example of the shell script in action. Finally, we will introduce the concept of cronjobs and how they can be used to further automate the maintenance and management of your website.
                 </div> -->
                 
 
