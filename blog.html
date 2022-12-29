@@ -72,6 +72,8 @@
                         -Individual Pages for blog Posts
                         -Blog is first place, swap with current index
                         -Better image sourcing + size convert
+                        -Sources for each blog entry, particularly for photos
+
                         -I will remember this later
                     </p>
                 </div> -->
@@ -88,6 +90,7 @@
                             -Add them to sudo group
                         Changed the /etc/ssh/sshd_config file to only allow login w/ ssh keys
                         Went to /etc/nginx/nginx.conf, uncomented server_tokens off and reloaded nginx to not show nginx version numbers on error pages
+                        Vultr comes preinstalled with ufw
                         
                     </p>
                 </div> -->
@@ -115,7 +118,8 @@
 
                 <div class="blog">
                     <h4>December 29th, 2022</h4>
-                    <div class='title'>setting up, automating and hardening site</div>
+                    <div class='title'>Step-by-Step Guide to Setting Up Your Own Website: From Domain Name to Secure Server</div>
+                    <img src="photos/epik.jpeg" alt="epik" width="250" height="250" />
 
                     <p>
                         Setting up a website can seem like a daunting task, especially if you're new to the process. 
@@ -125,14 +129,16 @@
                         In this blog post, we'll cover the steps I took to set up my website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx.
                     </p>
                     <p>
-                        First, I used a company called Epik to rent my domain name. 
+                        First, I used a company called epik to rent my domain name. 
                         The process was fairly quick, taking about a quarter of a day before my domain name was registered to me.
+                        Its also pretty cool that epik supports cryptocurrency as a payment method.
                     </p>
                     <p>
                         Next, I chose Vultr as my server hosting provider, opting for a cloud compute Debian general purpose server. 
                         I chose the cheapest size that still allowed for IPv4, which cost around $5 per month.
                         <a href="https://www.vultr.com/?ref=9325408">If you'd like to get a free $100 credit for your website when you sign up, use my referall link here!</a>
                     </p>
+                    <img src="photos/vultr.jpeg" alt="Vultr" width="250" height="445" />
                     <p>
                         Once I had my server set up, I linked the server's IPv4 and IPv6 addresses with the DNS records on Epik. 
                         This ensured that my website could be accessed using the domain name I had rented.
