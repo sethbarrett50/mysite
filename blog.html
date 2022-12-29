@@ -63,11 +63,43 @@
                         Have title, date for each entry
                         Below will be the main content for the posts
                 -->
+
                 <!-- <div class="blog">
-                    <h4>December 28th, 2022</h4>
-                    <div class='title'>Automating the Updating of Websites Hosted on Remote Servers</div>
+                    <h4>Jan 1st, 2022</h4>
+                    <div class='title'>Planned Website Features</div>
 
                     <p>
+                        -Individual Pages for blog Posts
+                        -Blog is first place, swap with current index
+                        -Better image sourcing + size convert
+                        -I will remember this later
+                    </p>
+                </div> -->
+
+                <!-- <div class="blog">
+                    <h4>December 31st, 2022</h4>
+                    <div class='title'>hardening</div>
+                    
+                    <p>
+                        security
+                        
+                        As mentioned above, SSH keys
+                        Different users than root
+                            -Add them to sudo group
+                        Changed the /etc/ssh/sshd_config file to only allow login w/ ssh keys
+                        Went to /etc/nginx/nginx.conf, uncomented server_tokens off and reloaded nginx to not show nginx version numbers on error pages
+                        
+                    </p>
+                </div> -->
+
+
+
+                <!-- <div class="blog">
+                    <h4>December 30th, 2022</h4>
+                    <div class='title'>automating</div>
+                    <p>
+                        Automation
+    
                         Used updateSite script, chmod +x, add site alias
                         Commits changes to mySite repository using command argument for message
                         Pushes commit to remote repository
@@ -76,9 +108,51 @@
                         Cds into /var/www/mysite/
                         pulls from repository
                         exits remote server
-
                     </p>
+                
                 </div> -->
+                
+
+                <div class="blog">
+                    <h4>December 29th, 2022</h4>
+                    <div class='title'>setting up, automating and hardening site</div>
+
+                    <p>
+                        Setting up a website can seem like a daunting task, especially if you're new to the process. 
+                        However, with the right tools and knowledge, it can be a relatively straightforward process.
+                    </p>
+                    <p>
+                        In this blog post, we'll cover the steps I took to set up my website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx.
+                    </p>
+                    <p>
+                        First, I used a company called Epik to rent my domain name. 
+                        The process was fairly quick, taking about a quarter of a day before my domain name was registered to me.
+                    </p>
+                    <p>
+                        Next, I chose Vultr as my server hosting provider, opting for a cloud compute Debian general purpose server. 
+                        I chose the cheapest size that still allowed for IPv4, which cost around $5 per month.
+                        <a href="https://www.vultr.com/?ref=9325408">If you'd like to get a free $100 credit for your website when you sign up, use my referall link here!</a>
+                    </p>
+                    <p>
+                        Once I had my server set up, I linked the server's IPv4 and IPv6 addresses with the DNS records on Epik. 
+                        This ensured that my website could be accessed using the domain name I had rented.
+                    </p>
+                    <p>
+                        I decided to use Nginx as my web server, rather than the more traditional Apache. 
+                        While I was familiar with Apache, I wanted to try something new and found Nginx to be fairly easy to use.
+                    </p>
+                    <p>
+                        After setting up the website and placing my HTML files in the /var/www/mysite directory, I used Certbot to generate a certificate for my site. 
+                        This ensures that all communication between my website and its users is encrypted and secure.
+                    </p>
+                    <p>
+                        Finally, I set up a cronjob to automate the process of renewing my certificates, ensuring that my website remains secure over time.
+                    </p>
+                    <p>
+                        Overall, the process of setting up a website may seem intimidating at first, but with the right tools and knowledge, it can be a relatively straightforward process. 
+                        Whether you're a seasoned pro or a beginner, following these steps can help you get your website up and running in no time.
+                    </p>
+                </div>
 
                 <div class="blog">
                     <h4>December 28th, 2022</h4>
