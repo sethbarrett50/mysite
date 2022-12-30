@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="selfie.css?v=1.0.2" />
-    <link rel="stylesheet" href="selfie_tablet.css?v=1.0.2" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="selfie_mobile.css?v=1.0.2" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="selfie.css?v=1.0.3" />
+    <link rel="stylesheet" href="selfie_tablet.css?v=1.0.3" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="selfie_mobile.css?v=1.0.3" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -80,19 +80,38 @@
 
                 <!-- <div class="blog">
                     <h4>December 31st, 2022</h4>
-                    <div class='title'>hardening</div>
-                    
+                    <div class='title'>Improving Server Security: Tips and Techniques for Hardening Your Server</div>
+                    <img src="photos/harden.png" alt="Harden Server" width="250" height="445" />
                     <p>
-                        security
-                        
-                        As mentioned above, SSH keys
-                        Different users than root
-                            -Add them to sudo group
-                        Changed the /etc/ssh/sshd_config file to only allow login w/ ssh keys
-                        Went to /etc/nginx/nginx.conf, uncomented server_tokens off and reloaded nginx to not show nginx version numbers on error pages
-                        Vultr comes preinstalled with ufw
-                        
+                        As a server administrator, it is important to take measures to ensure the security and stability of the server. 
+                        In my previous blog post, I discussed setting up ssh keys as a secure method of logging into the server. 
+                        In this post, I want to share a few more steps I have taken to harden the server and improve its security.
                     </p>
+                    <p>
+                        First, I added a new user to the server using the `adduser` command and included them in the sudo group. 
+                        This allows me to perform privileged tasks without constantly using the root user, which poses a security risk. 
+                        It is generally a best practice to avoid using the root user for everyday tasks, as any mistakes or vulnerabilities present in the actions taken with the root user can have severe consequences for the system.
+                    </p>
+                    <p>
+                        Next, I copied my ssh key's id to the new user's login and edited the `/etc/ssh/sshd_config` file to disable both root login and password login. 
+                        This means that ssh keys are the only way to access the server, adding an extra layer of security. 
+                        It is important to make sure to backup your ssh keys to a USB drive or other secure location, as losing access to your keys could prevent you from logging into the server. 
+                        If you are using a hosting provider like Vultr, it is also a good idea to take advantage of any additional security measures they offer, such as the ability to gain access to the server through their website in case you lose your keys.
+                    </p>
+                    <p>
+                        I also used the Uncomplicated Firewall (ufw), which is included as a package by default with Vultr, to close all ports on the server except for those used for HTTP, HTTPS, and SSH. 
+                        This helps to reduce the attack surface of the server and prevent unauthorized access.
+                    </p>
+                    <p>
+                        Lastly, I made a small but important change to the Nginx configuration located at `/etc/nginx/nginx.conf` by uncommenting the `server_tokens off` setting. 
+                        By default, Nginx displays its version number on error pages, but this setting disables that behavior. 
+                        While it may not seem like a significant change, hiding the version number can make it more difficult for attackers to target known vulnerabilities in specific versions of Nginx.
+                    </p>
+                    <p>
+                        As I continue to work with the server, I am sure I will take additional steps to harden it and improve its security. 
+                        I will be sure to keep you all updated on my progress.
+                    </p>
+                    Desc: In this blog post, we discuss a variety of steps and techniques that can be taken to improve the security of a server. From adding a new user and disabling root login, to using a firewall and hiding the version number of Nginx, these tips can help to reduce the risk of unauthorized access and protect against potential vulnerabilities. Whether you are a server administrator or just looking to improve the security of your own personal server, this post offers valuable insights and guidance.
                 </div> -->
 
 

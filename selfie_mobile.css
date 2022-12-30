@@ -109,6 +109,12 @@ nav a:active{
     float: left;
     margin: 5px;
 }
+.blog > pre {
+    /* width: 45%; */
+    overflow-x: scroll;
+    margin: 0;
+    text-align: left;
+}
 .me p {
     text-align: justify;
 }
