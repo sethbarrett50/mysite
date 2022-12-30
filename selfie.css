@@ -293,3 +293,7 @@ figure {
 	display: block;
 }
 
+
+.blog > pre{
+	background-color: black;
+}
