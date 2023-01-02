@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to my personal website! Here, you will find information about my professional experience, education, and a short blog where I share my thoughts and insights on a variety of topics. As a professional in the field of computer science, I am excited to share my accomplishments and experiences with you, and I hope that my website serves as a helpful resource for anyone interested in computer science. Thank you for visiting!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to my personal website! Here, you will find information about my professional experience, education, and a short blog where I share my thoughts and insights on a variety of topics. As a professional in the field of computer science, I am excited to share my accomplishments and experiences with you, and I hope that my website serves as a helpful resource for anyone interested in computer science. Thank you for visiting!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to my personal website! Here, you will find information about my professional experience, education, and a short blog where I share my thoughts and insights on a variety of topics. As a professional in the field of computer science, I am excited to share my accomplishments and experiences with you, and I hope that my website serves as a helpful resource for anyone interested in computer science. Thank you for visiting!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Seth Barrett - Home</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.3" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.3" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.3" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: December 30th, 2022</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <h4>December 30th, 2022</h4>
+                    <div class='title'>Streamlining Website Maintenance with Shell Scripts and Cronjobs</div>
+                    <img src="photos/bash.webp" alt="The Bourne-Again Shell" width="250" height="445" />
+                    <p>
+                        As we saw in yesterday's post, it's important to keep your website up to date in order to maintain security and ensure that everything is running smoothly. 
+                        One way to automate this process is by using a shell script. 
+                        In this post, we'll go over how to set up a script that will automatically update your website whenever you make changes.
+                    </p>
+                    <p>
+                        First, you'll need to set up SSH keys for your server. 
+                        This will allow you to securely connect to the server and run commands remotely.
+                        To do this, you can use the `ssh-keygen` command to generate a new SSH key, and then use `ssh-copy-id` to connect the key to your site's SSH.
+                    </p>
+                    <p>
+                        Once you have your SSH keys set up, you can create a shell script that takes an argument representing your commit message. 
+                        This script will commit and push any updates to your website's repository, log in to the remote server using the expect command and your new SSH key, change to your website repository location, and pull the update. 
+                        Finally, the script will exit the server.
+                    </p>
+                    <p>
+                        Here's the shell script in action:
+                    </p>
+                    <p>
+                        <pre>
+                            #!/bin/bash
+                            
+                            # Run git commit with the -a and -m flags
+                            #Uses the command line argument as the commit message
+                            git commit -a -m "$1"
+                            
+                            # Push the committed changes to the remote repository
+                            git push
+                            
+                            # Use expect to automate the login process
+                            expect <<- DONE
+                              # Wait for the login prompt and send the login command
+                              spawn ssh root@sethbarrett.xyz
+                            
+                              # Wait for the command prompt and send the cd command
+                              expect "$"
+                              send "cd /var/www/mysite/\r"
+                            
+                              # Wait for the command prompt and send the git pull command
+                              expect "$"
+                              send "git pull\r"
+                            
+                              # Exit remote server
+                              expect "$"
+                              send "exit"
+                              
+                              # Exit the expect script
+                              expect eof
+                            DONE
+                        </pre>                            
+                    </p>
+                    <p>
+                        With this script in place, you can easily update your website whenever you make changes, without having to log in to the server manually. 
+                        This can save you a lot of time and effort, and ensures that your website is always up to date.
+                    </p>
+                    <p>
+                        Cronjobs are a powerful tool for automating tasks on a Linux server. 
+                        By using cron, you can schedule a script or command to run at specific intervals, such as every hour, day, week, or month. 
+                        This can be especially useful for tasks that need to be run on a regular basis, such as website updates or backups.
+                        Yesterday, I used it to set up a cronjob to automatically renew my websites certificate monthly so I don't have to check all the time.
+                    </p>
+                    <p>
+                        In the future, I plan on utilizing cronjobs to further automate the maintenance and management of my website. 
+                        For example, I could set up a cronjob to run the shell script we discussed above every day at a certain time, to ensure that my website is always up to date. 
+                        I could also set up cronjobs for other tasks, such as cleaning up old log files or sending notifications when certain events occur. 
+                        By using cronjobs, I can save time and effort by automating these tasks, and ensure that my website is always running smoothly.
+                    </p>
+                    <!-- Desc: In this blog post, we will discuss how to automate the process of updating your website using a shell script. We will go over the steps for setting up SSH keys for your server and creating a shell script that can commit and push updates to your website's repository, log in to the server, and pull the updates. We will also provide an example of the shell script in action. Finally, we will introduce the concept of cronjobs and how they can be used to further automate the maintenance and management of your website. -->
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
