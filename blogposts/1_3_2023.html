@@ -31,7 +31,7 @@
 
     <meta property="og:url" content="sethbarrett.xyz">
     <meta property="og:type" content="website">
-    <title>Seth Barrett - Daily Blog Post: December 31st, 2022</title>
+    <title>Seth Barrett - Daily Blog Post: January 3rd, 2022</title>
 
 
     <!-- Update CSS Versions when changed -->
@@ -44,7 +44,7 @@
     <div id="wrapper">
         <header>
             <h1>Seth Barrett</h1>
-            <h2>Daily Blog Post: December 31st, 2022</h2>
+            <h2>Daily Blog Post: January 3rd, 2022</h2>
         </header>
         <nav>
             <ul>
@@ -59,39 +59,80 @@
             <div id="blog">
                 
                 <div class="blog">
-                    <h4>December 31st, 2022</h4>
-                    <div class='title'>Improving Server Security: Tips and Techniques for Hardening Your Server</div>
-                    <img src="photos/harden.webp" alt="Harden Server" width="250" height="445" />
+                    <h4>Jan 3rd, 2022</h4>
+                    <div class='title'>My Experience Setting Up and Using Diffusion Bee: AI Image Creating Software</div>
+
+                    <img src="photos/stableDiff.webp" alt="Stable Diffusion 1" width="250" height="445" />
+
                     <p>
-                        As a server administrator, it is important to take measures to ensure the security and stability of the server. 
-                        In my previous blog post, I discussed setting up ssh keys as a secure method of logging into the server. 
-                        In this post, I want to share a few more steps I have taken to harden the server and improve its security.
+                        Hey everyone!
                     </p>
                     <p>
-                        First, I added a new user to the server using the `adduser` command and included them in the sudo group. 
-                        This allows me to perform privileged tasks without constantly using the root user, which poses a security risk. 
-                        It is generally a best practice to avoid using the root user for everyday tasks, as any mistakes or vulnerabilities present in the actions taken with the root user can have severe consequences for the system.
+                        I wanted to share with you my experience today with setting up and using Diffusion Bee, an AI image creating software. 
+                        I used it on my MacBook Pro, which has a M1 Max chip and 64Gb of ram. 
+                        I figured that should be enough to run the software smoothly and create high quality AI art.
+
                     </p>
                     <p>
-                        Next, I copied my ssh key's id to the new user's login and edited the `/etc/ssh/sshd_config` file to disable both root login and password login. 
-                        This means that ssh keys are the only way to access the server, adding an extra layer of security. 
-                        It is important to make sure to backup your ssh keys to a USB drive or other secure location, as losing access to your keys could prevent you from logging into the server. 
-                        If you are using a hosting provider like Vultr, it is also a good idea to take advantage of any additional security measures they offer, such as the ability to gain access to the server through their website in case you lose your keys.
+                        I used the DiffusionBee UI for this, and I have to say it was a fairly easy process. 
+                        You can find the github page <a href="https://github.com/divamgupta/diffusionbee-stable-diffusion-ui">here</a> and the main website <a href="https://diffusionbee.com/">here</a>.
                     </p>
                     <p>
-                        I also used the Uncomplicated Firewall (ufw), which is included as a package by default with Vultr, to close all ports on the server except for those used for HTTP, HTTPS, and SSH. 
-                        This helps to reduce the attack surface of the server and prevent unauthorized access.
+                        The setup process was straightforward, though it did take a bit of time. 
+                        First, I had to download the dmg file from the main website and add it to my applications folder. 
+                        There are two versions of DiffusionBee available for Apple Silicon chips, and I opted for the high quality version since my MacBook Pro has good specs. 
+                        The initial dmg file was only 500Mb, but once you start up the application, 8 models need to be downloaded, so make sure you have at least 8Gb of free space and some time to allow the models to download.
+
                     </p>
                     <p>
-                        Lastly, I made a small but important change to the Nginx configuration located at `/etc/nginx/nginx.conf` by uncommenting the `server_tokens off` setting. 
-                        By default, Nginx displays its version number on error pages, but this setting disables that behavior. 
-                        While it may not seem like a significant change, hiding the version number can make it more difficult for attackers to target known vulnerabilities in specific versions of Nginx.
+                        DiffusionBee has several different modes of use, including text to image, image to image, in-painting and out-painting. Here's a breakdown of each mode:
                     </p>
+                    <ul>
+                        <li>
+                            Text to image generates an image based on an input string
+                        </li>
+                        <div class="exPic"><figure>
+                            <img src="photos/sdI2I.webp" alt="Text to Image" width="250" height="445" />
+                            <figcaption>Image created from the text prompt "create an image representing IoT security, Cel Shading"
+                            </figcaption>
+                        </figure></div>
+                        <li>
+                            Image to image modifies an image provided based on an input string
+                        </li>
+                        <div class="exPic"><figure>
+                            <img src="photos/alexa1.webp" alt="Image to Image1" width="250" height="445" />
+                            <img src="photos/alexa2.webp" alt="Image to Image2" width="250" height="445" />
+                            <figcaption>Image on right created from left image and text prompt "draw in cell shade style"
+                            </figcaption>
+                        </figure></div>
+                        <li>
+                            In-painting removes or adds objects to a region of a provided image based on an input string
+                        </li>
+                        <div class="exPic"><figure>
+                            <img src="photos/ip1.webp" alt="In-Painting1" width="250" height="445" />
+                            <img src="photos/ip2.webp" alt="In-Painting2" width="250" height="445" />
+                            <figcaption>Image on right created from left image and text prompt "draw in cell shade style"
+                            </figcaption>
+                        </figure></div>
+                        <li>
+                            Out-painting expands an image outward using an input string
+                        </li>
+                        <div class="exPic"><figure>
+                            <img src="photos/op1.webp" alt="Out-Painting1" width="250" height="445" />
+                            <img src="photos/op2.webp" alt="Out-Painting2" width="250" height="445" />
+                            <figcaption>Image on right created from left image and text prompt "draw more mountains"
+                            </figcaption>
+                        </figure></div>
+                        <!-- <li>
+                            Upscaling increases the resolution of a provided image
+                        </li> -->
+                    </ul>
                     <p>
-                        As I continue to work with the server, I am sure I will take additional steps to harden it and improve its security. 
-                        I will be sure to keep you all updated on my progress.
+                        One of the main reasons I really like DiffusionBee is that it runs entirely locally on my machine without communicating with any cloud services. Plus, its search system allows advanced control over the machine learning program. If you're looking for a way to run stable diffusion and you have a MacBook Pro that meets the minimum specs, I highly recommend checking out DiffusionBee!
                     </p>
-                    <!-- Desc: In this blog post, we discuss a variety of steps and techniques that can be taken to improve the security of a server. From adding a new user and disabling root login, to using a firewall and hiding the version number of Nginx, these tips can help to reduce the risk of unauthorized access and protect against potential vulnerabilities. Whether you are a server administrator or just looking to improve the security of your own personal server, this post offers valuable insights and guidance. -->
+
+                    <!-- Desc: In this blog post, I share my experience setting up and using Diffusion Bee, an AI image creating software that runs entirely locally on my MacBook Pro. I go through the setup process and the different modes of use, including text to image, image to image, in-painting, out-painting, and upscaling. If you're interested in using stable diffusion and have a MacBook that meets the minimum specs, I highly recommend checking out DiffusionBee! -->
+
                 </div>
             </div>
         </main>

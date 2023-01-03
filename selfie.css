@@ -282,6 +282,17 @@ textarea {
 	float: right;
 }
 
+.exPic{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+	text-align: center;
+}
+.exPic {
+	width: 100%;
+}
+
 header,
 section,
 footer,
