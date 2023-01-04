@@ -31,7 +31,7 @@
 
     <meta property="og:url" content="sethbarrett.xyz">
     <meta property="og:type" content="website">
-    <title>Seth Barrett - Daily Blog Post: December 30th, 2022</title>
+    <title>Seth Barrett - Daily Blog Post: January 4th, 2022</title>
 
 
     <!-- Update CSS Versions when changed -->
@@ -44,7 +44,7 @@
     <div id="wrapper">
         <header>
             <h1>Seth Barrett</h1>
-            <h2>Daily Blog Post: December 30th, 2022</h2>
+            <h2>Daily Blog Post: January 4th, 2022</h2>
         </header>
         <nav>
             <ul>
@@ -59,75 +59,101 @@
             <div id="blog">
                 
                 <div class="blog">
-                    <h4>December 30th, 2022</h4>
-                    <div class='title'>Streamlining Website Maintenance with Shell Scripts and Cronjobs</div>
-                    <img src="photos/bash.webp" alt="The Bourne-Again Shell" width="250" height="445" />
+                    <h4>Jan 4th, 2022</h4>
+                    <div class='title'>Automating RSS Feed Updates with Shell and Python</div>
+
+                    <img src="photos/updateRSS.webp" alt="Update RSS Script" width="250" height="445" />
+
                     <p>
-                        As we saw in yesterday's post, it's important to keep your website up to date in order to maintain security and ensure that everything is running smoothly. 
-                        One way to automate this process is by using a shell script. 
-                        In this post, we'll go over how to set up a script that will automatically update your website whenever you make changes.
+                        If you run a blog or website, it's important to keep your readers informed of new content by providing an RSS feed. But manually updating the feed can be a tedious process. 
+                        In this post, I'll show you how to automate the process using a combination of shell and Python scripts.
+                    </p>
+                    <h5>Setting up the RSS Feed</h5>
+                    <p>
+                        First, I create the RSS feed itself. 
+                        I based my feed on the formatting described in this tutorial: <a href="https://rss.com/blog/how-to-create-an-rss-feed/">How to Create an RSS Feed.</a>
                     </p>
                     <p>
-                        First, you'll need to set up SSH keys for your server. 
-                        This will allow you to securely connect to the server and run commands remotely.
-                        To do this, you can use the `ssh-keygen` command to generate a new SSH key, and then use `ssh-copy-id` to connect the key to your site's SSH.
+                        I then created an `rss.xml` file in my blogposts directory and formatted it according to the tutorial. 
+                        Then, I got to work on automating the input of blog post details.
                     </p>
+                    <h5>Automating the Process</h5>
                     <p>
-                        Once you have your SSH keys set up, you can create a shell script that takes an argument representing your commit message. 
-                        This script will commit and push any updates to your website's repository, log in to the remote server using the expect command and your new SSH key, change to your website repository location, and pull the update. 
-                        Finally, the script will exit the server.
+                        I started by writing a shell script that calls a Python script and passes the first argument (the name of an HTML file for a blog post) to the script:
                     </p>
-                    <p>
-                        Here's the shell script in action:
-                    </p>
-                    <p> <pre>
+                    <p><pre>
                         #!/bin/bash
-                        
-                        # Run git commit with the -a and -m flags
-                        #Uses the command line argument as the commit message
-                        git commit -a -m "$1"
-                        
-                        # Push the committed changes to the remote repository
-                        git push
-                        
-                        # Use expect to automate the login process
-                        expect <<- DONE
-                            # Wait for the login prompt and send the login command
-                            spawn ssh root@sethbarrett.xyz
-                        
-                            # Wait for the command prompt and send the cd command
-                            expect "$"
-                            send "cd /var/www/mysite/\r"
-                        
-                            # Wait for the command prompt and send the git pull command
-                            expect "$"
-                            send "git pull\r"
-                        
-                            # Exit remote server
-                            expect "$"
-                            send "exit"
-                            
-                            # Exit the expect script
-                            expect eof
-                        DONE
-                        </pre> </p>
+
+                        python3 /Users/SEBARRETT/Code/updateRss.py "$1"
+                    </pre></p>
                     <p>
-                        With this script in place, you can easily update your website whenever you make changes, without having to log in to the server manually. 
-                        This can save you a lot of time and effort, and ensures that your website is always up to date.
+                        Next, I wrote a Python script that does the following:
+                    </p>
+                    <ul>
+                        <li>Takes the name of an HTML file for a blog post as an argument</li>
+                        <li>Uses Beautiful Soup to parse the HTML file and extract the `div` element with the class "blog"</li>
+                        <li>Returns the title and contents of the blog post</li>
+                        <li>Inserts the title and contents into the `rss.xml` file as a new `item` element, below the `atom` element and above all the other `item` elements</li>
+                    </ul>
+                    <p>
+                        The complete Python script can be found <a href="https://github.com/sethbarrett50/update_RSS_Feed">here:</a>
+                    </p>
+                    <!-- <p><pre>
+                        import sys
+                        import re
+                        import datetime
+                        from bs4 import BeautifulSoup as bs4
+
+                        # Takes the html document, uses bs4 to get div element with class blog
+                        def getBlogContents() -> tuple[str]:
+                            with open(f'/Users/SEBARRETT/Code/mysite/blogposts/{sys.argv[1]}', 'r') as f:
+                                soup = bs4(f.read(), 'html.parser')
+                            title = soup.find('div', class_='title').text
+                            contents = re.sub('\n', '', soup.find('div', class_='blog').prettify())
+                            return (title, contents)
+
+                        # Adds blog contents to top of channel as a new item
+                        def addToRss(bc: str) -> None:
+                            RSS_PATH = "/Users/SEBARRETT/Code/mysite/blogposts/rss.xml"
+                            with open(RSS_PATH, 'r') as rss_file:
+                                rss_xml = rss_file.read()
+                            START_LINE = '<atom:link href="https://sethbarrett.xyz/rss.xml" rel="self" type="application/rss+xml"/>'
+                            channel_start_index = rss_xml.index(START_LINE)
+                            now = datetime.datetime.now()
+                            rss_xml = (rss_xml[:channel_start_index+len(START_LINE)] +
+                                f'\n  <item>\n    <title>{bc[0]}</title>\n\t<link>https://sethbarrett.xyz/blogposts/{sys.argv[1]}</link>\n\t<pubDate>{now.strftime("%a, %d %b %Y %H:%M:%S %z")}+400</pubDate>\n\t<guid>https://sethbarrett.xyz/blogposts/{sys.argv[1]}/</guid>\n\t<description>{bc[1]}</description>\n  </item>' +
+                                rss_xml[channel_start_index+len(START_LINE):])
+                        with open(RSS_PATH, 'w') as rss_file:
+                            rss_file.write(rss_xml)
+
+
+                    def main() -> None:
+                        blogContents = getBlogContents()
+                        addToRss(blogContents)
+
+
+                    if __name__ == "__main__":
+                        main()
+                    </pre></p> -->
+                    <p>
+                        To parse the HTML document, the script uses Beautiful Soup to extract the `div` element with the class "blog" and its contents.
+                        I had experience using BS4 from my previous work on my Vault research project, so this was a breeze.
+                        The extracted title and contents are then inserted into the `rss.xml` file as a new `item` element, below the `atom` element and above all the other `item` elements. 
+                        The `item` element includes the title of the post, a link to the post, the publication date using the `datetime` library, and the main contents of the post. 
+                        After testing the script, it was successfully able to update the `rss.xml` file with the new blog post information.
                     </p>
                     <p>
-                        Cronjobs are a powerful tool for automating tasks on a Linux server. 
-                        By using cron, you can schedule a script or command to run at specific intervals, such as every hour, day, week, or month. 
-                        This can be especially useful for tasks that need to be run on a regular basis, such as website updates or backups.
-                        Yesterday, I used it to set up a cronjob to automatically renew my websites certificate monthly so I don't have to check all the time.
+                        To make the shell script executable, the command `chmod +x updateRSS.sh` was used. 
+                        An alias for the script was also added to the `zsh` configuration file.
                     </p>
                     <p>
-                        In the future, I plan on utilizing cronjobs to further automate the maintenance and management of my website. 
-                        For example, I could set up a cronjob to run the shell script we discussed above every day at a certain time, to ensure that my website is always up to date. 
-                        I could also set up cronjobs for other tasks, such as cleaning up old log files or sending notifications when certain events occur. 
-                        By using cronjobs, I can save time and effort by automating these tasks, and ensure that my website is always running smoothly.
+                        In the future, I plan to have the script automatically detect when a new blog post has been added using `git add` and `grep`, and then run the script automatically to update the RSS feed.
                     </p>
-                    <!-- Desc: In this blog post, we will discuss how to automate the process of updating your website using a shell script. We will go over the steps for setting up SSH keys for your server and creating a shell script that can commit and push updates to your website's repository, log in to the server, and pull the updates. We will also provide an example of the shell script in action. Finally, we will introduce the concept of cronjobs and how they can be used to further automate the maintenance and management of your website. -->
+                    <p>
+                        If you'd like to follow our RSS feed, the URL is `sethbarrett.xyz/blogposts/rss.xml`.
+                    </p>
+                    <!-- Desc: This blog post discusses how to automate the process of updating an RSS feed for a blog or website using shell and Python scripts. The post describes how the RSS feed was set up and the process of creating a shell script that calls a Python script to extract the title and contents of a new blog post and insert it into the RSS feed as a new item element. The post also mentions plans to have the script automatically detect when a new blog post has been added and run the update automatically in the future. The URL for the RSS feed is also provided. -->
+
                 </div>
             </div>
         </main>
