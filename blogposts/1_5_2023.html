@@ -31,7 +31,7 @@
 
     <meta property="og:url" content="sethbarrett.xyz">
     <meta property="og:type" content="website">
-    <title>Seth Barrett - Daily Blog Post: December 29th, 2022</title>
+    <title>Seth Barrett - Daily Blog Post: January 5th, 2022</title>
 
 
     <!-- Update CSS Versions when changed -->
@@ -44,7 +44,7 @@
     <div id="wrapper">
         <header>
             <h1>Seth Barrett</h1>
-            <h2>Daily Blog Post: December 29th, 2022</h2>
+            <h2>Daily Blog Post: January 5th, 2022</h2>
         </header>
         <nav>
             <ul>
@@ -59,48 +59,81 @@
             <div id="blog">
                 
                 <div class="blog">
-                    <h4>December 29th, 2022</h4>
-                    <div class='title'>Step-by-Step Guide to Setting Up Your Own Website: From Domain Name to Secure Server</div>
-                    <img src="photos/epik.webp" alt="epik" width="250" height="250" />
+                    <h4>Jan 5th, 2022</h4>
+                    <div class='title'> Improving the Security of My Nginx Webserver</div>
 
+                    <img src="photos/1_5_23.webp" alt="Update RSS Script" width="250" height="445" />
+
+                    <h5>Web Server Security Test</h5>
                     <p>
-                        Setting up a website can seem like a daunting task, especially if you're new to the process. 
-                        However, with the right tools and knowledge, it can be a relatively straightforward process.
+                        In my personal, professional blog, I wanted to make sure that my nginx webserver was secure. 
+                        To do this, I ran a security test from <a href="https://www.immuniweb.com/websec/">immuniweb, found here.</a>
+                        I found several vulnerabilities that needed to be improved upon, including issues with my website's GDPR compliance, PCI DSS compliance, and HTTP headers security.
+                    </p>
+                    <h5>GDPR Compliance Test</h5>
+                    <p>
+                        To fix the GDPR compliance issues, I added a privacy policy html page and inserted it into the footers of all my pages. 
+                        I also made sure to outline that we do not collect personally identifiable information or use cookies.
+                    </p>
+                    <h5>PCI DSS Compliance Test</h5>
+                    <p>
+                        In the PCI DSS Compliance Test, it was noted that my website's CMS could not be reliably fingerprinted and that I should make sure it is up to date. 
+                        Additionally, it was recommended that I implement a web application firewall (WAF) to protect against common web attacks.
                     </p>
                     <p>
-                        In this blog post, we'll cover the steps I took to set up my website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx.
+                        Although my website does not use a web-based content management system, I am currently using UFW as a firewall. 
+                        However, I am planning on setting up a VLAN with an openBSD server to act as my WAF in order to further improve the security of my website. 
+                        Ensuring that my website is compliant with PCI DSS standards and has a strong firewall is an important step in protecting it against potential threats.
+                    </p>
+                    <h5>HTTP Headers Security Test</h5>
+                    <p>
+                        In the HTTP Headers Security Test, it was recommended that I implement strict-transport-security, X-Frame-Options, and X-Content-Type-Options to improve the security of my website.
                     </p>
                     <p>
-                        First, I used a company called epik to rent my domain name. 
-                        The process was fairly quick, taking about a quarter of a day before my domain name was registered to me.
-                        Its also pretty cool that epik supports cryptocurrency as a payment method.
+                        To fix strict-transport-security, I added the following code to my nginx config located at `/etc/nginx/nginx.conf` to enable STS for HTTP: 
+                    </p>
+                    <p><pre>
+                        add_header Strict-Transport-Security "max-age=31536000;
+                        includeSubDomains" always; 
+                        location / { root /usr/share/nginx/html; } 
+                        location /servlet { 
+                            add_header X-Served-By "My Servlet Handler"; 
+                            add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always; 
+                            proxy_pass http://localhost:8080; 
+                        }
+                    </pre></p>
+                    <p>
+                        This included adding a header for strict-transport-security to the `location` block in my config and redeclaring it in a second `location` block.
                     </p>
                     <p>
-                        Next, I chose Vultr as my server hosting provider, opting for a cloud compute Debian general purpose server. 
-                        I chose the cheapest size that still allowed for IPv4, which cost around $5 per month.
-                        <a href="https://www.vultr.com/?ref=9325408">If you'd like to get $100 credit on Vultr for any of your server needs, use my referall link here when you sign up!</a>
-                    </p>
-                    <img src="photos/vultr.webp" alt="Vultr" width="250" height="445" />
-                    <p>
-                        Once I had my server set up, I linked the server's IPv4 and IPv6 addresses with the DNS records on Epik. 
-                        This ensured that my website could be accessed using the domain name I had rented.
+                        To fix the X-Frame-Option, I added the following code to `/etc/nginx/sites-available/default` to hide the header: <span style="font-family: monospace; color: #333;"><code>proxy_hide_header X-Frame-Options;</code>
                     </p>
                     <p>
-                        I decided to use Nginx as my web server, rather than the more traditional Apache. 
-                        While I was familiar with Apache, I wanted to try something new and found Nginx to be fairly easy to use.
+                        To fix X-Content-Type-Options, I added the following code for X-Content-Type-Options to my nginx config located at `/etc/nginx/nginx.conf` with a value of "nosniff": <span style="font-family: monospace; color: #333;"><code>add_header X-Content-Type-Options "nosniff";</code>
                     </p>
                     <p>
-                        After setting up the website and placing my HTML files in the /var/www/mysite directory, I used Certbot to generate a certificate for my site. 
-                        This ensures that all communication between my website and its users is encrypted and secure.
+                        Enabling these HTTP headers helps to protect my website and its users against potential threats and improve overall security.
+                    </p>
+                    <h5>Content Security Policy Test</h5>
+                    <p>
+                        In the Content Security Policy Test, it was noted that the CONTENT-SECURITY-POLICY and CONTENT-SECURITY-POLICY-REPORT-ONLY headers were not being sent by the server.
                     </p>
                     <p>
-                        Finally, I set up a cronjob to automate the process of renewing my certificates, ensuring that my website remains secure over time.
+                        To fix this issue, I added the following code to `/etc/nginx/nginx.conf` to enable the Content Security Policy (CSP) for my website: <span style="font-family: monospace; color: #333;"><code>add_header Content-Security-Policy "default-src 'self';" always;</code>
                     </p>
                     <p>
-                        Overall, the process of setting up a website may seem intimidating at first, but with the right tools and knowledge, it can be a relatively straightforward process. 
-                        Whether you're a seasoned pro or a beginner, following these steps can help you get your website up and running in no time.
+                        Implementing a CSP helps to protect my website and its users from potential threats by defining a set of rules for the browser to follow when loading resources. 
+                        This helps to prevent malicious attacks such as cross-site scripting and clickjacking. 
+                        Ensuring that my website has a strong CSP is an important step in improving its overall security.
                     </p>
-                    <!-- Desc: In this blog post, learn the steps for setting up a website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx. We also cover the use of Certbot for secure communication and setting up a cronjob for certificate renewal. Whether you're a beginner or a pro, these steps can help you get your website up and running smoothly. -->
+                    <p>
+                        In this blog post, I discussed the steps I took to improve the security of my nginx webserver. 
+                        This included fixing vulnerabilities related to GDPR compliance, PCI DSS compliance, HTTP headers security, and Content Security Policy. 
+                        By taking these steps, I was able to better protect my website and its users against potential threats and improve its overall security. 
+                        It is important for all website owners to take steps to ensure the security of their websites and protect their users.
+                    </p>
+                    <!-- Desc: In this blog post, I discuss the steps taken to improve the security of an nginx webserver. This includes fixing vulnerabilities related to GDPR compliance, PCI DSS compliance, HTTP headers security, and Content Security Policy. By taking these steps, I was able to better protect my website and its users against potential threats and improve its overall security. This post is a helpful resource for website owners looking to improve the security of their own websites. -->
+
                 </div>
             </div>
         </main>
