@@ -321,4 +321,6 @@ figure {
 
 .blog > h5 {
 	color: #2C3E50;
+	font-size: 20px;
+	font-style: italic;
 }
