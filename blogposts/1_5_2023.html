@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.4" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.4" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.4" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.0.5" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.5" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.5" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -90,26 +90,24 @@
                         In the HTTP Headers Security Test, it was recommended that I implement strict-transport-security, X-Frame-Options, and X-Content-Type-Options to improve the security of my website.
                     </p>
                     <p>
-                        To fix strict-transport-security, I added the following code to my nginx config located at `/etc/nginx/nginx.conf` to enable STS for HTTP: 
+                        To fix strict-transport-security, I added the following code to my nginx config located at <code>/etc/nginx/nginx.conf</code> to enable STS for HTTP: 
                     </p>
-                    <p><pre>
-                        add_header Strict-Transport-Security "max-age=31536000;
-                        includeSubDomains" always; 
-                        location / { root /usr/share/nginx/html; } 
-                        location /servlet { 
-                            add_header X-Served-By "My Servlet Handler"; 
-                            add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always; 
-                            proxy_pass http://localhost:8080; 
-                        }
-                    </pre></p>
+<p><pre>add_header Strict-Transport-Security "max-age=31536000;
+includeSubDomains" always; 
+location / { root /usr/share/nginx/html; } 
+location /servlet { 
+    add_header X-Served-By "My Servlet Handler"; 
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always; 
+    proxy_pass http://localhost:8080; 
+}</pre></p>
                     <p>
-                        This included adding a header for strict-transport-security to the `location` block in my config and redeclaring it in a second `location` block.
+                        This included adding a header for strict-transport-security to the <code>location</code> block in my config and redeclaring it in a second <code>location</code> block.
                     </p>
                     <p>
-                        To fix the X-Frame-Option, I added the following code to `/etc/nginx/sites-available/default` to hide the header: <span style="font-family: monospace; color: #333;"><code>proxy_hide_header X-Frame-Options;</code>
+                        To fix the X-Frame-Option, I added the following code to <code>/etc/nginx/sites-available/default</code> to hide the header: <code>proxy_hide_header X-Frame-Options;</code>
                     </p>
                     <p>
-                        To fix X-Content-Type-Options, I added the following code for X-Content-Type-Options to my nginx config located at `/etc/nginx/nginx.conf` with a value of "nosniff": <span style="font-family: monospace; color: #333;"><code>add_header X-Content-Type-Options "nosniff";</code>
+                        To fix X-Content-Type-Options, I added the following code for X-Content-Type-Options to my nginx config located at <code>/etc/nginx/nginx.conf</code> with a value of "nosniff": <code>add_header X-Content-Type-Options "nosniff";</code>
                     </p>
                     <p>
                         Enabling these HTTP headers helps to protect my website and its users against potential threats and improve overall security.
@@ -119,7 +117,7 @@
                         In the Content Security Policy Test, it was noted that the CONTENT-SECURITY-POLICY and CONTENT-SECURITY-POLICY-REPORT-ONLY headers were not being sent by the server.
                     </p>
                     <p>
-                        To fix this issue, I added the following code to `/etc/nginx/nginx.conf` to enable the Content Security Policy (CSP) for my website: <span style="font-family: monospace; color: #333;"><code>add_header Content-Security-Policy "default-src 'self';" always;</code>
+                        To fix this issue, I added the following code to <code>/etc/nginx/nginx.conf</code> to enable the Content Security Policy (CSP) for my website: <code>add_header Content-Security-Policy "default-src 'self';" always;</code>
                     </p>
                     <p>
                         Implementing a CSP helps to protect my website and its users from potential threats by defining a set of rules for the browser to follow when loading resources. 

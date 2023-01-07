@@ -306,5 +306,19 @@ figure {
 
 
 .blog > pre{
-	background-color: black;
+	background: #111222 ;
+	border: 1px solid lime ;
+	border-radius: 20px ;
+	padding: 1em ;
+	white-space: pre-wrap;
+	overflow-wrap: break-word ;
+	max-width: 600px ;
+	margin: auto ;
+}
+.blog > code {
+	border-radius: 5px ;
+}
+
+.blog > h5 {
+	color: #2C3E50;
 }

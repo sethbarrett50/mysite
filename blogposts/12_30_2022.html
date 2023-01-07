@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.4" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.4" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.4" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.0.5" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.5" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.5" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -70,7 +70,7 @@
                     <p>
                         First, you'll need to set up SSH keys for your server. 
                         This will allow you to securely connect to the server and run commands remotely.
-                        To do this, you can use the `ssh-keygen` command to generate a new SSH key, and then use `ssh-copy-id` to connect the key to your site's SSH.
+                        To do this, you can use the <code>ssh-keygen</code> command to generate a new SSH key, and then use <code>ssh-copy-id</code> to connect the key to your site's SSH.
                     </p>
                     <p>
                         Once you have your SSH keys set up, you can create a shell script that takes an argument representing your commit message. 
@@ -80,37 +80,35 @@
                     <p>
                         Here's the shell script in action:
                     </p>
-                    <p> <pre>
-                        #!/bin/bash
-                        
-                        # Run git commit with the -a and -m flags
-                        #Uses the command line argument as the commit message
-                        git commit -a -m "$1"
-                        
-                        # Push the committed changes to the remote repository
-                        git push
-                        
-                        # Use expect to automate the login process
-                        expect <<- DONE
-                            # Wait for the login prompt and send the login command
-                            spawn ssh root@sethbarrett.xyz
-                        
-                            # Wait for the command prompt and send the cd command
-                            expect "$"
-                            send "cd /var/www/mysite/\r"
-                        
-                            # Wait for the command prompt and send the git pull command
-                            expect "$"
-                            send "git pull\r"
-                        
-                            # Exit remote server
-                            expect "$"
-                            send "exit"
-                            
-                            # Exit the expect script
-                            expect eof
-                        DONE
-                        </pre> </p>
+<p> <pre>#!/bin/bash
+
+# Run git commit with the -a and -m flags
+#Uses the command line argument as the commit message
+git commit -a -m "$1"
+
+# Push the committed changes to the remote repository
+git push
+
+# Use expect to automate the login process
+expect <<- DONE
+    # Wait for the login prompt and send the login command
+    spawn ssh root@sethbarrett.xyz
+
+    # Wait for the command prompt and send the cd command
+    expect "$"
+    send "cd /var/www/mysite/\r"
+
+    # Wait for the command prompt and send the git pull command
+    expect "$"
+    send "git pull\r"
+
+    # Exit remote server
+    expect "$"
+    send "exit"
+    
+    # Exit the expect script
+    expect eof
+DONE </pre> </p>
                     <p>
                         With this script in place, you can easily update your website whenever you make changes, without having to log in to the server manually. 
                         This can save you a lot of time and effort, and ensures that your website is always up to date.

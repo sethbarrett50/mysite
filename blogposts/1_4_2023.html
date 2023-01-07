@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.4" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.4" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.4" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.0.5" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.5" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.5" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -74,46 +74,43 @@
                         I based my feed on the formatting described in this tutorial: <a href="https://rss.com/blog/how-to-create-an-rss-feed/">How to Create an RSS Feed.</a>
                     </p>
                     <p>
-                        I then created an `rss.xml` file in my blogposts directory and formatted it according to the tutorial. 
+                        I then created an <code>rss.xml</code> file in my blogposts directory and formatted it according to the tutorial. 
                         Then, I got to work on automating the input of blog post details.
                     </p>
                     <h5>Automating the Process</h5>
                     <p>
                         I started by writing a shell script that calls a Python script and passes the first argument (the name of an HTML file for a blog post) to the script:
                     </p>
-                    <p><pre>
-                        #!/bin/bash
-
-                        python3 /Users/SEBARRETT/Code/updateRss.py "$1"
-                    </pre></p>
+<p><pre>#!/bin/bash
+python3 /Users/SEBARRETT/Code/updateRss.py "$1"</pre></p>
                     <p>
                         Next, I wrote a Python script that does the following:
                     </p>
                     <ul>
                         <li>Takes the name of an HTML file for a blog post as an argument</li>
-                        <li>Uses Beautiful Soup to parse the HTML file and extract the `div` element with the class "blog"</li>
+                        <li>Uses Beautiful Soup to parse the HTML file and extract the <code>div</code> element with the class "blog"</li>
                         <li>Returns the title and contents of the blog post</li>
-                        <li>Inserts the title and contents into the `rss.xml` file as a new `item` element, below the `atom` element and above all the other `item` elements</li>
+                        <li>Inserts the title and contents into the <code>rss.xml</code> file as a new <code>item</code> element, below the <code>atom</code> element and above all the other <code>item</code> elements</li>
                     </ul>
                     <p>
                         The complete Python script can be found <a href="https://github.com/sethbarrett50/update_RSS_Feed">here:</a>
                     </p>
                     <p>
-                        To parse the HTML document, the script uses Beautiful Soup to extract the `div` element with the class "blog" and its contents.
+                        To parse the HTML document, the script uses Beautiful Soup to extract the <code>div</code> element with the class "blog" and its contents.
                         I had experience using BS4 from my previous work on my Vault research project, so this was a breeze.
-                        The extracted title and contents are then inserted into the `rss.xml` file as a new `item` element, below the `atom` element and above all the other `item` elements. 
-                        The `item` element includes the title of the post, a link to the post, the publication date using the `datetime` library, and the main contents of the post. 
-                        After testing the script, it was successfully able to update the `rss.xml` file with the new blog post information.
+                        The extracted title and contents are then inserted into the <code>rss.xml</code> file as a new <code>item</code> element, below the <code>atom</code> element and above all the other <code>item</code> elements. 
+                        The <code>item</code> element includes the title of the post, a link to the post, the publication date using the <code>datetime</code> library, and the main contents of the post. 
+                        After testing the script, it was successfully able to update the <code>rss.xml</code> file with the new blog post information.
                     </p>
                     <p>
-                        To make the shell script executable, the command `chmod +x updateRSS.sh` was used. 
-                        An alias for the script was also added to the `zsh` configuration file.
+                        To make the shell script executable, the command <code>chmod +x updateRSS.sh</code> was used. 
+                        An alias for the script was also added to the <code>zsh</code> configuration file.
                     </p>
                     <p>
-                        In the future, I plan to have the script automatically detect when a new blog post has been added using `git add` and `grep`, and then run the script automatically to update the RSS feed.
+                        In the future, I plan to have the script automatically detect when a new blog post has been added using <code>git add</code> and <code>grep</code>, and then run the script automatically to update the RSS feed.
                     </p>
                     <p>
-                        If you'd like to follow our RSS feed, the URL is `sethbarrett.xyz/blogposts/rss.xml`.
+                        If you'd like to follow our RSS feed, the URL is <code>sethbarrett.xyz/blogposts/rss.xml</code>.
                     </p>
                     <!-- Desc: This blog post discusses how to automate the process of updating an RSS feed for a blog or website using shell and Python scripts. The post describes how the RSS feed was set up and the process of creating a shell script that calls a Python script to extract the title and contents of a new blog post and insert it into the RSS feed as a new item element. The post also mentions plans to have the script automatically detect when a new blog post has been added and run the update automatically in the future. The URL for the RSS feed is also provided. -->
 

@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.4" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.4" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.4" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.0.5" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.5" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.5" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -71,14 +71,14 @@
                     </p>
                     <p>
                         To do this, I'm using the following piece of C# code:
-                        <span style="font-family: monospace; color: #333;"><code>Regex packEx = new Regex(@"(java.security.\w*|javax.crypto.\w*)");</code></span>
+                        <code>Regex packEx = new Regex(@"(java.security.\w*|javax.crypto.\w*)");</code>
                         The use of grouping in this regular expression is essential for finding these specific patterns within the data.
                         By using the parentheses, we are able to group together the "java.security." and "javax.crypto." patterns, and the use of the pipe symbol (|) allows us to search for either of these patterns. 
                         The \w* characters at the end of each group allow for any combination of alphanumeric characters to follow these patterns.
                     </p>
                     <p>
                         In addition to searching for Java packages, I have also been using regular expressions to find instances of Android permission usage in the files. 
-                        To do this, I am using the following regular expression: <span style="font-family: monospace; color: #333;"><code>@"([\w])([^(]{[^{](android.permission.[A-Z_])"</code></span>
+                        To do this, I am using the following regular expression: <code>@"([\w])([^(]{[^{](android.permission.[A-Z_])"</code>
                     </p>
                     <p>
                         This regular expression searches for any instance of "android.permission." followed by one or more capitalized and underscore-separated characters. 
