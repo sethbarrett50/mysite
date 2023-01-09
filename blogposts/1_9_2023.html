@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow">
 
     <meta name="description"
-        content="In this blog post, learn the steps for setting up a website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx. We also cover the use of Certbot for secure communication and setting up a cronjob for certificate renewal. Whether you're a beginner or a pro, these steps can help you get your website up and running smoothly.">
+        content="This next blog post will cover how to use functions in Python. Functions are blocks of code that perform specific tasks and can be called by their name. They can take arguments, have default values for arguments, and return values. Functions are useful for organizing and reusing code. This blog post will provide examples and explanations of how to define and use functions in Python. In this next lesson, the course will cover how to work with modules and libraries in Python.">
     <meta name="keywords"
         content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
     <meta name="author" content="Seth Barrett">
@@ -18,9 +18,9 @@
     <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
     <meta name="og:title" property="og:title" content="Seth Barrett - Home">
     <meta property="og:description"
-        content="In this blog post, learn the steps for setting up a website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx. We also cover the use of Certbot for secure communication and setting up a cronjob for certificate renewal. Whether you're a beginner or a pro, these steps can help you get your website up and running smoothly.">
+        content="This next blog post will cover how to use functions in Python. Functions are blocks of code that perform specific tasks and can be called by their name. They can take arguments, have default values for arguments, and return values. Functions are useful for organizing and reusing code. This blog post will provide examples and explanations of how to define and use functions in Python. In this next lesson, the course will cover how to work with modules and libraries in Python.">
     <meta name="twitter:description" property="twitter:description"
-        content="In this blog post, learn the steps for setting up a website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx. We also cover the use of Certbot for secure communication and setting up a cronjob for certificate renewal. Whether you're a beginner or a pro, these steps can help you get your website up and running smoothly.">
+        content="This next blog post will cover how to use functions in Python. Functions are blocks of code that perform specific tasks and can be called by their name. They can take arguments, have default values for arguments, and return values. Functions are useful for organizing and reusing code. This blog post will provide examples and explanations of how to define and use functions in Python. In this next lesson, the course will cover how to work with modules and libraries in Python.">
     <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
 
 
@@ -31,7 +31,7 @@
 
     <meta property="og:url" content="sethbarrett.xyz">
     <meta property="og:type" content="website">
-    <title>Daily Blog Post: December 29th, 2022</title>
+    <title>Daily Blog Post: January 9th, 2022</title>
 
 
     <!-- Update CSS Versions when changed -->
@@ -44,7 +44,7 @@
     <div id="wrapper">
         <header>
             <h1>Seth Barrett</h1>
-            <h2>Daily Blog Post: December 29th, 2022</h2>
+            <h2>Daily Blog Post: January 9th, 2022</h2>
         </header>
         <nav>
             <ul>
@@ -59,48 +59,83 @@
             <div id="blog">
                 
                 <div class="blog">
-                    <h4>December 29th, 2022</h4>
-                    <div class='title'>Step-by-Step Guide to Setting Up Your Own Website: From Domain Name to Secure Server</div>
-                    <img src="photos/epik.webp" alt="epik" width="250" height="250" />
+                    <h4>Jan 9th, 2022</h4>
+                    <div class='title'>Using Functions in Python: An Introduction</div>
+
+                    <img src="photos/1_9_23.webp" alt="Python4" width="250" height="445" />
 
                     <p>
-                        Setting up a website can seem like a daunting task, especially if you're new to the process. 
-                        However, with the right tools and knowledge, it can be a relatively straightforward process.
+                        Welcome back to our Python3 intro course! 
+                        In the last lesson, we learned about working with iteration and conditional statements in Python. 
+                        These are important concepts to understand as they allow us to create more complex programs that can make decisions and perform actions based on certain conditions. 
+                        In this lesson, we'll be exploring and learning how to define and call functions in Python, as well as how to work with input parameters and return values. By the end of this lesson, you should have a solid understanding of how to use functions in Python.
                     </p>
                     <p>
-                        In this blog post, we'll cover the steps I took to set up my website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx.
+                        Functions are a way to group together a set of related instructions and give them a name, which can then be called upon when needed.
+                        Functions can also accept input parameters, which allows us to customize their behavior and make them more versatile. 
+                        Functions are a cornerstone of programming and they allow you to break up your code into smaller, more manageable chunks. 
+                        This makes it easier to write, read, and understand your code, and it also makes it easier to reuse your code in different parts of your program. 
+                        Functions are defined using the <code>def</code> keyword in Python, followed by the function name and a set of parentheses. 
+                        Inside the parentheses, you can specify any parameters or arguments that the function needs in order to run. 
+                        For example, you might define a function like this:
+                    </p>
+<p><pre>def greet():
+    print("Hello, World!") </pre></p>
+                    <p>
+                        This creates a function called <code>greet</code> that simply prints "Hello, World!". 
+                        You can call a function by simply typing its name followed by a set of parentheses. 
+                        For example:
+                    </p>
+<p><pre>greet()  
+# Output: Hello, World! </pre></p>
+                    <p>
+                        You can also pass arguments to a function, which are values that the function can use to perform its task. 
+                        For example:
+                    </p>
+<p><pre>def greet(name):
+    print("Hello, " + name + "!")
+
+greet("Alice")  
+# Output: Hello, Alice!
+greet("Bob")  
+# Output: Hello, Bob! </pre></p>
+                    <p>
+                        In this example, the <code>greet</code> function takes a single argument, <code>name</code>, and prints a personalized greeting using the value of <code>name</code>.
                     </p>
                     <p>
-                        First, I used a company called epik to rent my domain name. 
-                        The process was fairly quick, taking about a quarter of a day before my domain name was registered to me.
-                        Its also pretty cool that epik supports cryptocurrency as a payment method.
+                        You can also define default values for function arguments, which will be used if no value is provided when the function is called. 
+                        For example:
+                    </p>
+<p><pre>def greet(name="World"):
+    print("Hello, " + name + "!")
+
+greet()  
+# Output: Hello, World!
+greet("Alice") 
+# Output: Hello, Alice!
+greet("Bob")  
+# Output: Hello, Bob! </pre></p>
+                    <p>
+                        In this example, the default value of <code>name</code> is "World", so if no value is provided when the function is called, it will use this default value.
                     </p>
                     <p>
-                        Next, I chose Vultr as my server hosting provider, opting for a cloud compute Debian general purpose server. 
-                        I chose the cheapest size that still allowed for IPv4, which cost around $5 per month.
-                        <a href="https://www.vultr.com/?ref=9325408">If you'd like to get $100 credit on Vultr for any of your server needs, use my referall link here when you sign up!</a>
+                        Functions can also return values using the <code>return</code> keyword. For example:
                     </p>
-                    <img src="photos/vultr.webp" alt="Vultr" width="250" height="445" />
+<p><pre>def add(x, y):
+    return x + y
+
+result = add(5, 6)  
+# result is now 11 </pre></p>
                     <p>
-                        Once I had my server set up, I linked the server's IPv4 and IPv6 addresses with the DNS records on Epik. 
-                        This ensured that my website could be accessed using the domain name I had rented.
-                    </p>
-                    <p>
-                        I decided to use Nginx as my web server, rather than the more traditional Apache. 
-                        While I was familiar with Apache, I wanted to try something new and found Nginx to be fairly easy to use.
+                        In this example, the add function takes two arguments, <code>x</code> and <code>y</code>, and returns their sum.
                     </p>
                     <p>
-                        After setting up the website and placing my HTML files in the /var/www/mysite directory, I used Certbot to generate a certificate for my site. 
-                        This ensures that all communication between my website and its users is encrypted and secure.
+                        I hope this has been a helpful introduction to using functions in Python. 
+                        Functions are an essential tool for organizing and simplifying your code, so be sure to practice and get comfortable with them. 
+                        In the next lesson, we'll be exploring how to work with modules and libraries in Python. Stay tuned!
                     </p>
-                    <p>
-                        Finally, I set up a cronjob to automate the process of renewing my certificates, ensuring that my website remains secure over time.
-                    </p>
-                    <p>
-                        Overall, the process of setting up a website may seem intimidating at first, but with the right tools and knowledge, it can be a relatively straightforward process. 
-                        Whether you're a seasoned pro or a beginner, following these steps can help you get your website up and running in no time.
-                    </p>
-                    <!-- Desc: In this blog post, learn the steps for setting up a website, including renting a domain name, choosing a server hosting provider, and configuring the server with Nginx. We also cover the use of Certbot for secure communication and setting up a cronjob for certificate renewal. Whether you're a beginner or a pro, these steps can help you get your website up and running smoothly. -->
+
+                        <!-- Desc: This next blog post will cover how to use functions in Python. Functions are blocks of code that perform specific tasks and can be called by their name. They can take arguments, have default values for arguments, and return values. Functions are useful for organizing and reusing code. This blog post will provide examples and explanations of how to define and use functions in Python. In this next lesson, the course will cover how to work with modules and libraries in Python. -->
                 </div>
             </div>
         </main>
