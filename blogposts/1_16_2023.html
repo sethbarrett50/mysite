@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this blog post, we'll be taking a look at the collections module in Python, a built-in library that provides additional data types for storing and manipulating data. We'll be covering the deque, Counter, OrderedDict, and defaultdict data types, and will be exploring each one in more depth in future posts. These specialized data types provide additional functionality and efficiency compared to the basic data types (such as lists, tuples, and dictionaries) and are useful in a variety of situations.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this blog post, we'll be taking a look at the collections module in Python, a built-in library that provides additional data types for storing and manipulating data. We'll be covering the deque, Counter, OrderedDict, and defaultdict data types, and will be exploring each one in more depth in future posts. These specialized data types provide additional functionality and efficiency compared to the basic data types (such as lists, tuples, and dictionaries) and are useful in a variety of situations.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this blog post, we'll be taking a look at the collections module in Python, a built-in library that provides additional data types for storing and manipulating data. We'll be covering the deque, Counter, OrderedDict, and defaultdict data types, and will be exploring each one in more depth in future posts. These specialized data types provide additional functionality and efficiency compared to the basic data types (such as lists, tuples, and dictionaries) and are useful in a variety of situations.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: January 16th, 2022</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.6" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.6" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.6" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: January 16th, 2022</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <h4>Jan 16th, 2022</h4>
+                    <div class='title'>Exploring the Collections Module in Python: deques, Counters, OrderedDicts, and defaultdicts</div>
+
+                    <img src="photos/1_16_23.webp" alt="Python11" width="250" height="445" />
+
+                    <p>
+                        Hello and welcome back to my intro to Python series! 
+                        In the previous posts, we learned about advanced concepts such as exception handling, object-oriented programming, inheritance, polymorphism, web scraping with <code>requests</code> and <code>Beautiful Soup</code>, and browser automation with <code>Selenium</code>. 
+                        In this post, we're going to cover a quick overview of the <code>collections</code> module and some of the specialized data types it provides, and will be diving deeper into each type of collection in future posts.
+                    </p>
+
+                    <h5>Collections Overview</h5>
+                    <p>
+                        The <code>collections</code> module is a built-in Python library that provides additional data types for storing and manipulating data. These data types are specialized versions of the basic data types (such as lists, tuples, and dictionaries) that provide additional functionality and efficiency. Some of the data types in the <code>collections</code> module are:
+                    </p>
+                    <p> <ul>
+                        <li>
+                            <code>deque</code>: A double-ended queue that supports efficient insertion and deletion at both ends.
+                        </li>
+                        <li>
+                            <code>Counter</code>: A dictionary subclass for counting occurrences of hashable objects.
+                        </li>
+                        <li>
+                            <code>OrderedDict</code>: A dictionary subclass that remembers the order that keys were added.
+                        </li>
+                        <li>
+                            <code>defaultdict</code>: A dictionary subclass that provides a default value for missing keys.
+                        </li>
+                    </ul> </p>
+                    <p>
+                        Here are some examples of how to use these data types:
+                    </p>
+<p><pre>from collections import deque, Counter, OrderedDict, defaultdict
+
+# deque example
+q = deque(["a", "b", "c"])
+q.appendleft("d")  # add an element to the left side
+print(q)  # deque(['d', 'a', 'b', 'c'])
+q.pop()  # remove and return an element from the right side
+print(q)  # deque(['d', 'a', 'b'])
+
+# Counter example
+c = Counter(["a", "b", "c", "a", "b", "b"])
+print(c)  # Counter({'b': 3, 'a': 2, 'c': 1})
+
+# OrderedDict example
+d = OrderedDict()
+d["a"] = 1
+d["b"] = 2
+d["c"] = 3
+print(d)  # OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+
+# defaultdict example
+dd = defaultdict(int)  # default value is 0
+dd["a"] = 1
+dd["b"] = 2
+print(dd["c"])  # 0</pre></p>
+
+                    <h5>Deque</h5>
+                    <p>
+                        The deque (short for double-ended queue) is a data structure that is similar to a list, but it allows efficient insertion and deletion at both ends of the sequence. 
+                        It is implemented as a doubly-linked list, which makes it more efficient than a list for these operations. 
+                        Deques are a thread-safe, memory efficient, and flexible data type that can be used in a variety of situations where a list may be used. 
+                        An example of using a deque is as follows:
+                    </p>
+<p><pre>from collections import deque
+
+# Create a deque
+d = deque([1, 2, 3])
+
+# Add elements to the deque
+d.appendleft(0)  # add element to the left side
+d.append(4)  # add element to the right side
+
+# Remove elements from the deque
+d.popleft()  # remove and return element from the left side
+d.pop()  # remove and return element from the right side
+
+# Iterate over the elements of the deque
+for x in d:
+    print(x) </pre></p>
+
+                    <h5>Counter</h5>
+                    <p>
+                        The Counter is a dictionary subclass from the <code>collections</code> module that is used for counting occurrences of hashable objects. 
+                        It takes an iterable as input and creates a dictionary with keys for each unique element in the input, and values for the number of occurrences of each element. 
+                        The Counter data type is useful for counting the frequency of elements in a list or other iterable. 
+                        An example of using a Counter is as follows:
+                    </p>
+<p><pre>from collections import Counter
+
+# Count the frequency of elements in a list
+c = Counter(["a", "b", "c", "a", "b", "b"])
+print(c)  # Counter({'b': 3, 'a': 2, 'c': 1})
+
+# Convert the Counter to a dictionary
+d = dict(c)
+print(d)  # {'a': 2, 'b': 3, 'c': 1}
+
+# Use the most_common method to get the most frequent elements
+print(c.most_common(2))  # [('b', 3), ('a', 2)]
+
+# Use arithmetic operations to add or subtract counts
+c2 = Counter({"a": 1, "b": 2, "c": 3})
+c3 = c + c2  # add counts
+c4 = c - c2  # subtract counts
+print(c3)  # Counter({'b': 5, 'a': 3, 'c': 4})
+print(c4)  # Counter({'b': 1, 'a': 1, 'c': -2})</pre></p>
+                    <p>
+                        This code creates a Counter from the <code>list ["a", "b", "c", "a", "b", "b"]</code>, which counts 2 occurrences of "a", 3 occurrences of "b", and 1 occurrence of "c". 
+                        It then converts the Counter to a dictionary, gets the 2 most common elements using the <code>most_common</code> method, and performs arithmetic operations on the Counter to add or subtract counts. 
+                        The output of this code would be <code>Counter({'b': 5, 'a': 3, 'c': 4})</code> for c3 and <code>Counter({'b': 1, 'a': 1, 'c': -2})</code> for c4.
+                    </p>
+                    
+                    <h5>OrderedDict</h5>
+                    <p>
+                        The OrderedDict is a dictionary subclass from the <code>collections</code> module that remembers the order that keys were added to the dictionary. 
+                        It is implemented as a doubly-linked list and preserves the order of keys as they are inserted. 
+                        This can be useful for preserving the order of items in a dictionary, or for creating dictionaries with a specific order for the keys. 
+                        An example of using an OrderedDict is as follows:
+                    </p>
+<p><pre>from collections import OrderedDict
+
+# Create an OrderedDict
+d = OrderedDict()
+
+# Add elements to the OrderedDict
+d["a"] = 1
+d["b"] = 2
+d["c"] = 3
+
+# Iterate over the elements of the OrderedDict
+for k, v in d.items():
+    print(k, v)
+
+# Output the elements in the order they were added
+print(d)  # OrderedDict([('a', 1), ('b', 2), ('c', 3)])</pre></p>
+                    <p>
+                        This code creates an OrderedDict and adds the elements "a" with value 1, "b" with value 2, and "c" with value 3. 
+                        It then iterates over the elements of the OrderedDict and prints the keys and values. 
+                        Finally, it outputs the OrderedDict and shows that the elements are in the order they were added. 
+                        The output of this code would be "a 1", "b 2", "c 3", and <code>OrderedDict([('a', 1), ('b', 2), ('c', 3)])</code>.
+                    </p>
+
+                    <h5>defaultdict</h5>
+                    <p>
+                        The defaultdict is a dictionary subclass from the <code>collections</code> module that provides a default value for missing keys. 
+                        It is similar to a regular dictionary, but it allows you to specify a default factory function that is called to provide a default value for a missing key.
+                        This can be useful for creating dictionaries with default values for missing keys, or for creating dictionaries with keys that have a default behavior. 
+                        An example of using a defaultdict is as follows:
+                    </p>
+<p><pre>from collections import defaultdict
+
+# Create a defaultdict with a default value of 0
+dd = defaultdict(int)
+
+# Add elements to the defaultdict
+dd["a"] = 1
+dd["b"] = 2
+
+# Access a missing key
+print(dd["c"])  # 0
+
+# Use a default factory function to provide a default value
+def default_factory():
+    return "default value"
+
+dd2 = defaultdict(default_factory)
+
+# Access a missing key
+print(dd2["c"])  # "default value" </pre></p>
+                    <p>
+                        This code creates a defaultdict with a default value of 0, and adds the elements "a" with value 1 and "b" with value 2. 
+                        It then accesses a missing key "c" and prints the default value of 0. 
+                        It then creates a defaultdict with a default factory function that returns the string "default value", and accesses a missing key "c" to print the default value. 
+                        The output of this code would be "0" and "default value".
+                    </p>
+
+                    <h5>Conclusion</h5>
+                    <p>
+                        The <code>collections</code> module provides a variety of specialized data types that can be useful in different situations. 
+                        They can provide additional functionality and efficiency compared to the basic data types.
+                    </p>
+                    <p>
+                        I hope this post has introduced you to the <code>collections</code> module and its specialized data types in Python. 
+                        In the next post, we'll look at some more advanced topics in Python. 
+                        Thanks for reading!
+                    </p>
+
+
+                    <!-- Desc:  In this blog post, we'll be taking a look at the collections module in Python, a built-in library that provides additional data types for storing and manipulating data. We'll be covering the deque, Counter, OrderedDict, and defaultdict data types, and will be exploring each one in more depth in future posts. These specialized data types provide additional functionality and efficiency compared to the basic data types (such as lists, tuples, and dictionaries) and are useful in a variety of situations. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
