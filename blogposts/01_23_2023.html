@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Regular expressions, also known as regex or regexp, are a powerful tool for manipulating and analyzing text. They are a sequence of characters that define a search pattern, allowing you to match and extract specific information from a string. In this blog post, we'll take a deep dive into the world of regular expressions and explore how to use them in Python. From the basic syntax and usage to advanced features such as special characters and quantifiers, we'll cover everything you need to know to master regular expressions and take your programming skills to the next level. Whether you're a beginner or an experienced developer, this post will help you understand the power of regular expressions and how to use them to create more readable and dynamic code.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Regular expressions, also known as regex or regexp, are a powerful tool for manipulating and analyzing text. They are a sequence of characters that define a search pattern, allowing you to match and extract specific information from a string. In this blog post, we'll take a deep dive into the world of regular expressions and explore how to use them in Python. From the basic syntax and usage to advanced features such as special characters and quantifiers, we'll cover everything you need to know to master regular expressions and take your programming skills to the next level. Whether you're a beginner or an experienced developer, this post will help you understand the power of regular expressions and how to use them to create more readable and dynamic code.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Regular expressions, also known as regex or regexp, are a powerful tool for manipulating and analyzing text. They are a sequence of characters that define a search pattern, allowing you to match and extract specific information from a string. In this blog post, we'll take a deep dive into the world of regular expressions and explore how to use them in Python. From the basic syntax and usage to advanced features such as special characters and quantifiers, we'll cover everything you need to know to master regular expressions and take your programming skills to the next level. Whether you're a beginner or an experienced developer, this post will help you understand the power of regular expressions and how to use them to create more readable and dynamic code.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: January 23rd, 2022</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: January 23rd, 2022</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/01_23_23.webp" alt="Python16" width="250" height="445" />
+                    <h4>Jan 23rd, 2022</h4>
+                    <div class='title'>Unlocking the Power of Regular Expressions: A Comprehensive Guide to Text Manipulation in Python</div>
+
+                    <p>
+                        Regular expressions, also known as regex or regexp, are a powerful tool for manipulating and analyzing text. 
+                        They are a sequence of characters that define a search pattern, allowing you to match and extract specific information from a string. 
+                        You can use the <code>in</code> operator to check if a specific string is inside a string, but to check if more varied strings are present, you must use regular expressions.
+                        In Python, regular expressions are supported by the <code>re</code> module, which provides a wide range of functions and methods for working with regular expressions.
+                    </p>
+                    <p>
+                        The basic syntax of a regular expression in Python is to define a pattern using a string, and then use that pattern to search for matches in another string. The <code>search()</code> function of the <code>re</code> module returns a match object if the pattern is found in the string, otherwise it returns <code>None</code>. 
+                        For example:
+                    </p>
+<p><pre>import re
+
+text = "The quick brown fox jumps over the lazy dog"
+pattern = "fox"
+match = re.search(pattern, text)
+
+if match:
+    print("Found", match.group())
+else:
+    print("Not found")</pre></p>
+                    <p>
+                        This will output: "Found fox"
+                    </p>
+                    <p>
+                        You can also use the <code>findall()</code> function to get a list of all the matches of a pattern in a string, and the <code>finditer()</code> function to get an iterator of match objects. 
+                        For example:
+                    </p>
+<p><pre>text = "The quick brown fox jumps over the lazy dog"
+pattern = "o"
+matches = re.findall(pattern, text)
+print(matches) 
+# prints ['o', 'o', 'o']</pre></p>
+<p><pre>text = "The quick brown fox jumps over the lazy dog"
+pattern = "o"
+matches = re.finditer(pattern, text)
+for match in matches:
+    print(match.group())  
+# prints 'o' 'o' 'o'</pre></p>
+                    <p>
+                        One of the most powerful features of regular expressions is the ability to use special characters and quantifiers to define a pattern.
+                    </p>
+                    <p><ul>
+                        <li><code>.</code> : Matches any character except newline</li>
+                        <li><code>*</code>: Matches 0 or more of the preceding character</li>
+                        <li><code>+</code>: Matches 1 or more of the preceding character</li>
+                        <li><code>?</code>: Matches 0 or 1 of the preceding character</li>
+                        <li><code>{n}</code>: Matches exactly n occurrences of the preceding character</li>
+                        <li><code>{n,}</code>: Matches n or more occurrences of the preceding character</li>
+                        <li><code>{n, m}</code>: Matches between n and m occurrences of the preceding character</li>
+                        <li><code>[]</code>: A character set. Matches any one of the characters enclosed</li>
+                        <li><code>[^]</code>: A negated character set. Matches any character not enclosed</li>
+                        <li><code>^</code>: Matches the start of a string</li>
+                        <li><code>$</code>: Matches the end of a string</li>
+                        <li><code>()</code>: Groups a pattern</li>
+                        <li><code>|</code>: Matches one of the patterns separated by the <code>|</code></li>
+                        <li><code>\</code>: Escapes special characters</li>
+                    </ul></p>
+                    <p>For example: </p>
+<p><pre>text = "The quick brown fox jumps over the lazy dog"
+pattern = "^T.+g$"
+match = re.search(pattern, text)
+
+if match:
+    print("Found", match.group())
+else:
+    print("Not found")</pre></p>
+                    <p>
+                        This will output: "Found The quick brown fox jumps over the lazy dog"
+                    </p>
+                    <p>
+                        Another important feature of regular expressions is the ability to use special flags to modify the behavior of the pattern. 
+                        Some of the most commonly used flags are:
+                    </p>
+                    <p><ul>
+                        <li><code>re.IGNORECASE</code>: makes the pattern matching case-insensitive</li>
+                        <li><code>re.MULTILINE</code>: allows the pattern to match multiple lines</li>
+                        <li><code>re.DOTALL</code>: makes the dot <code>.</code> character match any character including newline</li>
+                        <li><code>re.VERBOSE</code>: allows you to add comments and white space to the pattern to make it more readable</li>
+                    </ul></p>
+                    <p>For example:</p>
+<p><pre>text = "The quick brown fox\n jumps over the lazy dog"
+pattern = "^T.+g$"
+match = re.search(pattern, text, re.MULTILINE)
+
+if match:
+    print("Found", match.group())
+else:
+    print("Not found")</pre></p>
+                    <p>
+                        This will output: "Found The quick brown fox jumps over the lazy dog"
+                    </p>
+
+                    <p>
+                        The <code>re.sub()</code> method is a function of the <code>re</code> module in Python, which is used to perform string substitution using regular expressions. 
+                        It searches for all occurrences of a pattern in a string and replaces them with a replacement string.
+                    </p>
+                    <p>
+                        The basic syntax of the <code>re.sub()</code> method is as follows:
+                    </p>
+                    <p><pre>re.sub(pattern, repl, string, count=0, flags=0)</pre></p>
+                    <p>
+                        where <code>pattern</code> is the regular expression pattern to search for, <code>repl</code> is the replacement string, <code>string</code> is the target string, <code>count</code> is the maximum number of occurrences to replace (0 means replace all occurrences), and <code>flags</code> are any additional regular expression flags.
+                    </p>
+                    <p>
+                        For example, let's say you have a string with multiple phone numbers in it, but you want to replace them with "xxx-xxx-xxxx" for privacy reasons. You can use the <code>re.sub()</code> method to do this:
+                    </p>
+<p><pre>import re
+
+text = "My phone number is 555-555-5555 and my friend's number is 666-666-6666"
+new_text = re.sub(r'\d{3}-\d{3}-\d{4}', 'xxx-xxx-xxxx', text)
+print(new_text)</pre></p>
+                    <p>
+                        This will output: "My phone number is xxx-xxx-xxxx and my friend's number is xxx-xxx-xxxx"
+                    </p>
+                    <p>
+                        In this example, the <code>re.sub()</code> method searches for all occurrences of the pattern <code>\d{3}-\d{3}-\d{4}</code> (which represents a phone number in the format of "xxx-xxx-xxxx") and replaces them with the replacement string "xxx-xxx-xxxx".
+                    </p>
+                    <p>
+                        The <code>re.sub()</code> method is a useful tool for performing complex string substitutions, but it should be used with caution as it can easily lead to errors if the regular expression pattern is incorrect. 
+                        In such cases it is always recommended to test it with sample inputs before using it in a production environment.
+                    </p>
+                    <p>
+                        Regular expressions are a powerful tool for working with text in Python, and can be used for tasks such as validating email addresses, parsing logs, or even scraping data from websites. 
+                        However, it's important to keep in mind that regular expressions can become complex quickly, especially when dealing with large and varied data. 
+                        It's always a good idea to test and debug your regular expressions with sample data before using them in a production environment.
+                    </p>
+                    <p>
+                        In conclusion, regular expressions in Python are a powerful tool for working with text, they offer a wide range of special characters and quantifiers, and flags to modify the behavior of the pattern. 
+                        It is a powerful tool that every python developer should have in their toolbox.
+                    </p>
+                    <p>
+                        Note: The above examples are just basic examples of regular expressions, you can explore more to get more advanced uses of regular expressions in python.
+                        Use the <a href="regex101.com">regex 101 website</a> to test out new regular expressions and read deeper into the Pythonic regular expression language to further your knowledge.
+                    </p>
+
+                    <!-- Desc: Regular expressions, also known as regex or regexp, are a powerful tool for manipulating and analyzing text. They are a sequence of characters that define a search pattern, allowing you to match and extract specific information from a string. In this blog post, we'll take a deep dive into the world of regular expressions and explore how to use them in Python. From the basic syntax and usage to advanced features such as special characters and quantifiers, we'll cover everything you need to know to master regular expressions and take your programming skills to the next level. Whether you're a beginner or an experienced developer, this post will help you understand the power of regular expressions and how to use them to create more readable and dynamic code. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
