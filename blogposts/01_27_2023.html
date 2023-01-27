@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="The os module in Python provides a way for your Python program to interact with the underlying operating system. In this post, we'll take a look at some of the most commonly used methods of the os module such as mkdir() method, rename() method, remove() method, chdir() method and getcwd() method. We'll also explore some other useful methods and attributes provided by the os module such as listdir(), environ, system(), path, and stat() that can be used to interact with the file system and the environment in more advanced ways. This post will provide a comprehensive understanding of how to use the os module to manipulate the file system in Python.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="The os module in Python provides a way for your Python program to interact with the underlying operating system. In this post, we'll take a look at some of the most commonly used methods of the os module such as mkdir() method, rename() method, remove() method, chdir() method and getcwd() method. We'll also explore some other useful methods and attributes provided by the os module such as listdir(), environ, system(), path, and stat() that can be used to interact with the file system and the environment in more advanced ways. This post will provide a comprehensive understanding of how to use the os module to manipulate the file system in Python.">
+    <meta name="twitter:description" property="twitter:description"
+        content="The os module in Python provides a way for your Python program to interact with the underlying operating system. In this post, we'll take a look at some of the most commonly used methods of the os module such as mkdir() method, rename() method, remove() method, chdir() method and getcwd() method. We'll also explore some other useful methods and attributes provided by the os module such as listdir(), environ, system(), path, and stat() that can be used to interact with the file system and the environment in more advanced ways. This post will provide a comprehensive understanding of how to use the os module to manipulate the file system in Python.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: January 27th, 2022</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: January 27th, 2022</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/01_27_23.webp" alt="Python20" width="250" height="445" />
+                    <h4>Jan 27th, 2022</h4>
+                    <div class='title'>Understanding Dunder Methods in Python: Customizing Built-in Operations and Making Your Classes More Pythonic</div>
+
+                    <p>
+                        In Python, dunder methods, also known as "magic" or "special" methods, are used to define how objects of a class behave in certain situations. 
+                        These methods are defined by double underscores at the beginning and end of their names (e.g. <code>__init__()</code>, <code>__add__()</code>). 
+                        They allow you to customize the behavior of built-in operations (e.g. addition, comparison, iteration) and provide a way to make your classes more Pythonic, and are similar to built-in methods of classes in other object oriented programming languages like C# and Java
+                        In this post, we'll take a look at some of the most commonly used dunder methods and how they can be used in your classes.
+                    </p>
+                    <p>
+                        One of the most commonly used dunder methods is the <code>__init__()</code> method. 
+                        This method is used to initialize an object when it is created. 
+                        Here's an example of how to use it:
+                    </p>
+<p><pre>class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+# Create an object of MyClass
+obj = MyClass(5)
+
+# Print the value attribute of the object
+print(obj.value) # Output: 5</pre></p>
+                    <p>
+                        In this example, we define a class MyClass with an <code>__init__()</code> method that takes one argument, value, and assigns it to an attribute of the same name. 
+                        This is the same as a constructor like in other programming languages like C#/
+                    </p>
+                    <p>
+                        Another commonly used dunder method is the <code>__str__()</code> method. 
+                        This method is used to define how an object should be represented as a string. 
+                        Here's an example of how to use it:
+                    </p>
+<p><pre>class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return 'MyClass object with value: {}'.format(self.value)
+
+# Create an object of MyClass
+obj = MyClass(5)
+
+# Print the object
+print(obj) # Output: 'MyClass object with value: 5'</pre></p>
+                    <p>
+                        In this example, we've defined the <code>__str__()</code> method to return a string that includes the value attribute of the object. 
+                        This allows us to print the object in a more readable format.
+                    </p>
+                    <p>
+                        Another useful dunder method is the <code>__add__()</code> method. 
+                        This method is used to define how two objects of a class should be added together. 
+                        Here's an example of how to use it:
+                    </p>
+<p><pre>class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __add__(self, other):
+        return MyClass(self.value + other.value)
+
+# Create two objects of MyClass
+obj1 = MyClass(5)
+obj2 = MyClass(10)
+
+# Add the two objects
+result = obj1 + obj2
+
+# Print the value attribute of the result object
+print(result.value) # Output: 15</pre></p>
+                    <p>
+                        In this example, we've defined the <code>__add__()</code> method to create a new object with the sum of the value attributes of the two objects being added. 
+                        This allows us to use the + operator to add two objects of our class together.
+                    </p>
+                    <p>
+                        Another dunder method is the <code>__eq__()</code> method. 
+                        This method is used to define how two objects of a class should be compared for equality. 
+                        Here's an example of how to use it:
+                    </p>
+<p><pre>class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __eq__(self, other):
+        return self.value == other.value
+
+# Create two objects of MyClass
+obj1 = MyClass(5)
+obj2 = MyClass(5)
+obj3 = MyClass(10)
+
+# Compare the two objects
+print(obj1 == obj2) # Output: True
+print(obj1 == obj3) # Output: False</pre></p>
+                    <p>
+                        In this example, we've defined the <code>__eq__()</code> method to compare the value attributes of the two objects being compared. 
+                        This allows us to use the == operator to compare two objects of our class.
+                    </p>
+                    <p>
+                        The <code>__len__()</code> method is used to define the length of an object. 
+                        Here's an example of how to use it:
+                    </p>
+<p><pre>class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __len__(self):
+        return len(self.value)
+
+# Create an object of MyClass
+obj = MyClass([1, 2, 3, 4, 5])
+
+# Get the length of the object
+print(len(obj)) # Output: 5</pre></p>
+                    <p>
+                        In this example, we've defined the <code>__len__()</code> method to return the length of the value attribute of the object. 
+                        This allows us to use the len() function to get the length of an object of our class.
+                    </p>
+                    <p>
+                        The <code>__iter__()</code> method is used to define an iterator for an object. Here's an example of how to use it:
+                    </p>
+<p><pre>class MyClass:
+    def __init__(self, value):
+        self.value = value
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index >= len(self.value):
+            raise StopIteration
+        result = self.value[self.index]
+        self.index += 1
+        return result
+
+# Create an object of MyClass
+obj = MyClass([1, 2, 3, 4, 5])
+
+# Iterate over the object
+for item in obj:
+    print(item)
+# Output: 1, 2, 3, 4, 5</pre></p>
+                    <p>
+                        In this example, we've defined the <code>__iter__()</code> method to return the object itself and the <code>__next__()</code> method to return the next item of the value attribute of the object. 
+                        This allows us to use the for loop to iterate over an object of our class.
+                    </p>
+                    <p>
+                        As you can see, dunder methods in Python provide a powerful way to customize the behavior of built-in operations and make your classes more Pythonic. 
+                        They allow you to define how objects of your class should behave in certain situations, making your code more readable, maintainable, and efficient.
+                    </p>
+                    <p>
+                        It is important to note that while using dunder methods is not required, they can greatly enhance the functionality of your classes and make them more intuitive to work with. 
+                        For example, by implementing the <code>__eq__()</code> method, you can ensure that two objects of your class can be compared for equality using the == operator, which makes it more readable and maintainable. 
+                        Similarly, by implementing the <code>__len__()</code> method, you can ensure that the len() function can be used to get the length of an object of your class, which makes it more intuitive to work with.
+                    </p>
+                    <p>
+                        It's also worth noting that not all dunder methods need to be implemented. 
+                        Depending on the class you're creating, you may only need to implement a few of them. 
+                        However, it's a good idea to be familiar with the available dunder methods so you can use them when they're appropriate.
+                    </p>
+                    <p>
+                        In summary, dunder methods are an important part of creating well-designed and well-behaved classes in Python. 
+                        They allow you to customize the behavior of built-in operations, making your classes more Pythonic and providing a way to make your code more readable, maintainable, and efficient. 
+                        Understanding and using dunder methods is essential for creating high-quality Python code.
+                    </p>
+
+                    <!-- Desc: Dunder methods, also known as "magic" or "special" methods, are used in Python to define how objects of a class behave in certain situations. They are defined by double underscores at the beginning and end of their names (e.g. init(), add()). This post will take a look at some of the most commonly used dunder methods such as init(), str(), add(), eq() and len() and how they can be used to customize the behavior of built-in operations and make your classes more Pythonic. This post will provide an understanding of how to use dunder methods to improve the functionality and usability of your classes. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
