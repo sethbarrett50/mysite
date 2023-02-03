@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="NumPy is a powerful, open-source Python library for numerical computation and data manipulation. In this blog post, we will explore some of the most commonly used methods in the NumPy library, including how to create arrays, fill them with zeros and ones, create ranges of values, generate random numbers, and calculate statistics such as minimum, maximum, mean, and median values. Whether you're a beginner or an experienced developer, this post is a great resource for understanding the capabilities of the NumPy library and how it can be used to simplify and speed up numerical computation in Python.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="NumPy is a powerful, open-source Python library for numerical computation and data manipulation. In this blog post, we will explore some of the most commonly used methods in the NumPy library, including how to create arrays, fill them with zeros and ones, create ranges of values, generate random numbers, and calculate statistics such as minimum, maximum, mean, and median values. Whether you're a beginner or an experienced developer, this post is a great resource for understanding the capabilities of the NumPy library and how it can be used to simplify and speed up numerical computation in Python.">
+    <meta name="twitter:description" property="twitter:description"
+        content="NumPy is a powerful, open-source Python library for numerical computation and data manipulation. In this blog post, we will explore some of the most commonly used methods in the NumPy library, including how to create arrays, fill them with zeros and ones, create ranges of values, generate random numbers, and calculate statistics such as minimum, maximum, mean, and median values. Whether you're a beginner or an experienced developer, this post is a great resource for understanding the capabilities of the NumPy library and how it can be used to simplify and speed up numerical computation in Python.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: Febuary 3rd, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: Febuary 3rd, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/02_03_23.webp" alt="Python26" width="250" height="445" />
+                    <h4>Feb 3rd, 2023</h4>
+                    <div class='title'>An Introduction to NumPy: The Power of Numerical Computing in Python</div>
+
+                    <p>
+                        NumPy is a powerful, open-source Python library for numerical computation and data manipulation. It is built on the foundation of Python's array object and provides a wide range of mathematical functions and tools for working with arrays and matrices of numerical data.
+                    </p>
+                    <p>
+                        Here are some of the most commonly used methods in the <code>NumPy</code> library:
+                    </p>
+                    <p><ul>
+                        <li><code>np.array(data, dtype=None, copy=True, order='K', subok=False, ndmin=0)</code>: This function creates an array from the given input data. The <code>data</code> parameter can be a list, tuple, or array-like object, and the <code>dtype</code> parameter specifies the data type of the resulting array. The <code>copy</code> parameter, if set to <code>True</code>, creates a copy of the input data, and the <code>order</code> parameter specifies the memory layout of the resulting array.</li>
+                    </ul></p>
+<p><pre>import numpy as np
+
+a = np.array([1, 2, 3, 4])</pre></p>
+                    <p><ul>
+                        <li><code>np.zeros(shape, dtype=float, order='C')</code>: This function returns a new array of given shape and type, filled with zeros. The <code>shape</code> parameter specifies the shape of the array and the <code>dtype</code> parameter specifies the data type of the array.</li>
+                    </ul></p>
+                    <p><pre>np.zeros((3,3))</pre></p>
+                    <p><ul>
+                        <li><code>np.ones(shape, dtype=None, order='C')</code>: This function returns a new array of given shape and type, filled with ones. The <code>shape</code> parameter specifies the shape of the array and the <code>dtype</code> parameter specifies the data type of the array.</li>
+                    </ul></p>
+                    <p><pre>np.ones((2,2))</pre></p>
+                    <p><ul>
+                        <li><code>np.arange(start, stop, step, dtype)</code>: This function returns an array with evenly spaced values within a given range. The <code>start</code> parameter specifies the start of the range, the <code>stop</code> parameter specifies the end of the range, and the <code>step</code> parameter specifies the spacing between the values. The <code>dtype</code> parameter specifies the data type of the array.</li>
+                    </ul></p>
+                    <p><pre>np.arange(1, 10, 2)</pre></p>
+                    <p><ul>
+                        <li><code>np.linspace(start, stop, num, endpoint, retstep, dtype)</code>: This function returns an array with evenly spaced values within a given range. The <code>start</code> parameter specifies the start of the range, the <code>stop</code> parameter specifies the end of the range, and the <code>num</code> parameter specifies the number of elements in the resulting array. The <code>endpoint</code> parameter, if set to <code>True</code>, includes the end value in the range. The <code>retstep</code> parameter, if set to <code>True</code>, returns the step value used in the range. The <code>dtype</code> parameter specifies the data type of the array.</li>
+                    </ul></p>
+                    <p><pre>np.linspace(1, 10, 6)</pre></p>
+                    <p><ul>
+                        <li><code>np.random.random(size=None)</code>: This function returns random floats in the half-open interval [0.0, 1.0). The <code>size</code> parameter specifies the shape of the array.</li>
+                    </ul></p>
+                    <p><pre>np.random.random((3,3))</pre></p>
+                    <p><ul>
+                        <li><code>np.min(a, axis=None, out=None, keepdims=False)</code>: This function returns the minimum of an array or minimum along an axis. The <code>a</code> parameter specifies the input array, the <code>axis</code> parameter specifies the axis along which the minimum value is calculated and the <code>out</code> parameter specifies the output and the <code>keepdims</code> parameter, if set to <code>True</code>, keeps the dimensions of the input array.</li>
+                    </ul></p>
+<p><pre>a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+np.min(a, axis=0)</pre></p>
+                    <p><ul>
+                        <li><code>np.max(a, axis=None, out=None, keepdims=False)</code>: This function returns the maximum of an array or maximum along an axis. The <code>a</code> parameter specifies the input array, the <code>axis</code> parameter specifies the axis along which the maximum value is calculated and the <code>out</code> parameter specifies the output and the <code>keepdims</code> parameter, if set to <code>True</code>, keeps the dimensions of the input array.</li>
+                    </ul></p>
+<p><pre>a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+np.max(a, axis=0)</pre></p>
+                    <p><ul>
+                        <li><code>np.mean(a, axis=None, dtype=None, out=None, keepdims=False)</code>: This function returns the mean of an array or mean along an axis. The <code>a</code> parameter specifies the input array, the <code>axis</code> parameter specifies the axis along which the mean value is calculated, the <code>dtype</code> parameter specifies the data type of the output, the <code>out</code> parameter specifies the output and the <code>keepdims</code> parameter, if set to <code>True</code>, keeps the dimensions of the input array.</li>
+                    </ul></p>
+<p><pre>a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+np.mean(a, axis=0)</pre></p>
+                    <p><ul>
+                        <li><code>np.median(a, axis=None, out=None, overwrite_input=False, keepdims=False)</code>: This function returns the median of an array or median along an axis. The <code>a</code> parameter specifies the input array, the <code>axis</code> parameter specifies the axis along which the median value is calculated, the <code>out</code> parameter specifies the output, the <code>overwrite_input</code> parameter, if set to <code>True</code>, allows the input array to be modified and the <code>keepdims</code> parameter, if set to <code>True</code>, keeps the dimensions of the input array.</li>
+                    </ul></p>
+<p><pre>a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+np.median(a, axis=0)</pre></p>
+                    <p>
+                        These are just a few examples of the many methods and capabilities of the NumPy library. 
+                        NumPy is a fundamental library for scientific computing and data analysis in python, it provides the array data structure that is at the core of the pandas and many other popular data manipulation libraries. 
+                        I hope this gives you a good introduction to using NumPy for numerical computation and data manipulation. 
+                        Let me know if you have any questions or need more examples.
+                    </p>
+
+                    <!-- Desc: NumPy is a powerful, open-source Python library for numerical computation and data manipulation. In this blog post, we will explore some of the most commonly used methods in the NumPy library, including how to create arrays, fill them with zeros and ones, create ranges of values, generate random numbers, and calculate statistics such as minimum, maximum, mean, and median values. Whether you're a beginner or an experienced developer, this post is a great resource for understanding the capabilities of the NumPy library and how it can be used to simplify and speed up numerical computation in Python. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
