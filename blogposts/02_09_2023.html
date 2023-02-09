@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Learn about the fundamental concepts of iterators and iterables in Python and how to use them to simplify and streamline your code. This post covers the basics of how they work, examples of built-in iterable and iterator objects, and how to create your own custom iterators.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Learn about the fundamental concepts of iterators and iterables in Python and how to use them to simplify and streamline your code. This post covers the basics of how they work, examples of built-in iterable and iterator objects, and how to create your own custom iterators.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Learn about the fundamental concepts of iterators and iterables in Python and how to use them to simplify and streamline your code. This post covers the basics of how they work, examples of built-in iterable and iterator objects, and how to create your own custom iterators.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: Febuary 9th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: Febuary 9th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/02_09_23.webp" alt="Python26" width="250" height="445" />
+                    <h4>Feb 9th, 2023</h4>
+                    <div class='title'>Mastering Iterators and Iterables in Python: A Deep Dive</div>
+
+                    <p>
+                        Iterators and iterables are fundamental concepts in Python that allow you to work with collections of data in a clean and efficient manner. 
+                        In this post, we'll take a deep dive into iterators and iterables, explore how they work, and see how you can use them to simplify and streamline your Python code.
+                    </p>
+                    <p>
+                        An iterable is an object that can be iterated (looped) upon. 
+                        It defines a method called <code>iter()</code> which returns an iterator object. 
+                        Examples of iterable objects include lists, tuples, strings, and dictionaries. 
+                    </p>
+                    <p>
+                        An iterator is an object that is used to iterate over an iterable. 
+                        It defines two methods: <code>next()</code> and <code>iter()</code>. The <code>next()</code> method returns the next item in the iterable, while the <code>iter()</code> method returns the iterator object itself. 
+                        This allows the iterator to be used in a for loop.
+                    </p>
+                    <p>
+                        Here's an example of how you can use a for loop to iterate over a list:
+                    </p>
+<p><pre>numbers = [1, 2, 3, 4, 5]
+for number in numbers:
+    print(number)</pre></p>
+                    <p>
+                        In this example, the for loop is used to iterate over the list "numbers". 
+                        On each iteration, the variable "number" is assigned the next value in the list. 
+                        This process continues until all the values in the list have been processed.
+                    </p>
+                    <p>
+                        An iterator is an object that is used to iterate over an iterable object. 
+                        It defines two methods, <code>iter()</code> and <code>next()</code>. 
+                        The <code>iter()</code> method returns the iterator object itself. 
+                        The <code>next()</code> method returns the next value from the iterable object. 
+                        If there are no more items to return, it should raise <code>StopIteration</code>. 
+                        Here's an example of how you can use the iterator protocol to manually iterate over a list:
+                    </p>
+<p><pre>numbers = [1, 2, 3, 4, 5]
+iterator = iter(numbers)
+print(next(iterator)) # 1
+print(next(iterator)) # 2
+print(next(iterator)) # 3
+print(next(iterator)) # 4
+print(next(iterator)) # 5</pre></p>
+                    <p>
+                        In this example, the <code>iter(numbers)</code> function returns an iterator object that can be used to iterate over the list "numbers". 
+                        The <code>next(iterator)</code> function is used to retrieve the next value from the iterator. 
+                        As you can see, this process is equivalent to the for loop example above, but with more manual control over the iteration process.
+                    </p>
+                    <p>
+                        Another example of Iterator is the built-in <code>enumerate()</code> function, it takes an iterable and returns an iterator that produces tuples containing the index and the corresponding item.
+                    </p>
+<p><pre>words = ["hello", "world"]
+for index, word in enumerate(words):
+    print(index, word)</pre></p>
+                    <p>
+                        In this example, the <code>enumerate()</code> function is used to iterate over the list "words" and returns an iterator that produces tuples containing the index and the corresponding item.
+                    </p>
+                    <p>
+                        In addition to the built-in iterable and iterator objects, you can also create your own. 
+                        To create your own iterable object, you need to define the <code>__iter__()</code> method which should return an iterator object. 
+                        To create your own iterator object, you need to define the <code>__iter__()</code> and <code>__next__()</code> methods. 
+                        Here's an example of how you can create a custom iterator that generates the Fibonacci sequence:
+                    </p>
+<p><pre>class Fibonacci:
+    def __init__(self, max_value):
+        self.max_value = max_value
+        self.a = 0
+        self.b = 1
+    def __iter__(self):
+        return self
+    def __next__(self):
+        fib = self.a
+        if fib > self.max_value:
+            raise StopIteration
+        self.a, self.b = self.b, self.a + self.b
+        return fib
+
+fibonacci = Fibonacci(20)
+for n in fibonacci:
+print(n)
+</pre></p>
+                    <p>
+                        In this example, we have defined a class called <code>Fibonacci</code> that has an <code>__iter__()</code> method that returns an iterator object and a <code>__next__()</code> method that calculates the next Fibonacci number. 
+                        The <code>__init__()</code> method sets the maximum value for the sequence and initializes the first two values of the sequence. 
+                        In the for loop, we are able to iterate over the fibonacci object as it is an iterable, and the for loop will call the <code>next()</code> method of the iterator returned by the <code>__iter__</code> method.
+                    </p>
+                    <p>
+                        In conclusion, iterators and iterables are powerful and versatile features of Python that allow you to work with collections of data in a clean and efficient manner. 
+                        By understanding how they work, you can use them to simplify and streamline your Python code, making it more readable and maintainable. 
+                        Whether you're working with built-in iterable and iterator objects or creating your own, the possibilities are endless.
+                    </p>
+
+                    <!-- Desc: Learn about the fundamental concepts of iterators and iterables in Python and how to use them to simplify and streamline your code. This post covers the basics of how they work, examples of built-in iterable and iterator objects, and how to create your own custom iterators. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
