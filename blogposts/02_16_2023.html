@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This blog post explores the benefits of using Poetry, a package manager and dependency management tool for Python projects. It explains how Poetry simplifies the process of managing dependencies and creating packages, making it easier for developers to focus on writing code and developing their projects. The post includes examples of how to use Poetry to manage dependencies, install them, and create a package of your project. Overall, it's a guide for Python developers on how to use Poetry to improve their workflows.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This blog post explores the benefits of using Poetry, a package manager and dependency management tool for Python projects. It explains how Poetry simplifies the process of managing dependencies and creating packages, making it easier for developers to focus on writing code and developing their projects. The post includes examples of how to use Poetry to manage dependencies, install them, and create a package of your project. Overall, it's a guide for Python developers on how to use Poetry to improve their workflows.">
+    <meta name="twitter:description" property="twitter:description"
+        content="This blog post explores the benefits of using Poetry, a package manager and dependency management tool for Python projects. It explains how Poetry simplifies the process of managing dependencies and creating packages, making it easier for developers to focus on writing code and developing their projects. The post includes examples of how to use Poetry to manage dependencies, install them, and create a package of your project. Overall, it's a guide for Python developers on how to use Poetry to improve their workflows.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: Febuary 16th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: Febuary 16th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/02_16_23.webp" alt="Python33" width="250" height="445" />
+                    <h4>Feb 16th, 2023</h4>
+                    <div class='title'>Managing Dependencies and Creating Packages with Poetry: A Python Developer's Guide</div>
+
+                    <p>
+                        Python has a lot of great libraries for developers to use, but one library that often goes overlooked is Poetry. 
+                        Poetry is a package manager and dependency management tool for Python projects. 
+                        It allows developers to easily manage the dependencies of their projects, and it also makes it easy to create and distribute packages. 
+                        In this blog post, we'll take a closer look at Poetry and how it can be used to manage dependencies and create packages in Python.
+                    </p>
+                    <p>
+                        First, let's talk about why Poetry is so useful. 
+                        One of the biggest challenges with Python projects is managing dependencies. 
+                        When you're working on a project, you'll often need to use other libraries to get things done. 
+                        For example, you might need to use a library for web scraping, or a library for working with data. 
+                        The problem is, managing all of these dependencies can be a real headache. 
+                        You need to keep track of which libraries you're using, what versions you're using, and how they're installed. 
+                        This is where Poetry comes in.
+                    </p>
+                    <p>
+                        With Poetry, you can easily manage your dependencies by creating a <code>pyproject.toml</code> file in the root of your project. 
+                        This file will contain all of the dependencies you need for your project, along with their versions. 
+                        You can then use Poetry to install these dependencies, and it will automatically handle any conflicts or issues that may arise. 
+                        This makes it much easier to keep your project running smoothly, without having to worry about managing dependencies manually.
+                    </p>
+                    <p>
+                        Another great feature of Poetry is that it makes it easy to create and distribute packages. 
+                        When you're working on a project, you'll often want to share your code with others. 
+                        With Poetry, you can easily create a package of your code, and distribute it to others. 
+                        This is done by creating a <code>poetry.lock</code> file, which contains all of the dependencies for your project, along with their versions. 
+                        You can then use Poetry to create a package of your project, and distribute it to others.
+                    </p>
+                    <p>
+                        Here is an example of how to use Poetry to manage dependencies in a python project:
+                    </p>
+<p><pre># First, you'll need to install Poetry. You can do this by running:
+pip install poetry
+
+# Next, you'll need to create a new project. You can do this by running:
+poetry new myproject
+
+# This will create a new directory called myproject, with a basic file structure.
+
+# Now, let's say you want to add a dependency to your project. You can do this by running:
+poetry add requests
+
+# This will add the requests library to your project, and it will also update your pyproject.toml file with the new dependency.
+
+# Now, let's say you want to install your dependencies. You can do this by running:
+poetry install
+
+# This will install all of the dependencies listed in your pyproject.toml file.
+
+# Finally, let's say you want to create a package of your project. You can do this by running:
+poetry build
+
+# This will create a package of your project, and it will also create a poetry.lock file.</pre></p>
+                    <p>
+                        In conclusion, Poetry is a powerful and essential tool for Python developers. 
+                        It simplifies the process of managing dependencies, and it makes it easy to create and distribute packages. 
+                        By using Poetry, you can focus on writing code and developing your projects, without having to worry about managing dependencies and creating packages. 
+                        So, if you haven't already, give Poetry a try, and see how it can help you with your Python projects.
+                    </p>
+
+                    <!-- Desc: This blog post explores the benefits of using Poetry, a package manager and dependency management tool for Python projects. It explains how Poetry simplifies the process of managing dependencies and creating packages, making it easier for developers to focus on writing code and developing their projects. The post includes examples of how to use Poetry to manage dependencies, install them, and create a package of your project. Overall, it's a guide for Python developers on how to use Poetry to improve their workflows. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
