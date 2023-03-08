@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content=" In this blog post, we explore Racket's module system and its benefits for organizing code. We provide an example of a module that exports a function and show how to import and use the function in another module. We also discuss the benefits of the module system, including namespacing, encapsulation, reusability, and abstraction.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content=" In this blog post, we explore Racket's module system and its benefits for organizing code. We provide an example of a module that exports a function and show how to import and use the function in another module. We also discuss the benefits of the module system, including namespacing, encapsulation, reusability, and abstraction.">
+    <meta name="twitter:description" property="twitter:description"
+        content=" In this blog post, we explore Racket's module system and its benefits for organizing code. We provide an example of a module that exports a function and show how to import and use the function in another module. We also discuss the benefits of the module system, including namespacing, encapsulation, reusability, and abstraction.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: March 8th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: March 8th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/03_08_23.webp" alt="racket5" width="250" height="445" />
+                    <h4>Mar 8th, 2023</h4>
+                    <div class='title'>Organizing Racket Code with Modules</div>
+
+                    <p>
+                        Welcome back to our Racket series. 
+                        In the previous post, we discussed Racket's macro system and its power to extend the language. 
+                        In this post, we will explore Racket's module system and its benefits for organizing code.
+                    </p>
+                    <h5>Module System</h5>
+                    <p>
+                        A module in Racket is a unit of code that provides a namespace for a group of definitions. 
+                        A module can export definitions that can be used by other modules, and it can import definitions from other modules.
+                    </p>
+                    <p>Here's an example of a simple module that defines a function:</p>
+<p><pre>#lang racket
+
+(module mymodule racket
+    (define (square x)
+    (* x x)))
+
+(provide square)</pre></p>
+                    <p>
+                        In this example, we define a module called <code>mymodule</code>. 
+                        The module exports a single function called <code>square</code> that calculates the square of a number.
+                    </p>
+                    <p>We can use the <code>square</code> function like this: </p>
+<p><pre>#lang racket
+
+(require 'mymodule)
+
+(square 5)</pre></p>
+                    <p>
+                        This imports the <code>square</code> function from the <code>mymodule</code> module and calls it with the argument <code>5</code>. 
+                        The result is <code>25</code>.
+                    </p>
+                    <h5>Benefits of the Module System</h5>
+                    <p>The module system provides several benefits for organizing code:</p>
+                    <p><ul>
+                        <li>Namespacing: Modules provide a namespace for a group of definitions. This makes it easier to avoid naming conflicts and to organize code.</li>
+                        <li>Encapsulation: Modules can hide implementation details and expose only the definitions that are meant to be used by other modules. This makes it easier to maintain code and to ensure its correctness.</li>
+                        <li>Reusability: Modules can be reused in multiple projects, making it easier to share code between projects and to maintain a consistent coding style.</li>
+                        <li>Abstraction: Modules can abstract away complex functionality and provide a simpler interface for other modules to use. This makes it easier to write and maintain code.</li>
+                    </ul></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we explored Racket's module system and its benefits for organizing code. 
+                        We provided an example of a module that exports a function and showed how to import and use the function in another module. 
+                        We also discussed the benefits of the module system, including namespacing, encapsulation, reusability, and abstraction. 
+                        In the next post, we will discuss Racket's support for object-oriented programming.
+                    </p>
+
+                    <!-- Desc:  In this blog post, we explore Racket's module system and its benefits for organizing code. We provide an example of a module that exports a function and show how to import and use the function in another module. We also discuss the benefits of the module system, including namespacing, encapsulation, reusability, and abstraction. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
