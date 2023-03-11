@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this blog post, we explore the core concepts and techniques of functional programming in Racket. We delve into the basics of functional programming, such as using functions as building blocks and treating computation as the evaluation of mathematical functions. We also discuss higher-order functions, lambda expressions, closures, and immutable data, all of which are crucial to creating efficient and easy-to-reason-about code in Racket. By the end of this post, you'll have a comprehensive understanding of functional programming in Racket and how to leverage its built-in support for this programming paradigm to develop functional applications.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this blog post, we explore the core concepts and techniques of functional programming in Racket. We delve into the basics of functional programming, such as using functions as building blocks and treating computation as the evaluation of mathematical functions. We also discuss higher-order functions, lambda expressions, closures, and immutable data, all of which are crucial to creating efficient and easy-to-reason-about code in Racket. By the end of this post, you'll have a comprehensive understanding of functional programming in Racket and how to leverage its built-in support for this programming paradigm to develop functional applications.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this blog post, we explore the core concepts and techniques of functional programming in Racket. We delve into the basics of functional programming, such as using functions as building blocks and treating computation as the evaluation of mathematical functions. We also discuss higher-order functions, lambda expressions, closures, and immutable data, all of which are crucial to creating efficient and easy-to-reason-about code in Racket. By the end of this post, you'll have a comprehensive understanding of functional programming in Racket and how to leverage its built-in support for this programming paradigm to develop functional applications.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: March 11th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: March 11th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/03_11_23.webp" alt="racket8" width="250" height="445" />
+                    <h4>Mar 11th, 2023</h4>
+                    <div class='title'>Functional Programming in Racket: A Comprehensive Overview of Key Concepts and Techniques</div>
+
+                    <p>
+                        In this post, we'll take a deeper dive into Racket's support for functional programming. 
+                        We've already seen some examples of functional programming in previous posts, but here we'll discuss the core concepts and techniques of functional programming in more detail.
+                    </p>
+                    <h5>Functional Programming Basics</h5>
+                    <p>
+                        Functional programming is a programming paradigm that emphasizes the use of functions to create programs. 
+                        Functional programming treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. 
+                        Racket provides built-in support for functional programming, making it a powerful tool for developing functional applications.
+                    </p>
+                    <h5>Functions</h5>
+                    <p>
+                        Functions are the building blocks of functional programming. 
+                        In Racket, functions are first-class objects, meaning they can be passed as arguments to other functions, returned as values, and stored in variables.
+                    </p>
+                    <p>Here's an example of a simple function in Racket:</p>
+<p><pre>#lang racket
+
+(define (square x)
+    (* x x))
+
+(square 5) ; Returns 25</pre></p>
+                    <p>
+                        In this example, we define a function called <code>square</code> that takes a single argument <code>x</code> and returns the square of <code>x</code>. 
+                        We then call the <code>square</code> function with an argument of <code>5</code>, which returns <code>25</code>.
+                    </p>
+                    <h5>Higher-order Functions</h5>
+                    <p>
+                        Higher-order functions are functions that take other functions as arguments or return functions as values. 
+                        Higher-order functions are a powerful tool in functional programming because they allow us to abstract common patterns of computation.
+                    </p>
+                    <p>Here's an example of a higher-order function in Racket:</p>
+<p><pre>#lang racket
+
+(define (apply-twice f x)
+    (f (f x)))
+
+(apply-twice square 5) ; Returns 625</pre></p>
+                    <p>
+                        In this example, we define a function called <code>apply-twice</code> that takes two arguments, a function <code>f</code> and a value <code>x</code>. 
+                        The <code>apply-twice</code> function applies <code>f</code> to <code>x</code> twice and returns the result. 
+                        We call the <code>apply-twice</code> function with the <code>square</code> function and an argument of <code>5</code>, which returns <code>625</code>.
+                    </p>
+                    <h5>Lambda Expressions</h5>
+                    <p>
+                        Lambda expressions are anonymous functions that can be used to define functions on-the-fly. 
+                        Lambda expressions are useful when we need to define a function that is used only once.
+                    </p>
+                    <p>Here's an example of a lambda expression in Racket:</p>
+<p><pre>#lang racket
+
+((lambda (x) (* x x)) 5) ; Returns 25</pre></p>
+                    <p>
+                        In this example, we define a lambda expression that takes a single argument <code>x</code> and returns the square of <code>x</code>. 
+                        We then call the lambda expression with an argument of <code>5</code>, which returns <code>25</code>.
+                    </p>
+                    <h5>Closures</h5>
+                    <p>
+                        Closures are functions that capture the values of their free variables. 
+                        Closures are useful for defining functions that depend on values that are not passed as arguments.
+                    </p>
+                    <p>
+                        Here's an example of a closure in Racket:
+                    </p>
+<p><pre>#lang racket
+
+(define (make-adder x)
+    (lambda (y) (+ x y)))
+
+(define add5 (make-adder 5))
+(add5 10) ; Returns 15
+</pre></p>
+                    <p>
+                        In this example, we define a function called <code>make-adder</code> that takes a single argument <code>x</code> and returns a closure that adds <code>x</code> to its argument. 
+                        We then define a closure called <code>add5</code> that adds <code>5</code> to its argument. 
+                        We call <code>add5</code> with an argument of <code>10</code>, which returns <code>15</code>.
+                    </p>
+                    <h5>Immutable Data</h5>
+                    <p>
+                        In functional programming, data is often immutable, meaning it cannot be changed after it is created. 
+                        Immutable data is useful for creating data structures that are efficient and easy to reason about.
+                    </p>
+                    <p>
+                        Racket provides several built-in immutable data structures, including lists, vectors, and hash tables.
+                    </p>
+                    <p>Here's an example of an immutable data structure in Racket:</p>
+<p><pre>#lang racket
+
+(define my-list '(1 2))
+(define my-new-list (cons 3 my-list))
+
+my-list 
+; Returns '(1 2)
+
+my-new-list 
+; Returns '(3 1 2)</pre></p>
+                    <p>
+                        In this example, we define an immutable list called <code>my-list</code> that contains the elements <code>1</code> and <code>2</code>. 
+                        We then use the `cons` function to create a new list called <code>my-new-list</code> that contains the element <code>3</code> followed by the elements of <code>my-list</code>. 
+                        We print the values of <code>my-list</code> and <code>my-new-list</code> to the console, which show that <code>my-list</code> is still unchanged and <code>my-new-list</code> contains the additional element <code>3</code>.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        Functional programming is a powerful programming paradigm that emphasizes the use of functions to create programs. 
+                        Racket provides built-in support for functional programming, making it a great tool for developing functional applications. 
+                        In this post, we discussed the basics of functional programming in Racket, including functions, higher-order functions, lambda expressions, closures, and immutable data. 
+                        By understanding these concepts, you can write efficient and easy-to-reason-about code in Racket.
+                    </p>
+
+                    <!-- Desc: In this blog post, we explore the core concepts and techniques of functional programming in Racket. We delve into the basics of functional programming, such as using functions as building blocks and treating computation as the evaluation of mathematical functions. We also discuss higher-order functions, lambda expressions, closures, and immutable data, all of which are crucial to creating efficient and easy-to-reason-about code in Racket. By the end of this post, you'll have a comprehensive understanding of functional programming in Racket and how to leverage its built-in support for this programming paradigm to develop functional applications. -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
