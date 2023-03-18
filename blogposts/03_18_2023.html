@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Learn about the Factory Pattern, a creational design pattern used in Java to create objects without specifying their exact class. Discover the components of the Factory Pattern, including the Creator, Concrete Creator, Product, and Concrete Product, and see an example implementation in Java.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Learn about the Factory Pattern, a creational design pattern used in Java to create objects without specifying their exact class. Discover the components of the Factory Pattern, including the Creator, Concrete Creator, Product, and Concrete Product, and see an example implementation in Java.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Learn about the Factory Pattern, a creational design pattern used in Java to create objects without specifying their exact class. Discover the components of the Factory Pattern, including the Creator, Concrete Creator, Product, and Concrete Product, and see an example implementation in Java.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: March 18th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: March 18th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/03_18_23.webp" alt="design1" width="250" height="445" />
+                    <h4>Mar 18th, 2023</h4>
+                    <div class='title'>Exploring the Factory Pattern for Object-Oriented Programming in Java</div>
+
+                    <p>
+                        Welcome back to our series on design patterns for Object-Oriented Programming (OOP) in Java. 
+                        In this post, we'll be exploring the Factory Pattern, which is a creational design pattern that provides a way to create objects without specifying their exact class.
+                    </p>
+                    <p>
+                        The Factory Pattern is used when we need to create objects that are derived from a common base class or interface. 
+                        It allows us to encapsulate the object creation process and provide a way to create different types of objects based on certain conditions or parameters.
+                    </p>
+                    <p>Let's take a look at the different components of the Factory Pattern:</p>
+                    <p><ol>
+                        <li>
+                            Creator:
+                            <p>
+                                The Creator is an abstract class or interface that defines a factory method. 
+                                This method is responsible for creating and returning an object of a certain type. 
+                                The Creator may also have other methods that use the objects created by the factory method.
+                            </p>
+                        </li>
+                        <li>
+                            Concrete Creator:
+                            <p>
+                                The Concrete Creator is a subclass of the Creator that implements the factory method. 
+                                It is responsible for creating and returning a Concrete Product.
+                            </p>
+                        </li>
+                        <li>
+                            Product:
+                            <p>
+                                The Product is an abstract class or interface that defines the properties and methods that the Concrete Products must have.
+                            </p>
+                        </li>
+                        <li>
+                            Concrete Product:
+                            <p>
+                                The Concrete Product is a subclass of the Product that implements the properties and methods defined by the Product.
+                            </p>
+                        </li>
+                    </ol></p>
+                    <p>
+                        Now, let's see an example of how we can implement the Factory Pattern in Java:
+                    </p>
+<p><pre>public interface Animal {
+    public void makeSound();
+ }
+ 
+ public class Dog implements Animal {
+    @Override
+    public void makeSound() {
+       System.out.println("Woof");
+    }
+ }
+ 
+ public class Cat implements Animal {
+    @Override
+    public void makeSound() {
+       System.out.println("Meow");
+    }
+ }
+ 
+ public abstract class AnimalFactory {
+    public abstract Animal createAnimal();
+ }
+ 
+ public class DogFactory extends AnimalFactory {
+    @Override
+    public Animal createAnimal() {
+       return new Dog();
+    }
+ }
+ 
+ public class CatFactory extends AnimalFactory {
+    @Override
+    public Animal createAnimal() {
+       return new Cat();
+    }
+ }</pre></p>
+                    <p>
+                        In this example, we have an Animal interface and two Concrete Products, Dog and Cat, that implement this interface. 
+                        We also have an abstract AnimalFactory class that defines the factory method createAnimal(). 
+                        Finally, we have two Concrete Creators, DogFactory and CatFactory, that implement the createAnimal() method to create and return the respective Concrete Product.
+                    </p>
+                    <p>Now, let's see how we can use these classes to create objects:</p>
+<p><pre>public class Main {
+    public static void main(String[] args) {
+       AnimalFactory dogFactory = new DogFactory();
+       Animal dog = dogFactory.createAnimal();
+       dog.makeSound(); // Output: Woof
+ 
+       AnimalFactory catFactory = new CatFactory();
+       Animal cat = catFactory.createAnimal();
+       cat.makeSound(); // Output: Meow
+    }
+ }</pre></p>
+                    <p>
+                        In this example, we create a Dog object using the DogFactory and a Cat object using the CatFactory. 
+                        We then call the makeSound() method on each object to see the respective outputs.
+                    </p>
+                    <p>
+                        That's it for our introduction to the Factory Pattern. 
+                        We hope you found this post informative and useful. 
+                        In the next post, we'll explore the Abstract Factory Pattern, which is a variation of the Factory Pattern that allows us to create families of related objects. 
+                        Stay tuned!
+                    </p>
+
+                    <!-- Desc: Learn about the Factory Pattern, a creational design pattern used in Java to create objects without specifying their exact class. Discover the components of the Factory Pattern, including the Creator, Concrete Creator, Product, and Concrete Product, and see an example implementation in Java.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
