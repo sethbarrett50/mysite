@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="The Flyweight Pattern is a powerful design pattern that can help minimize memory usage in applications by sharing data between similar objects. By separating the intrinsic and extrinsic state of an object, the pattern enables the creation of a single object to be shared between multiple instances, resulting in a more efficient and scalable application. In this article, we explore the two main components of the Flyweight Pattern, the FlyweightFactory and the Flyweight objects, and provide an example of its use in a drawing application. By the end, you'll have a better understanding of how to use the Flyweight Pattern to optimize the memory usage of your own applications.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="The Flyweight Pattern is a powerful design pattern that can help minimize memory usage in applications by sharing data between similar objects. By separating the intrinsic and extrinsic state of an object, the pattern enables the creation of a single object to be shared between multiple instances, resulting in a more efficient and scalable application. In this article, we explore the two main components of the Flyweight Pattern, the FlyweightFactory and the Flyweight objects, and provide an example of its use in a drawing application. By the end, you'll have a better understanding of how to use the Flyweight Pattern to optimize the memory usage of your own applications.">
+    <meta name="twitter:description" property="twitter:description"
+        content="The Flyweight Pattern is a powerful design pattern that can help minimize memory usage in applications by sharing data between similar objects. By separating the intrinsic and extrinsic state of an object, the pattern enables the creation of a single object to be shared between multiple instances, resulting in a more efficient and scalable application. In this article, we explore the two main components of the Flyweight Pattern, the FlyweightFactory and the Flyweight objects, and provide an example of its use in a drawing application. By the end, you'll have a better understanding of how to use the Flyweight Pattern to optimize the memory usage of your own applications.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: March 28th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: March 28th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/03_28_23.webp" alt="design1" width="250" height="445" />
+                    <h4>Mar 28th, 2023</h4>
+                    <div class='title'>Minimizing Memory Usage with the Flyweight Pattern: A Structural Design Pattern</div>
+
+                    <p>
+                        The Flyweight Pattern is a structural design pattern that is used to minimize memory usage by sharing data between multiple similar objects. The pattern achieves this by separating the intrinsic and extrinsic state of an object. The intrinsic state is the part of the object that is common between multiple instances of the same type, while the extrinsic state is the part that varies between instances.
+                    </p>
+                    <p>
+                        The Flyweight Pattern consists of two main components: the <code>FlyweightFactory</code> and the <code>Flyweight</code> objects. The FlyweightFactory is responsible for managing and creating <code>Flyweight</code> objects, while the <code>Flyweight</code> objects are the shared objects that store the intrinsic state.
+                    </p>
+                    <p>
+                        Let's take an example of a drawing application that allows users to draw shapes on a canvas. The application allows users to draw circles, squares, and rectangles. Each shape has its own set of properties such as color, size, and position.
+                    </p>
+                    <p>
+                        Without the Flyweight Pattern, the application would create a new object for each shape drawn on the canvas, resulting in a large memory usage. By using the Flyweight Pattern, we can create a single <code>Shape</code> object for each shape type and share it between all instances of the same type.
+                    </p>
+                    <p>
+                        The <code>ShapeFactory</code> is the <code>FlyweightFactory</code> in this example. It is responsible for creating and managing the <code>Shape</code> objects. When a user requests to draw a shape, the <code>ShapeFactory</code> checks if a <code>Shape</code> object with the same intrinsic state already exists. If it does, the <code>ShapeFactory</code> returns the existing object. If it doesn't, the <code>ShapeFactory</code> creates a new <code>Shape</code> object and adds it to its internal collection.
+                    </p>
+                    <p>
+                        The <code>Shape</code> objects are the <code>Flyweight</code> objects in this example. They store the intrinsic state of the shapes such as color and size. The extrinsic state, which varies between instances, is stored in the <code>draw()</code> method of the <code>Shape</code> object. This method takes a <code>Canvas</code> object as a parameter and draws the shape on the canvas at the specified position.
+                    </p>
+                    <p>
+                        By using the Flyweight Pattern, we can reduce the memory usage of the application by sharing data between multiple similar objects. This results in a more efficient and scalable application.
+                    </p>
+                    <p>
+                        In conclusion, the Flyweight Pattern is a powerful structural design pattern that allows us to minimize memory usage by sharing data between similar objects. By separating the intrinsic and extrinsic state of an object, we can create more efficient and scalable applications.
+                    </p>
+
+                    <!-- Desc: The Flyweight Pattern is a powerful design pattern that can help minimize memory usage in applications by sharing data between similar objects. By separating the intrinsic and extrinsic state of an object, the pattern enables the creation of a single object to be shared between multiple instances, resulting in a more efficient and scalable application. In this article, we explore the two main components of the Flyweight Pattern, the FlyweightFactory and the Flyweight objects, and provide an example of its use in a drawing application. By the end, you'll have a better understanding of how to use the Flyweight Pattern to optimize the memory usage of your own applications.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
