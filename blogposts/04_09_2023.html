@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="The Visitor Design Pattern is a behavioral design pattern that separates an algorithm from the objects it operates on. This pattern is used when we need to perform operations on a group of unrelated objects. In this blog post, we will explore the Visitor pattern in detail with examples in both Java and C#. We will create a hierarchy of animals in Java and a library of items in C#, and implement Visitor pattern to perform operations on these objects. We will also see how to use the Visitor pattern to perform multiple operations on these objects.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="The Visitor Design Pattern is a behavioral design pattern that separates an algorithm from the objects it operates on. This pattern is used when we need to perform operations on a group of unrelated objects. In this blog post, we will explore the Visitor pattern in detail with examples in both Java and C#. We will create a hierarchy of animals in Java and a library of items in C#, and implement Visitor pattern to perform operations on these objects. We will also see how to use the Visitor pattern to perform multiple operations on these objects.">
+    <meta name="twitter:description" property="twitter:description"
+        content="The Visitor Design Pattern is a behavioral design pattern that separates an algorithm from the objects it operates on. This pattern is used when we need to perform operations on a group of unrelated objects. In this blog post, we will explore the Visitor pattern in detail with examples in both Java and C#. We will create a hierarchy of animals in Java and a library of items in C#, and implement Visitor pattern to perform operations on these objects. We will also see how to use the Visitor pattern to perform multiple operations on these objects.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: April 9th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: April 9th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/04_09_23.webp" alt="design1" width="250" height="445" />
+                    <h4>Apr 9th, 2023</h4>
+                    <div class='title'>Understanding Visitor Design Pattern with Examples in Java and C#</div>
+
+                    <p>
+                        Visitor Design Pattern is one of the behavioral design patterns that separates the algorithm from the objects on which it operates. The Visitor pattern is used when we have to perform an operation on a group of objects that are unrelated to each other.
+                    </p>
+                    <p>
+                        In this pattern, we define a Visitor class that defines the operation that we want to perform on an object structure. Then we create concrete classes derived from the Visitor class that implement these operations.
+                    </p>
+                    <p>
+                        Let's dive into an example to understand it better.
+                    </p>
+                    <p>Example in Java:</p>
+                    <p>
+                        Let's consider an example where we have a hierarchy of animals, and we want to perform an operation on them.
+                    </p>
+                    <p>
+                        First, let's create an interface that will define the method that will accept the Visitor.
+                    </p>
+<p><pre>public interface Animal {
+    void accept(AnimalVisitor visitor);
+}</pre></p>
+                    <p>
+                        Next, let's create some concrete classes that will implement the Animal interface.
+                    </p>
+<p><pre>public class Lion implements Animal {
+
+    @Override
+    public void accept(AnimalVisitor visitor) {
+        visitor.visit(this);
+    }
+}
+
+public class Bear implements Animal {
+
+    @Override
+    public void accept(AnimalVisitor visitor) {
+        visitor.visit(this);
+    }
+}</pre></p>
+                    <p>
+                        Now, let's create the Visitor interface that defines the operations we want to perform.
+                    </p>
+<p><pre>public interface AnimalVisitor {
+    void visit(Lion lion);
+    void visit(Bear bear);
+}</pre></p>
+                    <p>
+                        Next, let's create the concrete classes that will implement the AnimalVisitor interface.
+                    </p>
+<p><pre>public class FeedingVisitor implements AnimalVisitor {
+
+    @Override
+    public void visit(Lion lion) {
+        System.out.println("Feeding Lion");
+    }
+
+    @Override
+    public void visit(Bear bear) {
+        System.out.println("Feeding Bear");
+    }
+}
+
+public class PlayingVisitor implements AnimalVisitor {
+
+    @Override
+    public void visit(Lion lion) {
+        System.out.println("Playing with Lion");
+    }
+
+    @Override
+    public void visit(Bear bear) {
+        System.out.println("Playing with Bear");
+    }
+}</pre></p>
+                    <p>
+                        Now, let's create a class that will use the Visitor pattern to perform operations on the Animal objects.
+                    </p>
+<p><pre>public class AnimalOperations {
+
+    public void performOperation(List<Animal> animals, AnimalVisitor visitor) {
+        for (Animal animal : animals) {
+            animal.accept(visitor);
+        }
+    }
+}</pre></p>
+                    <p>
+                        Let's see how we can use this pattern to perform the operation.
+                    </p>
+<p><pre>public class Main {
+
+    public static void main(String[] args) {
+        List<Animal> animals = new ArrayList&lt;&gt;();
+        animals.add(new Lion());
+        animals.add(new Bear());
+
+        AnimalOperations animalOperations = new AnimalOperations();
+
+        AnimalVisitor feedingVisitor = new FeedingVisitor();
+        AnimalVisitor playingVisitor = new PlayingVisitor();
+
+        animalOperations.performOperation(animals, feedingVisitor);
+        animalOperations.performOperation(animals, playingVisitor);
+    }
+}</pre></p>
+                    <p>
+                        Output:
+                    </p>
+<p><pre>Feeding Lion
+    Feeding Bear
+    Playing with Lion
+    Playing with Bear</pre></p>
+                    <p>
+                        Example in C#:
+                    </p>
+                    <p>
+                        Let's implement the same example in C#.
+                    </p>
+                    <p>
+                        First, let's create an interface that will define the method that will accept the Visitor.
+                    </p>
+<p><pre>public interface IAnimal {
+    void Accept(IAnimalVisitor visitor);
+}</pre></p>
+                    <p>
+                        Next, let's create some concrete classes that will implement the IAnimal interface.
+                    </p>
+<p><pre>public class Lion : IAnimal {
+
+    public void Accept(IAnimalVisitor visitor) {
+        visitor.Visit(this);
+    }
+}
+
+public class Bear : IAnimal {
+
+    public void Accept(IAnimalVisitor visitor) {
+        visitor.Visit(this);
+    }
+}</pre></p>
+                    <p>
+                        Now, let's create the Visitor interface that defines the operations we want to perform.
+                    </p>
+<p><pre>public interface Visitor {
+    void visit(Book book);
+    void visit(CD cd);
+    void visit(DVD dvd);
+}</pre></p>
+                    <p>
+                        We have defined three visit methods, one for each type of item in our library. Now, let's create concrete visitor classes that implement these operations:
+                    </p>
+<p><pre>public class DisplayVisitor implements Visitor {
+
+    @Override
+    public void visit(Book book) {
+        System.out.println("Displaying Book: " + book.getTitle() + ", by " + book.getAuthor());
+    }
+
+    @Override
+    public void visit(CD cd) {
+        System.out.println("Displaying CD: " + cd.getTitle() + ", by " + cd.getArtist());
+    }
+
+    @Override
+    public void visit(DVD dvd) {
+        System.out.println("Displaying DVD: " + dvd.getTitle() + ", directed by " + dvd.getDirector());
+    }
+}
+
+public class RentVisitor implements Visitor {
+
+    @Override
+    public void visit(Book book) {
+        System.out.println("Renting Book: " + book.getTitle() + ", by " + book.getAuthor());
+    }
+
+    @Override
+    public void visit(CD cd) {
+        System.out.println("Renting CD: " + cd.getTitle() + ", by " + cd.getArtist());
+    }
+
+    @Override
+    public void visit(DVD dvd) {
+        System.out.println("Renting DVD: " + dvd.getTitle() + ", directed by " + dvd.getDirector());
+    }
+}</pre></p>
+                    <p>
+                        Here, we have defined two concrete visitor classes: DisplayVisitor and RentVisitor. The DisplayVisitor class implements the visit methods to display the details of the items in the library, while the RentVisitor class implements the visit methods to rent the items in the library.
+                    </p>
+                    <p>
+                        Finally, let's see how we can use the visitor pattern to perform these operations on our library:
+                    </p>
+<p><pre>public class Library {
+    private List<Item> items;
+
+    public Library() {
+        items = new ArrayList&lt;&gt;();
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public void accept(Visitor visitor) {
+        for (Item item : items) {
+            item.accept(visitor);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Library library = new Library();
+        library.addItem(new Book("The Great Gatsby", "F. Scott Fitzgerald"));
+        library.addItem(new CD("Thriller", "Michael Jackson"));
+        library.addItem(new DVD("The Godfather", "Francis Ford Coppola"));
+        library.addItem(new Book("To Kill a Mockingbird", "Harper Lee"));
+
+        Visitor displayVisitor = new DisplayVisitor();
+        Visitor rentVisitor = new RentVisitor();
+
+        System.out.println("Displaying items:");
+        library.accept(displayVisitor);
+
+        System.out.println("\nRenting items:");
+        library.accept(rentVisitor);
+    }
+}</pre></p>
+                    <p>
+                        In the Main class, we create a new Library object and add some items to it. Then, we create two visitors: displayVisitor and rentVisitor. We first use the displayVisitor to display the details of the items in the library, and then use the rentVisitor to rent the items.
+                    </p>
+                    <p>
+                        The output of the program is as follows:
+                    </p>
+<p><pre>Displaying items:
+    Displaying Book: The Great Gatsby, by F. Scott Fitzgerald
+    Displaying CD: Thriller, by Michael Jackson
+    Displaying DVD: The Godfather, directed by Francis Ford Coppola
+    Displaying Book: To Kill a Mockingbird, by Harper Lee</pre></p>
+                    
+                    <!-- Desc: The Visitor Design Pattern is a behavioral design pattern that separates an algorithm from the objects it operates on. This pattern is used when we need to perform operations on a group of unrelated objects. In this blog post, we will explore the Visitor pattern in detail with examples in both Java and C#. We will create a hierarchy of animals in Java and a library of items in C#, and implement Visitor pattern to perform operations on these objects. We will also see how to use the Visitor pattern to perform multiple operations on these objects.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
