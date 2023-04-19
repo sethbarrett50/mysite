@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This blog post provides an example program for a web server using Spring Boot. The program is a REST API that allows users to create, read, update, and delete notes, and it uses Spring Boot, Spring Data JPA, and H2 as an in-memory database. The post guides the reader through creating the project, writing the Java code, building and running the application, and testing the REST API. In the next post, the author will cover using Spring Security to secure the Java web application.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This blog post provides an example program for a web server using Spring Boot. The program is a REST API that allows users to create, read, update, and delete notes, and it uses Spring Boot, Spring Data JPA, and H2 as an in-memory database. The post guides the reader through creating the project, writing the Java code, building and running the application, and testing the REST API. In the next post, the author will cover using Spring Security to secure the Java web application.">
+    <meta name="twitter:description" property="twitter:description"
+        content="This blog post provides an example program for a web server using Spring Boot. The program is a REST API that allows users to create, read, update, and delete notes, and it uses Spring Boot, Spring Data JPA, and H2 as an in-memory database. The post guides the reader through creating the project, writing the Java code, building and running the application, and testing the REST API. In the next post, the author will cover using Spring Security to secure the Java web application.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: April 19th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: April 19th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/04_19_23.webp" alt="java" width="250" height="445" />
+                    <h4>Apr 19th, 2023</h4>
+                    <div class='title'>Example Program for a Web Server Using Spring Boot</div>
+
+                    <p>
+                        In the previous post, we showed you how to use Spring Boot to simplify the deployment process for your Java application. In this post, we'll provide an example program for a web server using Spring Boot.
+                    </p>
+                    <p>
+                        This example program is a simple REST API that allows users to create, read, update, and delete notes. It uses Spring Boot, Spring Data JPA, and H2 as an in-memory database.
+                    </p>
+                    <h5>Step 1: Create a Spring Boot Project</h5>
+                    <p>
+                        To create a Spring Boot project for this example, you can use the Spring Initializr website or the Spring Tool Suite plugin for IntelliJ. Choose "Web" as the project type and select the following dependencies:
+                    </p>
+                    <p><ul>
+                        <li>Spring Web</li>
+                        <li>Spring Data JPA</li>
+                        <li>H2 Database</li>
+                    </ul></p>
+                    <h5>Step 2: Write Your Java Code</h5>
+                    <p>
+                        In the editor window, create a new package named "com.example.notes" and create the following classes:
+                    </p>
+<p><pre>package com.example.notes;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Note {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    private String title;
+    
+    private String content;
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+}
+</pre></p>
+<p><pre>package com.example.notes;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface NoteRepository extends CrudRepository<Note, Long> {
+    
+}</pre></p>
+<p><pre>package com.example.notes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/notes")
+public class NoteController {
+    
+    @Autowired
+    private NoteRepository noteRepository;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Note> getNoteById(@PathVariable("id") Long id) {
+        Note note = noteRepository.findById(id).orElse(null);
+        if (note == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(note);
+        }
+    }
+    
+    @PostMapping("")
+    public ResponseEntity<Note> createNote(@RequestBody Note note) {
+        Note savedNote = noteRepository.save(note);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedNote);
+    }
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestBody Note note) {
+        Note existingNote = noteRepository.findById(id).orElse(null);
+        if (existingNote == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            existingNote.setTitle(note.getTitle());
+            existingNote.setContent(note.getContent());
+            Note updatedNote = noteRepository.save(existingNote);
+            return ResponseEntity.ok(updatedNote);
+        }
+    }
+    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteNoteById(@PathVariable("id") Long id) {
+        noteRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+}
+</pre></p>
+                    <h5>Step 3: Build and Run Your Application</h5>
+                    <p>
+                        To build and run your Spring Boot application, open a terminal window and navigate to your project directory. Then run the following command:
+                    </p>
+                    <p><pre>mvn spring-boot:run</pre></p>
+                    <p>
+                        This will compile your Java code, download any necessary dependencies, and start your Spring Boot application. You can access the REST API endpoints by navigating to <a href="http://localhost:8080/notes">http://localhost:8080/notes</a> in your web browser.
+                    </p>
+                    <h5>Step 4: Test Your REST API</h5>
+                    <p>
+                        To test your REST API, you can use a tool like Postman or curl to make HTTP requests to the API endpoints. Here are some examples of HTTP requests you can make:
+                    </p>
+                    <p><ul>
+                        <li>GET /notes/{id} - Retrieves the note with the specified ID.</li>
+                        <li>POST /notes - Creates a new note with the specified title and content.</li>
+                        <li>PUT /notes/{id} - Updates the note with the specified ID with the new title and content.</li>
+                        <li>DELETE /notes/{id} - Deletes the note with the specified ID.</li>
+                    </ul></p>
+                    <p>
+                        Congratulations! You've successfully created a web server using Spring Boot and implemented a simple REST API for managing notes. In the next post, we'll explore how to use Spring Security to secure your Java web application.
+                    </p>
+
+                    
+                    <!-- Desc: This blog post provides an example program for a web server using Spring Boot. The program is a REST API that allows users to create, read, update, and delete notes, and it uses Spring Boot, Spring Data JPA, and H2 as an in-memory database. The post guides the reader through creating the project, writing the Java code, building and running the application, and testing the REST API. In the next post, the author will cover using Spring Security to secure the Java web application.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
