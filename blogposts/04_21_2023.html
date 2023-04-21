@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="                        In this blog post, you will learn how to use Hibernate to store and retrieve data from a MySQL database in your Java web application. Hibernate is an Object-Relational Mapping (ORM) tool that provides a simple and efficient way to map Java objects to relational database tables. This post will guide you through creating a MySQL database, adding Hibernate and MySQL dependencies, configuring Hibernate, creating a Note entity, creating a Note repository, and testing your Hibernate configuration. Once you complete this tutorial, you will have a good understanding of how to use Hibernate in your Java web application.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="                        In this blog post, you will learn how to use Hibernate to store and retrieve data from a MySQL database in your Java web application. Hibernate is an Object-Relational Mapping (ORM) tool that provides a simple and efficient way to map Java objects to relational database tables. This post will guide you through creating a MySQL database, adding Hibernate and MySQL dependencies, configuring Hibernate, creating a Note entity, creating a Note repository, and testing your Hibernate configuration. Once you complete this tutorial, you will have a good understanding of how to use Hibernate in your Java web application.">
+    <meta name="twitter:description" property="twitter:description"
+        content="                        In this blog post, you will learn how to use Hibernate to store and retrieve data from a MySQL database in your Java web application. Hibernate is an Object-Relational Mapping (ORM) tool that provides a simple and efficient way to map Java objects to relational database tables. This post will guide you through creating a MySQL database, adding Hibernate and MySQL dependencies, configuring Hibernate, creating a Note entity, creating a Note repository, and testing your Hibernate configuration. Once you complete this tutorial, you will have a good understanding of how to use Hibernate in your Java web application.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: April 21th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: April 21th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/04_21_23.webp" alt="java" width="250" height="445" />
+                    <h4>Apr 21th, 2023</h4>
+                    <div class='title'>Storing and Retrieving Data from a MySQL Database Using Hibernate</div>
+
+                    <p>
+                        In the previous post, we showed you how to use Spring Security to secure your Java web application. In this post, we'll explore how to use Hibernate to store and retrieve data from a MySQL database.
+                    </p>
+                    <p>
+                        Hibernate is a popular Object-Relational Mapping (ORM) tool for Java that provides a simple and efficient way to map Java objects to relational database tables. It also provides powerful query capabilities and caching mechanisms that can improve the performance of your database operations.
+                    </p>
+                    <h5>Step 1: Create a MySQL Database</h5>
+                    <p>
+                        To create a MySQL database for this example, you can use the MySQL Workbench application or the MySQL command line interface. Create a new database named "notes" with a user named "notesuser" and a password of your choice.
+                    </p>
+                    <h5>Step 2: Add Hibernate and MySQL Dependencies</h5>
+                    <p>
+                        To add Hibernate and MySQL dependencies to your project, you can add the following dependencies to your pom.xml file:
+                    </p>
+<p><pre><dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+</dependency></pre></p>
+                    <h5>Step 3: Configure Hibernate</h5>
+                    <p>
+                        To configure Hibernate, you can create a new properties file named "application.properties" in the "src/main/resources" directory and add the following lines:
+                    </p>
+<p><pre>spring.datasource.url=jdbc:mysql://localhost:3306/notes
+spring.datasource.username=notesuser
+spring.datasource.password=password
+spring.jpa.hibernate.ddl-auto=create</pre></p>
+                    <p>
+                        This configuration sets the database URL, username, and password, and specifies that Hibernate should create the necessary database tables automatically.
+                    </p>
+                    <h5>Step 4: Create a Note Entity</h5>
+                    <p>
+                        To create a Note entity, you can create a new Java class named "Note" in the "com.example.notes" package and add the following lines:
+                    </p>
+<p><pre>package com.example.notes;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Note {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    private String title;
+    
+    private String content;
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+}
+</pre></p>
+                    <p>
+                        This entity defines the database table structure for the "Note" object.
+                    </p>
+                    <h5>Step 5: Create a Note Repository</h5>
+                    <p>
+                        To create a Note repository, you can create a new Java interface named "NoteRepository" in the "com.example.notes" package and add the following lines:
+                    </p>
+<p><pre>package com.example.notes;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface NoteRepository extends CrudRepository<Note, Long> {
+
+}</pre></p>
+                    <p>
+                        This repository provides a set of methods for creating, reading, updating, and deleting Note objects in the database.
+                    </p>
+                    <h5>Step 6: Test Your Hibernate Configuration</h5>
+                    <p>
+                        To test your Hibernate configuration, you can modify the NoteController class from the previous post to use the NoteRepository for storing and retrieving Note objects from the database:
+                    </p>
+<p><pre>package com.example.notes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.httprequestMapping("/notes")
+public class NoteController {
+    @Autowired
+    private NoteRepository noteRepository;
+        
+    @GetMapping("/{id}")
+    public ResponseEntity<Note> getNoteById(@PathVariable("id") Long id) {
+        Note note = noteRepository.findById(id).orElse(null);
+        if (note == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(note);
+        }
+    }
+    
+    @PostMapping("")
+    public ResponseEntity<Note> createNote(@RequestBody Note note) {
+        Note savedNote = noteRepository.save(note);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedNote);
+    }
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestBody Note note) {
+        Note existingNote = noteRepository.findById(id).orElse(null);
+        if (existingNote == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            existingNote.setTitle(note.getTitle());
+            existingNote.setContent(note.getContent());
+            Note updatedNote = noteRepository.save(existingNote);
+            return ResponseEntity.ok(updatedNote);
+        }
+    }
+    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteNoteById(@PathVariable("id") Long id) {
+        noteRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    } </pre></p>
+                    <p>
+                        You can then run the application using the "mvn spring-boot:run" command and test the REST API endpoints to ensure that Note objects are being stored and retrieved from the database correctly.
+                    </p>
+                    <p>
+                        Congratulations! You've successfully used Hibernate to store and retrieve data from a MySQL database. In the next post, we'll explore how to use Thymeleaf to create dynamic HTML templates for your Java web application.
+                    </p>
+
+                    
+                    <!-- Desc:                         In this blog post, you will learn how to use Hibernate to store and retrieve data from a MySQL database in your Java web application. Hibernate is an Object-Relational Mapping (ORM) tool that provides a simple and efficient way to map Java objects to relational database tables. This post will guide you through creating a MySQL database, adding Hibernate and MySQL dependencies, configuring Hibernate, creating a Note entity, creating a Note repository, and testing your Hibernate configuration. Once you complete this tutorial, you will have a good understanding of how to use Hibernate in your Java web application.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
