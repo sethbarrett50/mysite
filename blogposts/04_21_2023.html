@@ -155,7 +155,7 @@ public class Note {
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface NoteRepository extends CrudRepository<Note, Long> {
+public interface NoteRepository extends CrudRepository&lt;Note, Long&gt; {
 
 }</pre></p>
                     <p>
@@ -175,7 +175,7 @@ public class NoteController {
     private NoteRepository noteRepository;
         
     @GetMapping("/{id}")
-    public ResponseEntity<Note> getNoteById(@PathVariable("id") Long id) {
+    public ResponseEntity&lt;Note&gt; getNoteById(@PathVariable("id") Long id) {
         Note note = noteRepository.findById(id).orElse(null);
         if (note == null) {
             return ResponseEntity.notFound().build();
@@ -185,13 +185,13 @@ public class NoteController {
     }
     
     @PostMapping("")
-    public ResponseEntity<Note> createNote(@RequestBody Note note) {
+    public ResponseEntity&lt;Note&gt; createNote(@RequestBody Note note) {
         Note savedNote = noteRepository.save(note);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedNote);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestBody Note note) {
+    public ResponseEntity&lt;Note&gt; updateNote(@PathVariable("id") Long id, @RequestBody Note note) {
         Note existingNote = noteRepository.findById(id).orElse(null);
         if (existingNote == null) {
             return ResponseEntity.notFound().build();
@@ -204,7 +204,7 @@ public class NoteController {
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteNoteById(@PathVariable("id") Long id) {
+    public ResponseEntity&lt;Void&gt; deleteNoteById(@PathVariable("id") Long id) {
         noteRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     } </pre></p>
