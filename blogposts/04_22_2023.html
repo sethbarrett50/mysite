@@ -73,10 +73,10 @@
                     <p>
                         To add Thymeleaf to your project, you can add the following dependency to your pom.xml file:
                     </p>
-<p><pre><dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-</dependency></pre></p>
+<p><pre>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+&lt;/dependency&gt;</pre></p>
                     <h5>Step 2: Create a Thymeleaf Template</h5>
                     <p>
                         To create a Thymeleaf template, you can create a new HTML file in the "src/main/resources/templates" directory and add the following lines:
@@ -143,7 +143,7 @@ public class NoteController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Note> getNoteById(@PathVariable("id") Long id) {
+    public ResponseEntity&lt;Note&gt; getNoteById(@PathVariable("id") Long id) {
         Note note = noteRepository.findById(id).orElse(null);
         if (note == null) {
             return ResponseEntity.notFound().build();
@@ -153,12 +153,12 @@ public class NoteController {
     }
     
     @PostMapping("")
-    public ResponseEntity<Note> createNote(@RequestBody Note note) {
+    public ResponseEntity&lt;Note&gt; createNote(@RequestBody Note note) {
     Note savedNote = noteRepository.save(note);
     return ResponseEntity.status(HttpStatus.CREATED).body(savedNote);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestBody Note note) {
+    public ResponseEntity&lt;Note&gt; updateNote(@PathVariable("id") Long id, @RequestBody Note note) {
         Note existingNote = noteRepository.findById(id).orElse(null);
         if (existingNote == null) {
             return ResponseEntity.notFound().build();
@@ -171,7 +171,7 @@ public class NoteController {
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteNoteById(@PathVariable("id") Long id) {
+    public ResponseEntity&lt;Void&gt; deleteNoteById(@PathVariable("id") Long id) {
         noteRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
@@ -202,7 +202,7 @@ public class NoteController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Note> getNoteById(@PathVariable("id") Long id) {
+    public ResponseEntity&lt;Note&gt; getNoteById(@PathVariable("id") Long id) {
         Note note = noteRepository.findById(id).orElse(null);
         if (note == null) {
             return ResponseEntity.notFound().build();
@@ -212,13 +212,13 @@ public class NoteController {
     }
     
     @PostMapping("")
-    public ResponseEntity<Note> createNote(@ModelAttribute Note note) {
+    public ResponseEntity&lt;Note&gt; createNote(@ModelAttribute Note note) {
         Note savedNote = noteRepository.save(note);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedNote);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @ModelAttribute Note note) {
+    public ResponseEntity&lt;Note&gt; updateNote(@PathVariable("id") Long id, @ModelAttribute Note note) {
         Note existingNote = noteRepository.findById(id).orElse(null);
         if (existingNote == null) {
             return ResponseEntity.notFound().build();
@@ -231,7 +231,7 @@ public class NoteController {
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteNoteById(@PathVariable("id") Long id) {
+    public ResponseEntity&lt;Void&gt; deleteNoteById(@PathVariable("id") Long id) {
         noteRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
