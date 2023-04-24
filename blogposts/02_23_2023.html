@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.9" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.9" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.9" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.1.0" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.0" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.0" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -96,8 +96,8 @@
 <p><pre>(defrule find-biggest-number
 (declare (salience 10))
 (number ?x)
-(not (number ?y&:(> ?y ?x)))
-=>
+(not (number ?y&:(&gt; ?y ?x)))
+=&gt;
 (printout t "The biggest number is " ?x crlf))
 
 (deftemplate number
@@ -126,6 +126,8 @@
                         If you are interested in learning more about CLIPs, there are many resources available online, including tutorials, forums, and online courses. 
                         Happy coding!
                     </p>
+
+                    <button><a href="./02_24_2023.html">Next Post in Series</a></button>
 
                     <!-- Desc: Learn about CLIPs (C Language Integrated Production System), a powerful rule-based programming language used in artificial intelligence and expert systems. Discover the basics of knowledge representation and inference in CLIPs, and follow step-by-step instructions to set up the coding environment on Windows. Explore a simple example of a first CLIPs program and learn how to build complex systems that require reasoning, inference, and decision-making capabilities. -->
                         

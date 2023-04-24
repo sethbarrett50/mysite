@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.9" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.9" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.9" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.1.0" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.0" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.0" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -78,8 +78,8 @@
                     <p>Here's an example of a simple rule that uses a pattern:</p>
 <p><pre>(defrule example-rule
 (person (name ?name) (age ?age))
-(test (> ?age 18))
-=>
+(test (&gt; ?age 18))
+=&gt;
 (printout t "Person " ?name " is older than 18." crlf))</pre></p>
                     <p>
                         In this example, the pattern "person" specifies that the rule is working with facts of the "person" template. 
@@ -97,9 +97,9 @@
                     </p>
 <p><pre>(defrule example-rule
 (person (name ?name) (age ?age) (gender ?gender))
-(and (test (> ?age 18))
+(and (test (&gt; ?age 18))
 (test (or (eq ?gender "Male") (eq ?gender "Female"))))
-=>
+=&gt;
 (printout t "Person " ?name " is older than 18 and is male or female." crlf))</pre></p>
                     <p>
                         In this example, the rule uses the "and" construct to specify that the rule will only be activated if both conditions are met: the value of "?age" is greater than 18 and the value of "?gender" is either "Male" or "Female".
@@ -111,6 +111,9 @@
                         Whether you're working on a natural language processing system or a decision support system, the ability to express complex conditions is critical for the success of your project. 
                         Happy coding!
                     </p>
+
+                    <button><a href="./02_24_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./02_26_2023.html">Next Post in Series</a></button>
 
 
                     <!-- Desc: In this blog post, we will dive into the world of CLIPS and explore the key features of using patterns and logical constructs in rules. With the help of examples, we will understand how patterns can be used to specify conditions and how logical constructs can be used to make complex decisions. Whether you're working on a natural language processing system or a decision support system, the ability to express complex conditions is crucial for the success of your project. Join us as we explore the power of patterns and logical constructs in CLIPS. -->

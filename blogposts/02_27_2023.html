@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.9" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.9" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.9" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.1.0" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.0" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.0" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -81,8 +81,8 @@
 <p><pre>(defmodule my-module)
 (defrule my-rule
 (person (name ?name) (age ?age))
-(test (> ?age 18))
-=>
+(test (&gt; ?age 18))
+=&gt;
 (printout t "Person " ?name " is older than 18." crlf))
 
 (assert (person (name "John") (age 30)))
@@ -112,6 +112,9 @@
                         Whether you're working on a large or small project, modules can help you keep your code organized and maintainable. 
                         Happy coding!
                     </p>
+
+                    <button><a href="./02_26_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./02_28_2023.html">Next Post in Series</a></button>
 
 
                     <!-- Desc: Learn how to use modules in CLIPS to organize and manage your code. Modules allow you to encapsulate your code into separate entities, making it easier to maintain and reuse. Discover how to create a module, add rules and data, and include a module in another program. Whether you're working on a large or small project, modules can help you keep your code organized and maintainable. Read on for more information on modules in CLIPS. -->

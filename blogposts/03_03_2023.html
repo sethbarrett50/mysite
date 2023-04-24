@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.9" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.9" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.9" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.1.0" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.0" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.0" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -95,7 +95,7 @@
 (user-preference ?user ?preference)
 (item-category ?item ?category)
 (test (eq ?preference ?category))
-=>
+=&gt;
 (assert (recommendation ?user ?item)))
 
 (defrule remove-recommendation
@@ -103,7 +103,7 @@
 (recommendation ?user ?item)
 (item-category ?item ?category)
 (test (eq ?preference ?category))
-=>
+=&gt;
 (retract (recommendation ?user ?item)))</pre></p>
                     <p>
                         In this example, the first rule "recommend" uses the "user-preference" and "item-category" facts to determine if a user's preference matches the category of a particular item. 
@@ -122,6 +122,8 @@
                         Thank you for following along with the CLIPS series on my blog. I hope you have found this series informative and helpful in your understanding of CLIPS and rule-based programming. 
                         If you have any questions or comments, please feel free to reach out!
                     </p>
+
+                    <button><a href="./03_02_2023.html">Previous Post in Series</a></button>
 
                     <!-- Desc: In this final post of the CLIPS series, we discuss the many ways that CLIPS can be used to create expert systems and more advanced programs. From medical diagnosis to financial advice, CLIPS provides a powerful tool for building rule-based systems. We also examine how CLIPS can be used to build a recommendation engine, providing an example of how rules can be written to make recommendations based on user preferences. Whether you are just starting with CLIPS or an experienced user, this post will provide valuable insights into the capabilities of this powerful rule-based programming tool. -->
                         

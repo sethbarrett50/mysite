@@ -35,9 +35,9 @@
 
 
     <!-- Update CSS Versions when changed -->
-    <link rel="stylesheet" href="../selfie.css?v=1.0.9" />
-    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.9" media="only screen and (max-width: 1000px)" />
-    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.9" media="only screen and (max-width: 600px)" />
+    <link rel="stylesheet" href="../selfie.css?v=1.1.0" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.0" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.0" media="only screen and (max-width: 600px)" />
 </head>
 
 <body>
@@ -80,8 +80,8 @@
                     <p>Here's an example of a simple rule that uses the inference engine:</p>
 <p><pre>(defrule example-rule
 (person (name ?name) (age ?age))
-(test (> ?age 18))
-=>
+(test (&gt; ?age 18))
+=&gt;
 (printout t "Person " ?name " is older than 18." crlf))
 
 (assert (person (name "John") (age 30)))
@@ -103,8 +103,8 @@
                     </p>
 <p><pre>(defrule example-rule
 (person (name ?name) (age ?age))
-(test (> ?age 18))
-=>
+(test (&gt; ?age 18))
+=&gt;
 (printout t "Person " ?name " is older than 18." crlf)
 (halt))
 
@@ -121,6 +121,9 @@
                         Whether you're working on a natural language processing system or a decision support system, the inference engine is a critical component for the success of your project. 
                         Happy coding!
                     </p>
+
+                    <button><a href="./02_25_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./02_27_2023.html">Next Post in Series</a></button>
 
 
                     <!-- Desc: In this blog post, we dive into the world of CLIPS and explore the power of the inference engine. Discover how the inference engine executes rules and updates the knowledge base, see examples of how to control its behavior, and learn why the inference engine is critical for the success of your project. Whether you're new to CLIPS or an experienced user, this post provides valuable insights into this important feature of this rule-based programming language. -->
