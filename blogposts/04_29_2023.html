@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Forms are a fundamental component of web applications, and Angular makes it easy to create and validate them using the built-in support for reactive forms. In this tutorial, you'll learn how to create a simple form and use validation to ensure the data is accurate.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Forms are a fundamental component of web applications, and Angular makes it easy to create and validate them using the built-in support for reactive forms. In this tutorial, you'll learn how to create a simple form and use validation to ensure the data is accurate.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Forms are a fundamental component of web applications, and Angular makes it easy to create and validate them using the built-in support for reactive forms. In this tutorial, you'll learn how to create a simple form and use validation to ensure the data is accurate.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: April 29th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.1.0" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.0" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.0" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: April 29th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/04_29_23.webp" alt="java" width="250" height="445" />
+                    <h4>Apr 29th, 2023</h4>
+                    <div class='title'>Creating and Validating Forms in Angular: A Step-by-Step Guide</div>
+
+                    <p>
+                        Forms are an essential part of most web applications. In Angular, forms are easy to create and use, thanks to the built-in support for reactive forms. In this tutorial, we'll explore how to create and use forms in Angular.
+                    </p>
+                    <h5>Creating a Form</h5>
+                    <p>
+                        To create a form in Angular, we need to use the "FormsModule" or "ReactiveFormsModule". The "FormsModule" is used for template-driven forms, while the "ReactiveFormsModule" is used for reactive forms. In this example, we'll use the "ReactiveFormsModule" to create a simple form.
+                    </p>
+                    <p>
+                        First, we need to import the "ReactiveFormsModule" module in the "AppModule":
+                    </p>
+<p><pre>import { ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+    imports: [BrowserModule, ReactiveFormsModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
+})
+export class AppModule {}</pre></p>
+                    <p>
+                        Next, we can create a new component called "FormComponent" and add a form to its template:
+                    </p>
+<p><pre>import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
+@Component({
+    selector: 'app-form',
+    template: `
+    &lt;form [formGroup]="form" (ngSubmit)="onSubmit()"&gt;
+        &lt;label&gt;
+        Name:
+        &lt;input type="text" formControlName="name" /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;label&gt;
+        Email:
+        &lt;input type="email" formControlName="email" /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    `,
+})
+export class FormComponent {
+    form = this.formBuilder.group({
+    name: '',
+    email: '',
+    });
+
+    constructor(private formBuilder: FormBuilder) {}
+
+    onSubmit() {
+    console.log(this.form.value);
+    }
+}</pre></p>
+                    <p>
+                        In this example, we're using the "FormBuilder" to create a new form group with two form controls: "name" and "email". We're also binding the form group to the "form" property of the component and using the "ngSubmit" directive to handle the form submission.
+                    </p>
+                    <h5>Using Form Validation</h5>
+                    <p>
+                        Forms are often used to collect data from users, and it's important to validate that data before submitting it to the server. In Angular, form validation is easy to implement using validators.
+                    </p>
+                    <p>
+                        Let's modify the "FormComponent" from the previous example to add some basic validation:
+                    </p>
+<p><pre>import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+    selector: 'app-form',
+    template: `
+    &lt;form [formGroup]="form" (ngSubmit)="onSubmit()"&gt;
+        &lt;label&gt;
+        Name:
+        &lt;input type="text" formControlName="name" /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;div *ngIf="name.invalid && (name.dirty || name.touched)"&gt;
+        &lt;div *ngIf="name.errors.required"&gt;Name is required.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;label&gt;
+        Email:
+        &lt;input type="email" formControlName="email" /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;div *ngIf="email.invalid && (email.dirty || email.touched)"&gt;
+        &lt;div *ngIf="email.errors.required"&gt;Email is required.&lt;/div&gt;
+        &lt;div *ngIf="email.errors.email"&gt;Email must be a valid email address.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    `,
+})
+export class FormComponent {
+    form = this.formBuilder.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    });</pre></p>
+                    <p>
+                        In this example, we're using the "Validators" module to add some basic validation to the "name" and "email" form controls. We're also using the "ngIf" directive to display error messages if the form controls are invalid and have been touched or modified.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this tutorial, we've explored how to create and use forms in Angular. Forms are an essential part of most web applications, and Angular provides a powerful and flexible way to create and validate forms using the "ReactiveFormsModule". In the next tutorial, we'll explore how to use routing in Angular to navigate between different views of our application.
+                    </p>
+
+                    <button><a href="./04_28_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./04_30_2023.html">Next Post in Series</a></button>
+                    
+                    <!-- Desc: Forms are a fundamental component of web applications, and Angular makes it easy to create and validate them using the built-in support for reactive forms. In this tutorial, you'll learn how to create a simple form and use validation to ensure the data is accurate.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
