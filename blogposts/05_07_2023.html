@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Learn how to use Angular's Forms module to create and validate forms in your application, including adding built-in and custom validators and displaying validation messages.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Learn how to use Angular's Forms module to create and validate forms in your application, including adding built-in and custom validators and displaying validation messages.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Learn how to use Angular's Forms module to create and validate forms in your application, including adding built-in and custom validators and displaying validation messages.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: May 7th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.1.1" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.1" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.1" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: May 7th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/05_07_23.webp" alt="java" width="250" height="445" />
+                    <h4>May 7th, 2023</h4>
+                    <div class='title'>Creating and Validating Forms with Angular's Forms Module</div>
+
+                    <p>
+                        Forms are a critical part of most web applications, and Angular provides a powerful forms module to make creating and validating forms easy. In this tutorial, we'll explore how to use Angular's forms module to create forms in your application.
+                    </p>
+                    <h5>Creating a Simple Form</h5>
+                    <p>
+                        To create a form in Angular, we can use the "FormsModule" or "ReactiveFormsModule" module. Let's start by creating a simple form that allows the user to enter their name and email address using the "FormsModule":
+                    </p>
+<p><pre>import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-form',
+    template: `
+    &lt;h1&gt;Simple Form&lt;/h1&gt;
+    &lt;form (ngSubmit)="onSubmit()"&gt;
+        &lt;label&gt;
+        Name:
+        &lt;input type="text" [(ngModel)]="name" name="name" required /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;label&gt;
+        Email:
+        &lt;input type="email" [(ngModel)]="email" name="email" required /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    `,
+})
+export class FormComponent {
+    name = '';
+    email = '';
+
+    onSubmit() {
+    console.log(`Name: ${this.name}, Email: ${this.email}`);
+    }
+}</pre></p>
+                    <p>
+                        In this example, we're using the "ngModel" directive to bind the input values to the "name" and "email" properties of the component. We're also using the "ngSubmit" directive to handle form submission.
+                    </p>
+                    <h5>Adding Validation</h5>
+                    <p>
+                        Now that we have our simple form set up, let's add validation to the form. We can use Angular's built-in validators or create custom validators to validate the form.
+                    </p>
+                    <p>
+                        Let's add required validation to the "name" and "email" fields:
+                    </p>
+<p><pre>import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+    selector: 'app-form',
+    template: `
+    &lt;h1&gt;Validated Form&lt;/h1&gt;
+    &lt;form [formGroup]="form" (ngSubmit)="onSubmit()"&gt;
+        &lt;label&gt;
+        Name:
+        &lt;input type="text" formControlName="name" /&gt;
+        &lt;/label&gt;
+        &lt;div *ngIf="name.invalid && (name.dirty || name.touched)"&gt;
+        &lt;div *ngIf="name.errors.required"&gt;Name is required&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br /&gt;
+        &lt;label&gt;
+        Email:
+        &lt;input type="email" formControlName="email" /&gt;
+        &lt;/label&gt;
+        &lt;div *ngIf="email.invalid && (email.dirty || email.touched)"&gt;
+        &lt;div *ngIf="email.errors.required"&gt;Email is required&lt;/div&gt;
+        &lt;div *ngIf="email.errors.email"&gt;Email is invalid&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br /&gt;
+        &lt;button type="submit" [disabled]="form.invalid"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    `,
+})
+export class FormComponent {
+    form = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    });
+
+    get name() {
+    return this.form.get('name');
+    }
+
+    get email() {
+    return this.form.get('email');
+    }
+
+    constructor(private fb: FormBuilder) {}
+
+    onSubmit() {
+    console.log(this.form.value);
+    }
+}</pre></p>
+                    <p>
+                        In this example, we're using the "FormBuilder" to create a form with the "name" and "email" fields. We're also using the "Validators" class to add required and email validation to the fields. We're also using the "formControlName" directive to bind the inputs to the corresponding form controls. We're using the "ngIf" directive to display validation messages when the fields are invalid and have been touched or are dirty.
+                    </p>
+                    <p>
+                        We're also using the "form.invalid" property to disable the submit button when the form is invalid.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this tutorial, we've explored how to use Angular's forms module to create and validate forms in your application. By using the "ngModel" and "ngSubmit" directives, we can create simple forms that capture user input. By using the "FormBuilder" and "Validators" class, we can add validation to the form and display validation messages. Angular's forms module provides a powerful and flexible way to create and validate forms in your application. In the next tutorial, we'll explore how to use Angular's HTTP module to submit data from a form to a server.
+                    </p>
+
+                    <button><a href="./05_06_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./05_08_2023.html">Next Post in Series</a></button>
+
+                    
+                    <!-- Desc: Learn how to use Angular's Forms module to create and validate forms in your application, including adding built-in and custom validators and displaying validation messages.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
