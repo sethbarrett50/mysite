@@ -152,27 +152,27 @@ import { HttpClient } from '@angular/common/http';
 @Component({
 selector: 'app-form',
 template: `
-    &lt;h1&lt;Submit Form&lt;/h1&lt;
-    &lt;form [formGroup]="form" (ngSubmit)="onSubmit()"&lt;
-    &lt;label&lt;
+    &lt;h1&gt;Submit Form&lt;/h1&gt;
+    &lt;form [formGroup]="form" (ngSubmit)="onSubmit()"&gt;
+    &lt;label&gt;
         Name:
-        &lt;input type="text" formControlName="name" /&lt;
-        &lt;/label&lt;
-        &lt;div *ngIf="name.invalid && (name.dirty || name.touched)"&lt;
-        &lt;div *ngIf="name.errors.required"&lt;Name is required&lt;/div&lt;
-        &lt;/div&lt;
-        &lt;br /&lt;
-        &lt;label&lt;
+        &lt;input type="text" formControlName="name" /&gt;
+        &lt;/label&gt;
+        &lt;div *ngIf="name.invalid && (name.dirty || name.touched)"&gt;
+        &lt;div *ngIf="name.errors.required"&gt;Name is required&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br /&gt;
+        &lt;label&gt;
         Email:
-        &lt;input type="email" formControlName="email" /&lt;
-        &lt;/label&lt;
-        &lt;div *ngIf="email.invalid && (email.dirty || email.touched)"&lt;
-        &lt;div *ngIf="email.errors.required"&lt;Email is required&lt;/div&lt;
-        &lt;div *ngIf="email.errors.email"&lt;Email is invalid&lt;/div&lt;
-        &lt;/div&lt;
-        &lt;br /&lt;
-        &lt;button type="submit" [disabled]="form.invalid"&lt;Submit&lt;/button&lt;
-    &lt;/form&lt;`,
+        &lt;input type="email" formControlName="email" /&gt;
+        &lt;/label&gt;
+        &lt;div *ngIf="email.invalid && (email.dirty || email.touched)"&gt;
+        &lt;div *ngIf="email.errors.required"&gt;Email is required&lt;/div&gt;
+        &lt;div *ngIf="email.errors.email"&gt;Email is invalid&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br /&gt;
+        &lt;button type="submit" [disabled]="form.invalid"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;`,
 })
 export class FormComponent {
     form = this.fb.group({
