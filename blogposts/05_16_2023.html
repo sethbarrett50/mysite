@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="ASP.NET Core Identity is a membership system that provides libraries and tools for managing user authentication, roles, and permissions. Adding authentication and authorization to your web application can significantly improve its security and user experience. In this post, we will explore how to add authentication and authorization to your web application using ASP.NET Core Identity. We will cover the key features of ASP.NET Core Identity, the steps to add authentication and authorization to your web application, and how to protect a route. By the end of this post, you will have a secure and scalable web application using ASP.NET Core Identity and C#.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="ASP.NET Core Identity is a membership system that provides libraries and tools for managing user authentication, roles, and permissions. Adding authentication and authorization to your web application can significantly improve its security and user experience. In this post, we will explore how to add authentication and authorization to your web application using ASP.NET Core Identity. We will cover the key features of ASP.NET Core Identity, the steps to add authentication and authorization to your web application, and how to protect a route. By the end of this post, you will have a secure and scalable web application using ASP.NET Core Identity and C#.">
+    <meta name="twitter:description" property="twitter:description"
+        content="ASP.NET Core Identity is a membership system that provides libraries and tools for managing user authentication, roles, and permissions. Adding authentication and authorization to your web application can significantly improve its security and user experience. In this post, we will explore how to add authentication and authorization to your web application using ASP.NET Core Identity. We will cover the key features of ASP.NET Core Identity, the steps to add authentication and authorization to your web application, and how to protect a route. By the end of this post, you will have a secure and scalable web application using ASP.NET Core Identity and C#.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: May 16th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.1.1" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.1" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.1" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: May 16th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/05_16_23.webp" alt="java" width="250" height="445" />
+                    <h4>May 16th, 2023</h4>
+                    <div class='title'>How to Add Authentication and Authorization to Your Web Application using ASP.NET Core Identity</div>
+
+                    <p>
+                        In this post, we will explore how to add authentication and authorization to your web application using ASP.NET Core Identity.
+                    </p>
+                    <h5>Step 1: Understanding ASP.NET Core Identity</h5>
+                    <p>
+                        ASP.NET Core Identity is a membership system that allows you to add authentication and authorization to your web applications. It provides a set of libraries and tools for managing user authentication, roles, and permissions.
+                    </p>
+                    <p>
+                        Some of the key features of ASP.NET Core Identity include:
+                    </p>
+                    <p><ul>
+                        <li>User Registration and Management: You can register new users and manage user accounts, including password resets and account lockouts.</li>
+                        <li>Authentication: You can authenticate users using a variety of methods, such as cookies, tokens, or external providers like Google or Facebook.</li>
+                        <li>Authorization: You can define roles and permissions for your application and control access to specific areas or features.</li>
+                        <li>Two-Factor Authentication: You can enable two-factor authentication for added security.</li>
+                        <li>Social Login: You can allow users to sign in with their social media accounts.</li>
+                    </ul></p>
+                    <p>Step 2: Adding Authentication and Authorization to Your Web Application</p>
+                    <p>
+                        To add authentication and authorization to your web application using ASP.NET Core Identity, follow these steps:
+                    </p>
+                    <p><ul>
+                        <li>Install the ASP.NET Core Identity package. In Visual Studio, right-click on your project and select "Manage NuGet Packages". Search for "Microsoft.AspNetCore.Identity" and install the package.</li>
+                        <li>Update your DbContext. Open your DbContext file and add the following code:</li>
+                    </ul></p>
+<p><pre>using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+public class ApplicationDbContext : IdentityDbContext
+{
+    public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)
+        : base(options)
+    {
+    }
+}</pre></p>         
+                    <p><ul>
+                        <li>Configure ASP.NET Core Identity. In the "Startup.cs" file, add the following code to the "ConfigureServices" method:</li>
+                    </ul></p>
+<p><pre>services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;
+    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+services.AddIdentity&lt;IdentityUser, IdentityRole&gt;()
+    .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()
+    .AddDefaultTokenProviders();
+
+services.Configure&lt;IdentityOptions&gt;(options =&gt;
+{
+    // Password settings
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequiredUniqueChars = 1;
+
+    // Lockout settings
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+
+    // User settings
+    options.User.AllowedUserNameCharacters =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    options.User.RequireUniqueEmail = true;
+
+    // SignIn settings
+    options.SignIn.RequireConfirmedEmail = false;
+    options.SignIn.RequireConfirmedPhoneNumber = false;
+});
+</pre></p>
+                        <p><ul>
+                        <li>Add authentication middleware. In the "Startup.cs" file, add the following code to the "Configure" method:</li>
+                        </ul></p>
+                        <p><pre>app.UseAuthentication();</pre></p>
+                        <p><ul>
+                        <li>Add authorization middleware. In the "Startup.cs" file, add the following code to the "Configure" method:</li>
+                        </ul></p>
+                        <p><pre>app.UseAuthorization();</pre></p>
+                        <p><ul>
+                        <li>Create a user. You can create a user using the UserManager class. For example, to create a new user, you can add the following code to your controller:</li>
+                        </ul></p>
+<p><pre>var user = new IdentityUser { UserName = "testuser", Email = "testuser@example.com" };
+    var result = await _userManager.CreateAsync(user, "P@ssw0rd");</pre></p>
+                        <p><ul>
+                        <li>Protect a route. To protect a route, you can add the [Authorize] attribute to your controller or action method. For example:</li>
+                    </ul></p>
+<p><pre>[Authorize]
+public IActionResult Secret()
+{
+    return View();
+}</pre></p>
+                    <p>Congratulations! You have successfully added authentication and authorization to your web application using ASP.NET Core Identity and C#.</p>
+                    <p>
+                        In this series, we covered the basics of C# programming, how to set up a coding environment on Windows, how to create a simple web application using ASP, how to deploy your web application to a hosting provider, and how to add authentication and authorization using ASP.NET Core Identity.
+                    </p>
+                    <p>
+                        ASP.NET Core is a powerful framework for building web applications using C#. It provides a wide range of tools and libraries for web development, making it easy to build scalable, maintainable, and secure applications.
+                    </p>
+                    <p>
+                        We hope this series has helped you get started with C# web programming using ASP.NET Core. If you have any questions or feedback, feel free to leave a comment below. Happy coding!
+                    </p>
+
+                    <button><a href="./05_15_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: ASP.NET Core Identity is a membership system that provides libraries and tools for managing user authentication, roles, and permissions. Adding authentication and authorization to your web application can significantly improve its security and user experience. In this post, we will explore how to add authentication and authorization to your web application using ASP.NET Core Identity. We will cover the key features of ASP.NET Core Identity, the steps to add authentication and authorization to your web application, and how to protect a route. By the end of this post, you will have a secure and scalable web application using ASP.NET Core Identity and C#.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
