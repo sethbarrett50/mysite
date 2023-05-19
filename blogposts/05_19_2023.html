@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In the previous post, we covered MongoDB's document model and how to manipulate data. In this post, we'll introduce you to MongoDB's aggregation framework, a powerful tool for performing complex data analysis operations. The aggregation pipeline is the core of the framework, which consists of stages that perform specific operations on the data. The pipeline uses various aggregation operators such as $match, $project, $group, $sort, $limit, $skip, and $lookup to transform and process data. We'll walk you through an example aggregation pipeline and show you how to use the most commonly used operators. By the end of this post, you'll have a good understanding of MongoDB's aggregation framework and how to leverage it for data analysis. Stay tuned for the next post, where we'll explore MongoDB's indexing capabilities for query performance optimization.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In the previous post, we covered MongoDB's document model and how to manipulate data. In this post, we'll introduce you to MongoDB's aggregation framework, a powerful tool for performing complex data analysis operations. The aggregation pipeline is the core of the framework, which consists of stages that perform specific operations on the data. The pipeline uses various aggregation operators such as $match, $project, $group, $sort, $limit, $skip, and $lookup to transform and process data. We'll walk you through an example aggregation pipeline and show you how to use the most commonly used operators. By the end of this post, you'll have a good understanding of MongoDB's aggregation framework and how to leverage it for data analysis. Stay tuned for the next post, where we'll explore MongoDB's indexing capabilities for query performance optimization.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In the previous post, we covered MongoDB's document model and how to manipulate data. In this post, we'll introduce you to MongoDB's aggregation framework, a powerful tool for performing complex data analysis operations. The aggregation pipeline is the core of the framework, which consists of stages that perform specific operations on the data. The pipeline uses various aggregation operators such as $match, $project, $group, $sort, $limit, $skip, and $lookup to transform and process data. We'll walk you through an example aggregation pipeline and show you how to use the most commonly used operators. By the end of this post, you'll have a good understanding of MongoDB's aggregation framework and how to leverage it for data analysis. Stay tuned for the next post, where we'll explore MongoDB's indexing capabilities for query performance optimization.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: May 19th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.1.1" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.1.1" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.1.1" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: May 19th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/05_19_23.webp" alt="java" width="250" height="445" />
+                    <h4>May 19th, 2023</h4>
+                    <div class='title'>Performing Complex Data Analysis with MongoDB's Aggregation Framework</div>
+
+                    <p>
+                        In the previous post, we covered MongoDB's document model and showed you how to work with data in MongoDB. In this post, we'll introduce MongoDB's aggregation framework, which allows you to perform complex data analysis operations on your MongoDB data.
+                    </p>
+                    <h5>Aggregation Pipeline</h5>
+                    <p>
+                        The aggregation framework in MongoDB uses a pipeline architecture to process data. The pipeline consists of stages, where each stage performs a specific operation on the data. The output of one stage becomes the input for the next stage in the pipeline.
+                    </p>
+                    <p>
+                        The aggregation pipeline can be divided into three parts: input stage, processing stage, and output stage. The input stage is where you specify the input data for the pipeline. The processing stage is where you perform the data analysis operations, and the output stage is where you define the output format for the pipeline.
+                    </p>
+                    <h5>Aggregation Operators</h5>
+                    <p>
+                        MongoDB's aggregation framework provides a wide range of operators for data analysis operations. Here are some of the most commonly used operators:
+                    </p>
+                    <p><ul>
+                        <li><code>$match</code>: Filters the documents in the input data based on a specified condition.</li>
+                        <li><code>$project</code>: Reshapes the documents in the input data by including, excluding, or renaming fields.</li>
+                        <li><code>$group</code>: Groups the documents in the input data based on a specified key and performs aggregation operations on each group.</li>
+                        <li><code>$sort</code>: Sorts the documents in the input data based on a specified field.</li>
+                        <li><code>$limit</code>: Limits the number of documents in the output data.</li>
+                        <li><code>$skip</code>: Skips a specified number of documents in the input data.</li>
+                        <li><code>$lookup</code>: Performs a left outer join between two collections based on a specified condition.</li>
+                    </ul></p>
+                    <h5>Example Aggregation Pipeline</h5>
+                    <p>
+                        Let's walk through an example aggregation pipeline to illustrate how the pipeline works. Suppose we have a collection called <code>orders</code> that contains documents with the following fields:
+                    </p>
+<p><pre>{
+    _id: ObjectId("615c9fb63fcb8607b91a12a4"),
+    customer: "John",
+    product: "TV",
+    price: 500,
+    date: ISODate("2021-10-06T00:00:00Z")
+}</pre></p>
+                    <p>
+                        Here's an example aggregation pipeline that calculates the total revenue by customer:
+                    </p>
+<p><pre>db.orders.aggregate([
+    { $group: { _id: "$customer", total: { $sum: "$price" } } },
+    { $sort: { total: -1 } }
+])</pre></p>
+                    <p>
+                        This pipeline has two stages: <code>$group</code> and <code>$sort</code>. The <code>$group</code> stage groups the documents by the <code>customer</code> field and calculates the sum of the price field for each group. The output of the <code>$group</code> stage is a document with two fields: <code>_id</code> (the grouping key) and <code>total</code> (the sum of the price field for the group). The <code>$sort</code> stage sorts the output data in descending order based on the <code>total</code> field.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we introduced MongoDB's aggregation framework, which allows you to perform complex data analysis operations on your MongoDB data. We walked through the aggregation pipeline and the most commonly used aggregation operators. We also provided an example aggregation pipeline to illustrate how the pipeline works. In the next post, we'll cover MongoDB's indexing capabilities, which allow you to optimize your queries for performance. Stay tuned!
+                    </p>
+
+                    <button><a href="./05_18_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./05_20_2023.html">Next Post in Series</a></button>
+
+                    
+                    <!-- Desc: In the previous post, we covered MongoDB's document model and how to manipulate data. In this post, we'll introduce you to MongoDB's aggregation framework, a powerful tool for performing complex data analysis operations. The aggregation pipeline is the core of the framework, which consists of stages that perform specific operations on the data. The pipeline uses various aggregation operators such as $match, $project, $group, $sort, $limit, $skip, and $lookup to transform and process data. We'll walk you through an example aggregation pipeline and show you how to use the most commonly used operators. By the end of this post, you'll have a good understanding of MongoDB's aggregation framework and how to leverage it for data analysis. Stay tuned for the next post, where we'll explore MongoDB's indexing capabilities for query performance optimization.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
