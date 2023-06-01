@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This blog post is the second in a series on Go programming. It covers the basics of Go syntax and some of its unique features, including creating a 'Hello, World!' program, declaring and initializing variables with types, and defining and using structs. By the end of the post, readers will have a basic understanding of Go's syntax and some of its most distinctive features.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This blog post is the second in a series on Go programming. It covers the basics of Go syntax and some of its unique features, including creating a 'Hello, World!' program, declaring and initializing variables with types, and defining and using structs. By the end of the post, readers will have a basic understanding of Go's syntax and some of its most distinctive features.">
+    <meta name="twitter:description" property="twitter:description"
+        content="This blog post is the second in a series on Go programming. It covers the basics of Go syntax and some of its unique features, including creating a 'Hello, World!' program, declaring and initializing variables with types, and defining and using structs. By the end of the post, readers will have a basic understanding of Go's syntax and some of its most distinctive features.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 1st, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 1st, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_01_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 1st, 2023</h4>
+                    <div class='title'>Go Programming Basics: Syntax and Unique Features</div>
+
+                    <p>
+                        Welcome back to our Go programming series! In our previous post, we set up our coding environment on Linux and created a Go workspace. Now that we're all set up, let's dive into the basics of Go syntax and some of its unique features.
+                    </p>
+                    <h5>Hello, World!</h5>
+                    <p>
+                        Let's start by creating our first Go program, the traditional "Hello, World!" program. Open up your favorite text editor and create a new file called <code>hello.go</code> in your workspace directory <code>($HOME/go/src)</code>:
+                    </p>
+<p><pre>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}</pre></p>
+                    <p>
+                        The first line <code>package main</code> tells Go that this is a main package, and the entry point of the program will be the <code>main()</code> function.
+                    </p>
+                    <p>
+                        Next, we import the <code>fmt</code> package, which provides functions for formatting text.
+                    </p>
+                    <p>
+                        In our <code>main()</code> function, we call the <code>Println()</code> function from the <code>fmt</code> package to print the string "Hello, World!" to the console.
+                    </p>
+                    <p>
+                        Now, let's compile and run our program. Open up a terminal, navigate to your workspace directory, and run the following commands:
+                    </p>
+<p><pre>cd $HOME/go/src
+go build hello.go
+./hello</pre></p>
+                    <p>
+                        The <code>go build</code> command compiles our Go code into an executable binary file, which we can run using the <code>./hello</code> command.
+                    </p>
+                    <h5>Variables && Types</h5>
+                    <p>
+                        Go is a statically typed language, which means that variables must be declared with their type at compile time. Here's an example of declaring and initializing variables in Go:
+                    </p>
+<p><pre>package main
+
+import "fmt"
+
+func main() {
+    var a int = 5
+    var b float64 = 3.14
+    var c string = "Hello, World!"
+    
+    fmt.Printf("a = %d\n", a)
+    fmt.Printf("b = %f\n", b)
+    fmt.Printf("c = %s\n", c)
+}</pre></p>
+                    <p>
+                        In this example, we declare three variables <code>a</code>, <code>b</code>, and <code>c</code> with their types <code>int</code>, <code>float64</code>, and <code>string</code>, respectively. We initialize each variable with a value.
+                    </p>
+                    <p>
+                        We use the <code>fmt.Printf()</code> function to print the value of each variable. The <code>%d</code>, <code>%f</code>, and <code>%s</code> format specifiers tell Go to print the values in decimal, float, and string formats, respectively.
+                    </p>
+                    <h5>Structs</h5>
+                    <p>
+                        In Go, structs are used to define custom data types. Here's an example of defining and using a struct:
+                    </p>
+<p><pre>package main
+
+import "fmt"
+
+type person struct {
+    name string
+    age int
+}
+
+func main() {
+    p := person{name: "John", age: 30}
+    fmt.Printf("Name: %s, Age: %d\n", p.name, p.age)
+}</pre></p>
+                    <p>
+                        In this example, we define a <code>person</code> struct with two fields: <code>name</code> of type <code>string</code> and <code>age</code> of type <code>int</code>.
+                    </p>
+                    <p>
+                        We create a new <code>person</code> struct instance <code>p</code> and initialize its <code>name</code> and <code>age</code> fields using the syntax <code>p := person{name: "John", age: 30}</code>.
+                    </p>
+                    <p>
+                        We use the <code>fmt.Printf()</code> function to print the <code>name</code> and <code>age</code> fields of the <code>p</code> struct instance.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we covered the basics of Go syntax and some of its unique features, including variables and types, and structs. In the next post, we'll dive deeper into Go's control structures and functions. Stay tuned!
+                    </p>
+
+                    <button><a href="./05_31_2023.html">Previous Post in Series</a></button>
+                    <button><a href="./06_02_2023.html">Next Post in Series</a></button>
+
+                    
+                    <!-- Desc: This blog post is the second in a series on Go programming. It covers the basics of Go syntax and some of its unique features, including creating a "Hello, World!" program, declaring a'd initializin' variables with types, and defining and using structs. By the end of the post, readers will have a basic understanding of Go's syntax and some of its most distinctive features.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
