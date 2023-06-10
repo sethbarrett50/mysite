@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This detailed blog post is part two in an ongoing series on Julia—a dynamic programming language particularly suited for high-performance scientific computing. It provides a deep-dive into the syntax of Julia, discussing similarities with other languages such as Python, MATLAB, and R, and provides readers with an understanding of key elements including variables, basic operations, control flow, and function definitions. The post also sheds light on some unique features that distinguish Julia from other programming languages, including multiple dispatch, just-in-time (JIT) compilation, metaprogramming, and interoperability. Guiding readers through writing their first program—a simple factorial calculator—the post serves as a hands-on primer to get started with Julia. By the conclusion, readers will have an essential grounding in Julia programming, setting the stage for more advanced topics to be discussed in subsequent posts.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This detailed blog post is part two in an ongoing series on Julia—a dynamic programming language particularly suited for high-performance scientific computing. It provides a deep-dive into the syntax of Julia, discussing similarities with other languages such as Python, MATLAB, and R, and provides readers with an understanding of key elements including variables, basic operations, control flow, and function definitions. The post also sheds light on some unique features that distinguish Julia from other programming languages, including multiple dispatch, just-in-time (JIT) compilation, metaprogramming, and interoperability. Guiding readers through writing their first program—a simple factorial calculator—the post serves as a hands-on primer to get started with Julia. By the conclusion, readers will have an essential grounding in Julia programming, setting the stage for more advanced topics to be discussed in subsequent posts.">
+    <meta name="twitter:description" property="twitter:description"
+        content="This detailed blog post is part two in an ongoing series on Julia—a dynamic programming language particularly suited for high-performance scientific computing. It provides a deep-dive into the syntax of Julia, discussing similarities with other languages such as Python, MATLAB, and R, and provides readers with an understanding of key elements including variables, basic operations, control flow, and function definitions. The post also sheds light on some unique features that distinguish Julia from other programming languages, including multiple dispatch, just-in-time (JIT) compilation, metaprogramming, and interoperability. Guiding readers through writing their first program—a simple factorial calculator—the post serves as a hands-on primer to get started with Julia. By the conclusion, readers will have an essential grounding in Julia programming, setting the stage for more advanced topics to be discussed in subsequent posts.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 10th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 10th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_10_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 10th, 2023</h4>
+                    <div class='title'>Julia Programming Essentials: Syntax, Unique Features, and Your First Program</div>
+
+                    <p>
+                        Welcome back to our series on Julia, a powerful and flexible programming language designed for high-performance scientific computing. In the previous post, we discussed setting up a coding environment for Julia on Linux. In this post, we will explore Julia's syntax, unique features, and guide you through writing your first Julia program.
+                    </p>
+                    <h5>Julia Syntax Basics</h5>
+                    <p>
+                        Julia's syntax is designed to be easy to read and write, with similarities to other programming languages like Python, MATLAB, and R. Here are some key syntax elements:
+                    </p>
+                    <h5>Variables and Basic Operations</h5>
+                    <p>Assigning values to variables in Julia is simple:</p>
+<p><pre>x = 42
+y = 3.14</pre></p>
+                    <p>Basic arithmetic operations can be performed using standard symbols:</p>
+<p><pre>sum = x + y
+difference = x - y
+product = x * y
+quotient = x / y
+remainder = x % y</pre></p>
+                    <h5>Control Flow</h5>
+                    <p>Conditional statements and loops are fundamental to any programming language, and Julia is no exception.</p>
+                    <p><b>If-elseif-else statements:</b></p>
+<p><pre>x = 42
+
+if x &lt; 0
+    println("x is negative")
+elseif x &gt; 0
+    println("x is positive")
+else
+    println("x is zero")
+end</pre></p>
+                    <p><b>For loops:</b></p>
+<p><pre>for i in 1:5
+    println(i)
+end</pre></p>
+                    <p><b>While loops:</b></p>
+<p><pre>i = 1
+while i &lt;= 5
+    println(i)
+    i += 1
+end</pre></p>
+                    <h5>Functions</h5>
+                    <p>Functions are crucial building blocks of any program. In Julia, you can define functions like this:</p>
+<p><pre>function add(x, y)
+    return x + y
+end
+
+result = add(3, 4) # result = 7</pre></p>
+                    <h5>Unique Features</h5>
+                    <p>Julia has several unique features that set it apart from other programming languages:</p>
+                    <ol>
+                        <li><b>Multiple dispatch</b>: Julia allows you to define function behavior across many combinations of argument types. This enables writing more generic and flexible code.</li>
+                        <li><b>Just-In-Time (JIT) compilation</b>: Julia compiles code just before execution, leading to significant performance improvements.</li>
+                        <li><b>Metaprogramming</b>: Julia supports metaprogramming, allowing you to create powerful macros and manipulate code as data.</li>
+                        <li><b>Interoperability</b>: Julia seamlessly integrates with C and Fortran libraries and can call Python functions using the PyCall package.</li>
+                    </ol>
+                    <h5>Your First Julia Program</h5>
+                    <p>Now that you are familiar with Julia's syntax and unique features, let's write a simple program that calculates the factorial of a given number:</p>
+<p><pre>function factorial(n)
+    if n == 0
+        return 1
+    else
+        return n * factorial(n - 1)
+    end
+end
+
+println("Enter a positive integer:")
+number = parse(Int, readline())
+
+if number &lt; 0
+    println("Invalid input. Please enter a positive integer.")
+else
+    println("The factorial of $number is $(factorial(number))")
+end</pre></p>
+                    <p>This program defines a recursive function <code>factorial</code> to compute the factorial of a given number. It then takes input from the user, checks if it's valid, and prints the factorial of the input number.</p>
+                    <h5>Conclusion</h5>
+                    <p>In this post, we've covered the essentials of Julia programming, including its syntax and unique features. You should now be equipped with the knowledge to write simple Julia programs. In the next post, we will delve into more advanced topics, such as using Julia for data science and machine learning, to further enhance your skills.</p>
+                    <p>Stay tuned and happy coding!</p>
+
+                    
+                    <button><a href="./06_11_2023.html">Next Post in Series</a></button>
+                    <button><a href="./06_09_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: This detailed blog post is part two in an ongoing series on Julia—a dynamic programming language particularly suited for high-performance scientific computing. It provides a deep-dive into the syntax of Julia, discussing similarities with other languages such as Python, MATLAB, and R, and provides readers with an understanding of key elements including variables, basic operations, control flow, and function definitions. The post also sheds light on some unique features that distinguish Julia from other programming languages, including multiple dispatch, just-in-time (JIT) compilation, metaprogramming, and interoperability. Guiding readers through writing their first program—a simple factorial calculator—the post serves as a hands-on primer to get started with Julia. By the conclusion, readers will have an essential grounding in Julia programming, setting the stage for more advanced topics to be discussed in subsequent posts.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
