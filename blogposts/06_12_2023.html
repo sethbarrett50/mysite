@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="The fourth entry in our blog series on Julia, this post dives deep into advanced machine learning concepts with a focus on deep learning and natural language processing (NLP). The post offers hands-on examples of building a neural network using Flux.jl to classify handwritten digits and leveraging TextAnalysis.jl to handle NLP tasks. It walks readers through the entire process, including installing packages, defining neural networks, optimizing and training models, preprocessing text documents, and conducting text classification. This post serves as a comprehensive guide to harnessing the potential of Julia in tackling complex machine learning problems, setting the stage for continuous exploration of Julia's robust ecosystem for scientific computing, data science, and machine learning.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="The fourth entry in our blog series on Julia, this post dives deep into advanced machine learning concepts with a focus on deep learning and natural language processing (NLP). The post offers hands-on examples of building a neural network using Flux.jl to classify handwritten digits and leveraging TextAnalysis.jl to handle NLP tasks. It walks readers through the entire process, including installing packages, defining neural networks, optimizing and training models, preprocessing text documents, and conducting text classification. This post serves as a comprehensive guide to harnessing the potential of Julia in tackling complex machine learning problems, setting the stage for continuous exploration of Julia's robust ecosystem for scientific computing, data science, and machine learning.">
+    <meta name="twitter:description" property="twitter:description"
+        content="The fourth entry in our blog series on Julia, this post dives deep into advanced machine learning concepts with a focus on deep learning and natural language processing (NLP). The post offers hands-on examples of building a neural network using Flux.jl to classify handwritten digits and leveraging TextAnalysis.jl to handle NLP tasks. It walks readers through the entire process, including installing packages, defining neural networks, optimizing and training models, preprocessing text documents, and conducting text classification. This post serves as a comprehensive guide to harnessing the potential of Julia in tackling complex machine learning problems, setting the stage for continuous exploration of Julia's robust ecosystem for scientific computing, data science, and machine learning.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 12th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 12th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_12_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 12th, 2023</h4>
+                    <div class='title'>Advanced Machine Learning with Julia: Deep Learning with Flux.jl and Natural Language Processing with TextAnalysis.jl</div>
+
+                    <p>
+                        Welcome back to our series on Julia, the high-performance programming language designed for scientific computing. So far, we've covered setting up a coding environment, discussed Julia's syntax and unique features, and explored using Julia for data science tasks. In this post, we'll dive into advanced machine learning topics, focusing on deep learning with Flux.jl and natural language processing (NLP) with TextAnalysis.jl.
+                    </p>
+                    <h5>Deep Learning with Flux.jl</h5>
+                    <p>
+                        Flux.jl is a powerful and user-friendly package for deep learning in Julia. It features lightweight syntax, GPU support, and a flexible design. To get started, install Flux.jl and its dependencies using the following command:
+                    </p>
+<p><pre>using Pkg
+Pkg.add("Flux")</pre></p>
+                    <p>Next, import the package by running:</p>
+                    <p><pre>using Flux</pre></p>
+                    <h5>Building a Simple Neural Network</h5>
+                    <p>
+                        With Flux.jl, you can easily define, train, and evaluate neural networks. Let's create a simple feedforward neural network for classifying handwritten digits using the famous MNIST dataset:
+                    </p>
+<p><pre>using Flux, Flux.Data.MNIST
+
+# Load the data
+images = Flux.Data.MNIST.images()
+labels = Flux.Data.MNIST.labels()
+
+# Preprocess the data
+X = hcat(float.(reshape.(images, :))...) |&gt; gpu
+Y = onehotbatch(labels, 0:9) |&gt; gpu
+
+# Split the data into training and validation sets
+train_indices = 1:50_000
+val_indices = 50_001:length(labels)
+
+X_train = X[:, train_indices]
+Y_train = Y[:, train_indices]
+X_val = X[:, val_indices]
+Y_val = Y[:, val_indices]
+
+# Define the neural network
+model = Chain(
+    Dense(28^2, 128, relu),
+    Dense(128, 64, relu),
+    Dense(64, 10),
+    softmax
+) |&gt; gpu
+
+# Define the loss function
+loss(x, y) = Flux.Losses.logitcrossentropy(model(x), y)
+
+# Define the optimizer
+opt = ADAM()
+
+# Train the model
+dataset = Flux.Data.DataLoader((X_train, Y_train), batchsize=128, shuffle=true)
+Flux.train!(loss, Flux.params(model), dataset, opt)
+
+# Evaluate the model
+accuracy(x, y) = mean(onecold(cpu(model(x))) .== onecold(cpu(y)))
+println("Validation accuracy: $(accuracy(X_val, Y_val))")</pre></p>
+                    <p>
+                        This example demonstrates how to load and preprocess the MNIST dataset, define a simple feedforward neural network, train the network using the ADAM optimizer, and evaluate the model on a validation set.
+                    </p>
+                    <h5>Natural Language Processing with TextAnalysis.jl</h5>
+                    <p>
+                        TextAnalysis.jl is a comprehensive package for NLP tasks in Julia. It offers tools for text preprocessing, feature extraction, and text classification. To get started, install TextAnalysis.jl using the following command:
+                    </p>
+<p><pre>using Pkg
+Pkg.add("TextAnalysis")</pre></p>
+                    <p>Next, import the package:</p>
+                    <p><pre>using TextAnalysis</pre></p>
+                    <h5>Text Preprocessing and Feature Extraction</h5>
+                    <p>Let's preprocess a corpus of text documents and extract features using TextAnalysis.jl:</p>
+<p><pre>using TextAnalysis
+
+# Create a corpus of documents
+docs = ["This is the first document.",
+        "This is the second document.",
+        "And this is the third one.",
+        "Is this the first document?"]
+
+corpus = Corpus(StringDocument.(docs))
+
+# Preprocess the text
+prepare!(corpus, strip_whitespace | strip_punctuation | strip_case)
+
+# Create a term-document matrix
+term_doc_matrix = DocumentTermMatrix(corpus)
+
+# Convert the term-document matrix to a matrix of term frequencies
+tf_matrix = tf(term_doc_matrix, normalize=true)
+
+# Apply the inverse document frequency (IDF) transformation
+idf_transformer = fit!(IDF(), tf_matrix)
+tfidf_matrix = transform(idf_transformer, tf_matrix)
+
+# Convert the matrix to a dense format
+dense_tfidf_matrix = Matrix(tfidf_matrix)</pre></p>
+                    <p>
+                        This example demonstrates how to create a corpus of documents, preprocess the text, create a term-document matrix, compute term frequencies, and apply the inverse document frequency (IDF) transformation. The resulting matrix contains the TF-IDF features for each document.
+                    </p>
+                    <h5>Text Classification</h5>
+<p><pre>using TextAnalysis, Random
+
+# Prepare the training data
+labels = ["A", "A", "B", "A"]
+data = [(docs[i], labels[i]) for i in 1:length(labels)]
+
+# Shuffle the data
+Random.seed!(1234)
+shuffle!(data)
+
+# Split the data into training and validation sets
+train_data, val_data = data[1:3], data[4:end]
+
+# Create the text classifier
+classifier = NaiveBayesClassifier()
+
+# Train the classifier
+fit!(classifier, train_data)
+
+# Evaluate the classifier
+correct = 0
+for (doc, label) in val_data
+    prediction = classify(classifier, doc)
+    if prediction == label
+        correct += 1
+    end
+end
+
+accuracy = correct / length(val_data)
+println("Validation accuracy: $accuracy")</pre></p>
+                    <p>
+                        This example shows how to prepare labeled text data, train a Naive Bayes classifier using TextAnalysis.jl, and evaluate the classifier on a validation set.
+                    </p>
+                   <h5>Conclusion</h5>
+                   <p>
+                        In this post, we explored advanced machine learning topics in Julia, including deep learning with Flux.jl and natural language processing with TextAnalysis.jl. These packages provide powerful tools for tackling complex machine learning problems and help you unlock the full potential of Julia in your projects.
+                   </p>
+                   <p>
+                    With the knowledge you've gained from this series, you should be well-equipped to explore Julia's rich ecosystem and use it to solve a wide range of problems in scientific computing, data science, and machine learning. Keep learning, and happy coding!
+                   </p>
+                    
+                    <button><a href="./06_13_2023.html">Next Post in Series</a></button>
+                    <button><a href="./06_11_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: The fourth entry in our blog series on Julia, this post dives deep into advanced machine learning concepts with a focus on deep learning and natural language processing (NLP). The post offers hands-on examples of building a neural network using Flux.jl to classify handwritten digits and leveraging TextAnalysis.jl to handle NLP tasks. It walks readers through the entire process, including installing packages, defining neural networks, optimizing and training models, preprocessing text documents, and conducting text classification. This post serves as a comprehensive guide to harnessing the potential of Julia in tackling complex machine learning problems, setting the stage for continuous exploration of Julia's robust ecosystem for scientific computing, data science, and machine learning.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
