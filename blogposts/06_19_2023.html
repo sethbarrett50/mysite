@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="The newest post in our Julia series delves into the realm of time series forecasting, with a detailed examination of the TimeSeries.jl and ARCHModels.jl packages. Beginning with an overview of the diverse array of packages available for handling time series data in Julia, the post focuses on the functionalities provided by TimeSeries.jl for handling, transforming, and summarizing time series data. It also provides insights into volatility forecasting using ARCHModels.jl. Readers will learn how to handle time series data effectively and how to estimate and forecast volatility, thus making well-informed decisions based on historical data trends. As with prior posts in this series, it closes by encouraging continued learning and exploration of this powerful programming language.
+">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="The newest post in our Julia series delves into the realm of time series forecasting, with a detailed examination of the TimeSeries.jl and ARCHModels.jl packages. Beginning with an overview of the diverse array of packages available for handling time series data in Julia, the post focuses on the functionalities provided by TimeSeries.jl for handling, transforming, and summarizing time series data. It also provides insights into volatility forecasting using ARCHModels.jl. Readers will learn how to handle time series data effectively and how to estimate and forecast volatility, thus making well-informed decisions based on historical data trends. As with prior posts in this series, it closes by encouraging continued learning and exploration of this powerful programming language.
+">
+    <meta name="twitter:description" property="twitter:description"
+        content="The newest post in our Julia series delves into the realm of time series forecasting, with a detailed examination of the TimeSeries.jl and ARCHModels.jl packages. Beginning with an overview of the diverse array of packages available for handling time series data in Julia, the post focuses on the functionalities provided by TimeSeries.jl for handling, transforming, and summarizing time series data. It also provides insights into volatility forecasting using ARCHModels.jl. Readers will learn how to handle time series data effectively and how to estimate and forecast volatility, thus making well-informed decisions based on historical data trends. As with prior posts in this series, it closes by encouraging continued learning and exploration of this powerful programming language.
+">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 19th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 19th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_19_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 19th, 2023</h4>
+                    <div class='title'>Time Series Forecasting in Julia: Introducing the TimeSeries.jl and ARCHModels.jl Packages</div>
+
+                    <p>
+                        Welcome back to our series on Julia, the high-performance programming language designed for scientific computing. We have covered various aspects of the language, including setting up a coding environment, syntax and unique features, data science, machine learning techniques, optimization strategies, working with databases, building web applications, web scraping, and data visualization. In this post, we will focus on time series forecasting in Julia, exploring how to analyze and forecast time series data using the TimeSeries.jl and ARCHModels.jl packages.
+                    </p>
+                    <h5>Overview of Time Series Packages in Julia</h5>
+                    <p>
+                        There are several packages available in Julia for working with time series data, including:
+                    </p>
+                    <ol>
+                        <li><b>TimeSeries.jl</b>: A package for working with time series data, providing functionality for handling, transforming, and summarizing time series data.</li>
+                        <li><b>ARCHModels.jl</b>: A package for estimating and forecasting volatility in time series data using autoregressive conditional heteroskedasticity (ARCH) models.</li>
+                        <li><b>StateSpaceModels.jl</b>: A package for state space modeling and the Kalman filter, which can be used for time series forecasting.</li>
+                    </ol>
+                    <p>
+                        In this post, we will focus on using TimeSeries.jl for handling time series data and ARCHModels.jl for volatility forecasting.
+                    </p>
+                    <h5>Working with Time Series Data using TimeSeries.jl</h5>
+                    <p>To get started with TimeSeries.jl, you first need to install the package:</p>
+<p><pre>import Pkg
+Pkg.add("TimeSeries")</pre></p>
+                    <p>
+                        Now, you can create a <code>TimeArray</code> object to represent time series data:
+                    </p>
+<p><pre>using TimeSeries
+
+dates = Date(2020, 1, 1):Date(2020, 12, 31)
+values = rand(length(dates))
+    
+time_series = TimeArray(dates, values)</pre></p>
+                    <p>
+                        The <code>TimeArray</code> object provides various functions for handling time series data, such as:
+                    </p>
+                    <ul>
+                        <li><code>timestamp</code>: Get the time indices of the time series.</li>
+                        <li><code>values</code>: Get the values of the time series.</li>
+                        <li><code>lag</code>: Compute the lagged values of the time series.</li>
+                        <li><code>lead</code>: Compute the lead values of the time series.</li>
+                        <li><code>moving</code>: Compute the moving average, median, or other summary statistics of the time series.</li>
+                    </ul>
+                    <p>
+                        For example, to compute the 5-day moving average of a time series, you can use the following code:
+                    </p>
+                    <p><pre>moving_average = moving(time_series, 5, mean)</pre></p>
+                    <h5>Volatility Forecasting using ARCHModels.jl</h5>
+                    <p>
+                        To forecast volatility in time series data using ARCH models, you can use the ARCHModels.jl package. First, let's install the package:
+                    </p>
+<p><pre>import Pkg
+Pkg.add("ARCHModels")</pre></p>
+                    <p>
+                        Now, you can estimate an ARCH or GARCH model using the <code>fit</code> function:
+                    </p>
+<p><pre>using ARCHModels
+
+# Estimate a GARCH(1, 1) model
+garch_model = fit(GARCH{1, 1}, values)</pre></p>
+                    <p>
+                        Once you have estimated the model, you can use the <code>forecast</code> function to forecast volatility:
+                    </p>
+<p><pre># Forecast volatility for the next 10 days
+volatility_forecast = forecast(garch_model, 10)</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we introduced time series forecasting in Julia using the TimeSeries.jl and ARCHModels.jl packages. We demonstrated how to handle time series data using TimeSeries.jl and how to forecast volatility using ARCHModels.jl. With these tools, you can efficiently analyze and forecast time series data, enabling you to make better decisions based on historical patterns and trends.
+                    </p>
+                    <p>
+                        As we continue our series on Julia, stay tuned for more posts covering a wide range of topics, from statistical analysis and machine learning to advanced numerical computing and scientific applications. We will delve into various aspects of the language and its packages, equipping you with the knowledge and skills required to tackle complex problems in your domain.
+                    </p>
+                    <p>
+                        In the upcoming posts, we will explore other popular packages and techniques, such as the use of the Flux.jl package for deep learning, the JuMP.jl package for mathematical optimization, and the DifferentialEquations.jl package for solving differential equations. These topics will further enhance your understanding of Julia and its capabilities, enabling you to become a proficient Julia programmer.
+                    </p>
+                    <p>
+                        Keep learning, and happy coding!
+                    </p>
+                    
+                    
+
+                    
+                    <button><a href="./06_20_2023.html">Next Post in Series</a></button>
+                    <button><a href="./06_18_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: The newest post in our Julia series delves into the realm of time series forecasting, with a detailed examination of the TimeSeries.jl and ARCHModels.jl packages. Beginning with an overview of the diverse array of packages available for handling time series data in Julia, the post focuses on the functionalities provided by TimeSeries.jl for handling, transforming, and summarizing time series data. It also provides insights into volatility forecasting using ARCHModels.jl. Readers will learn how to handle time series data effectively and how to estimate and forecast volatility, thus making well-informed decisions based on historical data trends. As with prior posts in this series, it closes by encouraging continued learning and exploration of this powerful programming language.
+  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
