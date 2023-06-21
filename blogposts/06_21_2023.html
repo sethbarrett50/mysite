@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This blog post provides an introduction to mathematical optimization in Julia through the exploration of the JuMP.jl package, a popular tool in the Julia ecosystem for formulating and solving linear, mixed-integer, quadratic, and nonlinear optimization problems. The tutorial covers the installation of JuMP.jl and an optimization solver, the creation of an optimization model, and the definition of variables, constraints, and objective functions. The post also demonstrates how to solve the optimization problem and retrieve the optimal objective value and variable values. The writer promises future posts exploring further optimization techniques in Julia, underscoring the mission to equip readers with the knowledge to tackle complex problems using this high-performance programming language.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This blog post provides an introduction to mathematical optimization in Julia through the exploration of the JuMP.jl package, a popular tool in the Julia ecosystem for formulating and solving linear, mixed-integer, quadratic, and nonlinear optimization problems. The tutorial covers the installation of JuMP.jl and an optimization solver, the creation of an optimization model, and the definition of variables, constraints, and objective functions. The post also demonstrates how to solve the optimization problem and retrieve the optimal objective value and variable values. The writer promises future posts exploring further optimization techniques in Julia, underscoring the mission to equip readers with the knowledge to tackle complex problems using this high-performance programming language.">
+    <meta name="twitter:description" property="twitter:description"
+        content="This blog post provides an introduction to mathematical optimization in Julia through the exploration of the JuMP.jl package, a popular tool in the Julia ecosystem for formulating and solving linear, mixed-integer, quadratic, and nonlinear optimization problems. The tutorial covers the installation of JuMP.jl and an optimization solver, the creation of an optimization model, and the definition of variables, constraints, and objective functions. The post also demonstrates how to solve the optimization problem and retrieve the optimal objective value and variable values. The writer promises future posts exploring further optimization techniques in Julia, underscoring the mission to equip readers with the knowledge to tackle complex problems using this high-performance programming language.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 21st, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 21st, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_21_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 21st, 2023</h4>
+                    <div class='title'>Mathematical Optimization in Julia: An Introduction to JuMP.jl</div>
+
+                    <p>
+                        Welcome back to our series on Julia, the high-performance programming language designed for scientific computing. We have covered various aspects of the language, including setting up a coding environment, syntax and unique features, data science, machine learning techniques, optimization strategies, working with databases, building web applications, web scraping, data visualization, time series forecasting, and deep learning. In this post, we will focus on mathematical optimization in Julia, introducing the JuMP.jl package and demonstrating how to formulate and solve optimization problems using this powerful and flexible framework.
+                    </p>
+                    <h5>Overview of Mathematical Optimization Packages in Julia</h5>
+                    <p>
+                        There are several mathematical optimization packages available in Julia, including:
+                    </p>
+                    <ol>
+                        <li><b>JuMP.jl</b>: A high-level modeling language for mathematical optimization that allows you to easily formulate and solve linear, mixed-integer, quadratic, and nonlinear optimization problems.</li>
+                        <li><b>Convex.jl</b>: A package for disciplined convex programming, which is a subset of mathematical optimization that focuses on convex optimization problems.</li>
+                        <li><b>Optim.jl</b>: A package for general-purpose optimization that provides algorithms for unconstrained and constrained optimization, as well as line search and trust region methods.</li>
+                    </ol>
+                    <p>
+                        In this post, we will focus on JuMP.jl, which is one of the most popular and widely used mathematical optimization libraries in the Julia ecosystem.
+                    </p>
+                    <h5>Getting Started with JuMP.jl</h5>
+                    <p>To get started with JuMP.jl, you first need to install the package:</p>
+<p><pre>import Pkg
+Pkg.add("JuMP")</pre></p>
+                    <p>In addition to JuMP.jl, you will also need to install an optimization solver that is compatible with JuMP.jl. Some popular solvers include:</p>
+                    <ul>
+                        <li>GLPK.jl for linear programming and mixed-integer linear programming.</li>
+                        <li>Ipopt.jl for nonlinear programming.</li>
+                        <li>Gurobi.jl for linear, quadratic, and mixed-integer programming (requires a Gurobi license).</li>
+                    </ul>
+                    <p>For this post, we will use GLPK.jl as the optimization solver:</p>
+                    <p><pre>Pkg.add("GLPK")</pre></p>
+                    <p>
+                        Now, you can use the <code>Model</code> function to create an optimization model and the <code>@variable</code>, <code>@constraint</code>, and <code>@objective</code> macros to define variables, constraints, and the objective function:
+                    </p>
+<p><pre>using JuMP, GLPK
+
+# Create an optimization model
+model = Model(GLPK.Optimizer)
+
+# Define variables
+@variable(model, x &gt;= 0)
+@variable(model, y &gt;= 0)
+
+# Define constraints
+@constraint(model, x + y &lt;= 1)
+
+# Define the objective function
+@objective(model, Max, x + 2 * y)</pre></p>
+                    <p>
+                        In this example, we create a linear programming model with two variables <code>x</code> and <code>y</code>, subject to a single constraint <code>x + y &lt;= 1</code>. The objective is to maximize the expression <code>x + 2 * y</code>.
+                    </p>
+                    <h5>Solving the Optimization Problem</h5>
+                    <p>To solve the optimization problem, you can use the <code>optimize!</code> function:</p>
+                    <p><pre>optimize!(model)</pre></p>
+                    <p>
+                        After solving the problem, you can use the <code>objective_value</code> and <code>value</code> functions to obtain the optimal objective value and variable values:
+                    </p>
+<p><pre># Get the optimal objective value
+optimal_objective = objective_value(model)
+
+# Get the optimal variable values
+optimal_x = value(x)
+optimal_y = value(y)
+
+println("Optimal objective value: ", optimal_objective)
+println("Optimal x: ", optimal_x)
+println("Optimal y: ", optimal_y)</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we introduced mathematical optimization in Julia using the JuMP.jl package. We demonstrated how to formulate and solve optimization problems using this powerful and flexible framework. With JuMP.jl, you can easily model and solve a wide range of optimization problems, from linear and mixed-integer programming to quadratic and nonlinear programming, leveraging the high-performance capabilities of Julia.
+                    </p>
+                    <p>
+                        As we continue our series on Julia, stay tuned for more posts covering a wide range of topics, from scientific applications and advanced numerical computing to parallel processing and distributed computing. We will explore various packages and techniques, equipping you with the knowledge and skills required to tackle complex problems in your domain.
+                    </p>
+                    <p>
+                        In upcoming posts, we will delve deeper into optimization techniques, discussing topics such as constraint programming with ConstraintSolver.jl, global optimization with BlackBoxOptim.jl, and multi-objective optimization with MOEAFramework.jl. These topics will further enhance your understanding of Julia and its capabilities, enabling you to become a proficient Julia programmer.
+                    </p>
+                    <p>
+                        Keep learning, and happy coding!
+                    </p>
+                    
+                    <button><a href="./06_22_2023.html">Next Post in Series</a></button>
+                    <button><a href="./06_20_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: This blog post provides an introduction to mathematical optimization in Julia through the exploration of the JuMP.jl package, a popular tool in the Julia ecosystem for formulating and solving linear, mixed-integer, quadratic, and nonlinear optimization problems. The tutorial covers the installation of JuMP.jl and an optimization solver, the creation of an optimization model, and the definition of variables, constraints, and objective functions. The post also demonstrates how to solve the optimization problem and retrieve the optimal objective value and variable values. The writer promises future posts exploring further optimization techniques in Julia, underscoring the mission to equip readers with the knowledge to tackle complex problems using this high-performance programming language.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
