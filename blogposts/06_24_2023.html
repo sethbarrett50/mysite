@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This insightful blog post explores the topic of optimization and root-finding in Julia, specifically utilizing the NLsolve.jl package. The post provides a detailed introduction to the package, presenting its application in solving nonlinear equations and optimization problems. The blog illustrates these concepts through coding examples and explanations, offering insights on how to convert optimization issues into root-finding problems. Additionally, it demonstrates how to customize the solver in accordance with the specific needs of the user. The article wraps up with a hint of what future posts will encompass, ensuring a continued exploration of advanced numerical computing. This post is an essential read for anyone seeking to expand their understanding of optimization and root-finding in Julia.
+">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This insightful blog post explores the topic of optimization and root-finding in Julia, specifically utilizing the NLsolve.jl package. The post provides a detailed introduction to the package, presenting its application in solving nonlinear equations and optimization problems. The blog illustrates these concepts through coding examples and explanations, offering insights on how to convert optimization issues into root-finding problems. Additionally, it demonstrates how to customize the solver in accordance with the specific needs of the user. The article wraps up with a hint of what future posts will encompass, ensuring a continued exploration of advanced numerical computing. This post is an essential read for anyone seeking to expand their understanding of optimization and root-finding in Julia.
+">
+    <meta name="twitter:description" property="twitter:description"
+        content="This insightful blog post explores the topic of optimization and root-finding in Julia, specifically utilizing the NLsolve.jl package. The post provides a detailed introduction to the package, presenting its application in solving nonlinear equations and optimization problems. The blog illustrates these concepts through coding examples and explanations, offering insights on how to convert optimization issues into root-finding problems. Additionally, it demonstrates how to customize the solver in accordance with the specific needs of the user. The article wraps up with a hint of what future posts will encompass, ensuring a continued exploration of advanced numerical computing. This post is an essential read for anyone seeking to expand their understanding of optimization and root-finding in Julia.
+">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 24th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 24th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_24_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 24th, 2023</h4>
+                    <div class='title'>Optimization and Root-Finding in Julia: An Introduction to NLsolve.jl</div>
+
+                    <p>
+                        Welcome back to our series on Julia, the high-performance programming language designed for scientific computing. We have covered various aspects of the language, including setting up a coding environment, syntax and unique features, data science, machine learning techniques, optimization strategies, working with databases, building web applications, web scraping, data visualization, time series forecasting, deep learning, mathematical optimization, scientific applications, and advanced numerical computing. In this post, we will focus on optimization and root-finding in Julia, introducing the NLsolve.jl package and demonstrating how to solve nonlinear equations and optimization problems using this powerful and flexible framework.
+                    </p>
+                    <h5>Overview of Optimization and Root-Finding Packages in Julia</h5>
+                    <p>
+                        There are several optimization and root-finding packages available in Julia, including:
+                    </p>
+                    <ol>
+                        <li><b>NLsolve.jl</b>: A package for solving nonlinear equations and systems of nonlinear equations.</li>
+                        <li><b>Optim.jl</b>: A package for optimization problems, including unconstrained and constrained optimization, as well as linear and quadratic programming.</li>
+                        <li><b>JuMP.jl</b>: A modeling language for mathematical optimization, which we have covered in a previous post.</li>
+                    </ol>
+                    <p>
+                        In this post, we will focus on NLsolve.jl, which provides efficient algorithms for solving nonlinear equations and systems of nonlinear equations.
+                    </p>
+                    <h5>Getting Started with NLsolve.jl</h5>
+                    <p>To get started with NLsolve.jl, you first need to install the package:</p>
+<p><pre>import Pkg
+Pkg.add("NLsolve")</pre></p>
+                    <p>
+                        Now, you can use the <code>nlsolve</code> function to solve a system of nonlinear equations:
+                    </p>
+<p><pre>using NLsolve
+
+# Define the system of equations
+function f!(F, x)
+    F[1] = x[1]^2 + x[2]^2 - 1
+    F[2] = x[1] * x[2] - 0.5
+end
+
+# Define the initial guess
+x0 = [0.5, 0.5]
+
+# Solve the system of equations
+solution = nlsolve(f!, x0)
+
+# Extract the solution
+x = solution.zero</pre></p>
+                    <p>
+                        In this example, we solve the system of nonlinear equations <code>x₁² + x₂² = 1</code> and <code>x₁ * x₂ = 0.5</code>. The <code>f!</code> function defines the system of equations, and the <code>nlsolve</code> function solves the system using a default algorithm. The resulting solution can be extracted using the <code>zero</code> field of the solution object.
+                    </p>
+                    <h5>Solving Optimization Problems with NLsolve.jl</h5>
+                    <p>
+                        Although NLsolve.jl is primarily designed for solving nonlinear equations, it can also be used to solve optimization problems by reformulating them as root-finding problems. In this example, we will demonstrate how to solve an unconstrained optimization problem:
+                    </p>
+<p><pre>using NLsolve
+
+# Define the objective function and its gradient
+function f(x)
+    return (x[1] - 1)^2 + (x[2] - 2)^2
+end
+
+function g!(G, x)
+    G[1] = 2 * (x[1] - 1)
+    G[2] = 2 * (x[2] - 2)
+end
+
+# Define the initial guess
+x0 = [0.0, 0.0]
+
+# Solve the optimization problem
+solution = nlsolve(g!, x0)
+
+# Extract the solution
+x_opt = solution.zero</pre></p>
+                    <p>
+                        In this example, we solve the unconstrained optimization problem <code>minimize (x₁ - 1)² + (x₂ - 2)²</code>. The <code>f</code> function defines the objective function, and the <code>g!</code> function defines its gradient. The optimization problem is reformulated as a root-finding problem by finding the zeros of the gradient. The <code>nlsolve</code> function is then used to solve the root-finding problem, and the resulting solution is the optimal point for the original optimization problem.
+                    </p>
+                    <h5>Customizing the Solver</h5>
+                    <p>
+                        NLsolve.jl provides several options for customizing the solver, such as choosing a different algorithm or adjusting the convergence tolerance. In this example, we demonstrate how to customize the solver using the <code>method</code> and <code>xtol</code> options:
+                    </p>
+<p><pre>using NLsolve
+
+# Define the system of equations
+function f!(F, x)
+    F[1] = x[1]^2 + x[2]^2 - 1
+    F[2] = x[1] * x[2] - 0.5
+end
+
+# Define the initial guess
+x0 = [0.5, 0.5]
+
+# Customize the solver
+solver_options = NLsolve.NewtonTrustRegion(; xtol=1e-10)
+
+# Solve the system of equations with custom options
+solution = nlsolve(f!, x0, method=solver_options)
+
+# Extract the solution
+x = solution.zero</pre></p>
+                    <p>
+                        In this example, we customize the solver by using the Newton trust region algorithm with a convergence tolerance of <code>1e-10</code>. The <code>NLsolve.NewtonTrustRegion</code> function creates a solver with the specified options, which is then passed to the <code>nlsolve</code> function using the <code>method</code> argument.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we introduced optimization and root-finding in Julia using the NLsolve.jl package. We demonstrated how to solve nonlinear equations and systems of nonlinear equations, as well as how to solve optimization problems by reformulating them as root-finding problems. NLsolve.jl provides efficient algorithms for solving a wide range of problems in scientific computing, engineering, data science, and other disciplines that require nonlinear equation solving and optimization.
+                    </p>
+                    <p>
+                        As we continue our series on Julia, stay tuned for more posts covering a wide range of topics, from parallel processing and distributed computing to high-performance computing and scientific applications. We will explore various packages and techniques, equipping you with the knowledge and skills required to tackle complex problems in your domain.
+                    </p>
+                    <p>
+                        In upcoming posts, we will delve deeper into advanced numerical computing, discussing topics such as statistical modeling with GLM.jl, numerical integration with QuadGK.jl, and machine learning with Flux.jl. These topics will further enhance your understanding of Julia and its capabilities, enabling you to become a proficient Julia programmer.
+                    </p>
+                    <p>
+                        Keep learning, and happy coding!
+                    </p>
+
+                    
+                    <button><a href="./06_25_2023.html">Next Post in Series</a></button>
+                    <button><a href="./06_23_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: This insightful blog post explores the topic of optimization and root-finding in Julia, specifically utilizing the NLsolve.jl package. The post provides a detailed introduction to the package, presenting its application in solving nonlinear equations and optimization problems. The blog illustrates these concepts through coding examples and explanations, offering insights on how to convert optimization issues into root-finding problems. Additionally, it demonstrates how to customize the solver in accordance with the specific needs of the user. The article wraps up with a hint of what future posts will encompass, ensuring a continued exploration of advanced numerical computing. This post is an essential read for anyone seeking to expand their understanding of optimization and root-finding in Julia.
+  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
