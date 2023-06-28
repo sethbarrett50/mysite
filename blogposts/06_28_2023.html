@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="This blog post serves as a comprehensive guide to data manipulation in Julia using the DataFrames.jl package, a versatile toolset for handling tabular data. The post delves into the essentials of installing the package, creating DataFrames, selecting and filtering data, as well as performing data transformations and aggregations. By leveraging the power of the DataFrames.jl package, the post showcases how users can handle complex data analysis tasks with ease and efficiency. As part of an ongoing series on Julia, this post continues to equip readers with the knowledge and skills required to exploit the full potential of the Julia programming language.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="This blog post serves as a comprehensive guide to data manipulation in Julia using the DataFrames.jl package, a versatile toolset for handling tabular data. The post delves into the essentials of installing the package, creating DataFrames, selecting and filtering data, as well as performing data transformations and aggregations. By leveraging the power of the DataFrames.jl package, the post showcases how users can handle complex data analysis tasks with ease and efficiency. As part of an ongoing series on Julia, this post continues to equip readers with the knowledge and skills required to exploit the full potential of the Julia programming language.">
+    <meta name="twitter:description" property="twitter:description"
+        content="This blog post serves as a comprehensive guide to data manipulation in Julia using the DataFrames.jl package, a versatile toolset for handling tabular data. The post delves into the essentials of installing the package, creating DataFrames, selecting and filtering data, as well as performing data transformations and aggregations. By leveraging the power of the DataFrames.jl package, the post showcases how users can handle complex data analysis tasks with ease and efficiency. As part of an ongoing series on Julia, this post continues to equip readers with the knowledge and skills required to exploit the full potential of the Julia programming language.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: June 28th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: June 28th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/06_28_23.webp" alt="go" width="250" height="445" />
+                    <h4>June 28th, 2023</h4>
+                    <div class='title'>Data Manipulation with DataFrames.jl: An Introduction to Julia's Data Wrangling Toolkit</div>
+
+                    <p>
+                        Welcome back to our series on Julia, the high-performance programming language designed for scientific computing. We have covered various aspects of the language, including setting up a coding environment, syntax and unique features, data science, machine learning techniques, optimization strategies, working with databases, building web applications, web scraping, data visualization, time series forecasting, deep learning, mathematical optimization, scientific applications, advanced numerical computing, optimization and root-finding with NLsolve.jl, statistical modeling with GLM.jl, numerical integration with QuadGK.jl, and machine learning with Flux.jl. In this post, we will focus on data manipulation in Julia, introducing the DataFrames.jl package and demonstrating how to perform various data wrangling tasks using this powerful and flexible framework.
+                    </p>
+                    <h5>Overview of Data Manipulation Packages in Julia</h5>
+                    <p>
+                        There are several data manipulation packages available in Julia, including:
+                    </p>
+                    <ol>
+                        <li>
+                            <b>DataFrames.jl</b>: A package for working with tabular data, providing a flexible and efficient DataFrame type, along with various functions for data manipulation, aggregation, and transformation.
+                        </li>
+                        <li>
+                            <b>CSV.jl</b>: A package for reading and writing CSV files, offering high-performance parsing and serialization with support for various CSV dialects and file encodings.
+                        </li>
+                        <li>
+                            <b>SQLite.jl</b>: A package for working with SQLite databases, providing a simple and efficient interface for querying and modifying SQLite databases using SQL statements.
+                        </li>
+                    </ol>
+                    <p>
+                        In this post, we will focus on DataFrames.jl, which provides a comprehensive toolkit for data manipulation and transformation in Julia.
+                    </p>
+                    <h5>Getting Started with DataFrames.jl</h5>
+                    <p>To get started with DataFrames.jl, you first need to install the package:</p>
+<p><pre>import Pkg
+Pkg.add("DataFrames")</pre></p>
+                    <p>
+                        Now, you can create a simple DataFrame:
+                    </p>
+<p><pre>using DataFrames
+
+# Create a DataFrame with three columns
+df = DataFrame(A = 1:5, B = ["A", "B", "C", "D", "E"], C = rand(5))
+
+# Display the DataFrame
+println(df)</pre></p>
+                    <p>
+                        In this example, we create a DataFrame with three columns: A, B, and C. The A column contains integer values from 1 to 5, the B column contains string values, and the C column contains random floating-point numbers.
+                    </p>
+                    <h5>Selecting and Filtering Data</h5>
+                    <p>DataFrames.jl provides various functions for selecting and filtering data:</p>
+<p><pre>using DataFrames
+
+# Select columns A and C
+selected_columns = df[:, [:A, :C]]
+
+# Filter rows where A is greater than 2
+filtered_rows = df[df.A .&gt; 2, :]
+
+# Select column B and filter rows where A is greater than 2
+selected_filtered = df[df.A .&gt; 2, :B]</pre></p>
+                    <p>
+                        In this example, we demonstrate how to select specific columns, filter rows based on a condition, and combine selection and filtering operations.
+                    </p>
+                    <h5>Data Transformation and Aggregation</h5>
+                    <p>DataFrames.jl also provides functions for data transformation and aggregation:</p>
+<p><pre>using DataFrames
+
+# Add a new column D with the square of A
+df.D = df.A .^ 2
+
+# Compute the mean of column C
+mean_C = mean(df.C)
+
+# Group the DataFrame by column B and compute the sum of A and C in each group
+grouped = groupby(df, :B)
+aggregated = combine(grouped, :A =&gt; sum, :C =&gt; sum)</pre></p>
+                    <p>
+                        In this example, we demonstrate how to add a new column with a derived value, compute the mean of a column, and perform aggregation operations on grouped data.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we introduced data manipulation in Julia using the DataFrames.jl package. We demonstrated how to create DataFrames, select and filter data, and perform data transformation and aggregation tasks. DataFrames.jl provides a powerful and flexible framework for various applications in data analysis, data science, machine learning, and other fields.
+                    </p>
+                    <p>
+                        As we continue our series on Julia, stay tuned for two more posts covering a wide range of topics. We will explore various packages and techniques, equipping you with the knowledge and skills required to tackle complex problems in your domain.
+                    </p>
+                    <p>
+                        Keep learning, and happy coding!
+                    </p>
+                    
+                    <button><a href="./06_29_2023.html">Next Post in Series</a></button>
+                    <button><a href="./06_27_2023.html">Previous Post in Series</a></button>
+
+                    
+                    <!-- Desc: This blog post serves as a comprehensive guide to data manipulation in Julia using the DataFrames.jl package, a versatile toolset for handling tabular data. The post delves into the essentials of installing the package, creating DataFrames, selecting and filtering data, as well as performing data transformations and aggregations. By leveraging the power of the DataFrames.jl package, the post showcases how users can handle complex data analysis tasks with ease and efficiency. As part of an ongoing series on Julia, this post continues to equip readers with the knowledge and skills required to exploit the full potential of the Julia programming language.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
