@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Continue your PostGreSQL journey with our third installment in this series for Linux users, where we delve into advanced commands and Python database interactions. This post presents how to update and delete data from your tables using precise commands. You'll then transition from the command line interface to Python, learning to interact with your PostGreSQL database using the psycopg2 module. This step-by-step guide provides the tools to execute and fetch commands in Python, thus elevating your database management skills. Next up in this series: exploring advanced topics, including database indexing and optimization. Stay tuned!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Continue your PostGreSQL journey with our third installment in this series for Linux users, where we delve into advanced commands and Python database interactions. This post presents how to update and delete data from your tables using precise commands. You'll then transition from the command line interface to Python, learning to interact with your PostGreSQL database using the psycopg2 module. This step-by-step guide provides the tools to execute and fetch commands in Python, thus elevating your database management skills. Next up in this series: exploring advanced topics, including database indexing and optimization. Stay tuned!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Continue your PostGreSQL journey with our third installment in this series for Linux users, where we delve into advanced commands and Python database interactions. This post presents how to update and delete data from your tables using precise commands. You'll then transition from the command line interface to Python, learning to interact with your PostGreSQL database using the psycopg2 module. This step-by-step guide provides the tools to execute and fetch commands in Python, thus elevating your database management skills. Next up in this series: exploring advanced topics, including database indexing and optimization. Stay tuned!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: July 2nd, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: July 2nd, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/07_02_23.webp" alt="post" width="250" height="445" />
+                    <h4>July 2nd, 2023</h4>
+                    <div class='title'>Delving Deeper into PostGreSQL: Advanced Commands and Python Integration on Linux - Part 3</div>
+
+                    <p>
+                        Welcome back to our series on PostGreSQL for Linux users! In our previous post, we covered some basic PostGreSQL commands and showed you how to connect to your new database. In this post, we'll dive into some more advanced PostGreSQL commands and show you how to interact with your database using Python.
+                    </p>
+                    <h5>Step 1: Update Data in the Table</h5>
+                    <p>
+                        To update data in the "people" table, you can use the <code>UPDATE</code> command. Here's an example command to update the email address for the row with id 1:
+                    </p>
+                    <p><pre>UPDATE people SET email = 'johndoe@example.com' WHERE id = 1;</pre></p>
+                    <p>
+                        This command will update the email address for the row with id 1 to "johndoe@example.com".
+                    </p>
+                    <h5>Step 2: Delete Data from the Table</h5>
+                    <p>
+                        To delete data from the "people" table, you can use the <code>DELETE</code> command. Here's an example command to delete the row with id 1:
+                    </p>
+                    <p><pre>INSERT INTO people (name, age, email) VALUES ('John Doe', 30, 'john.doe@example.com');</pre></p>
+                    <p><pre>DELETE FROM people WHERE id = 1;</pre></p>
+                    <h5>Step 4: Retrieve Data from the Table</h5>
+                    <p>
+                        To retrieve data from the "people" table, you can use the <code>SELECT</code> command. Here's an example command to retrieve all rows from the "people" table:
+                    </p>
+                    <p><pre>SELECT * FROM people;</pre></p>
+                    <p>
+                        This command will delete the row with id 1 from the "people" table.
+                    </p>
+                    <h5>Step 3: Interact with Your Database using Python</h5>
+                    <p>
+                        Now that you know how to work with PostGreSQL commands in the command line interface, let's show you how to interact with your database using Python. Here's an example Python script that connects to your PostGreSQL database and retrieves all rows from the "people" table:
+                    </p>
+<p><pre>import psycopg2
+
+conn = psycopg2.connect(
+    host="localhost",
+    database="mydatabase",
+    user="myuser",
+    password="mypassword"
+)
+
+cur = conn.cursor()
+
+cur.execute("SELECT * FROM people")
+
+rows = cur.fetchall()
+
+for row in rows:
+    print(row)
+
+cur.close()
+conn.close()</pre></p>
+                    <p>
+                        Replace "mydatabase", "myuser", and "mypassword" with the name of your database, the username you created in the previous post, and the password for your PostGreSQL user.
+                    </p>
+                    <p>
+                        This script will connect to your PostGreSQL database, retrieve all rows from the "people" table, and print them to the console.
+                    </p>
+                    <p>
+                        That's it for this post! In the next post in this series, we'll cover some advanced PostGreSQL topics, including indexing and optimizing your database.
+                    </p>
+
+
+                    <button><a href="./07_03_2023.html">Next Post in Series</a></button>
+                    <button><a href="./07_01_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: Continue your PostGreSQL journey with our third installment in this series for Linux users, where we delve into advanced commands and Python database interactions. This post presents how to update and delete data from your tables using precise commands. You'll then transition from the command line interface to Python, learning to interact with your PostGreSQL database using the psycopg2 module. This step-by-step guide provides the tools to execute and fetch commands in Python, thus elevating your database management skills. Next up in this series: exploring advanced topics, including database indexing and optimization. Stay tuned!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
