@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Further your knowledge of PostGreSQL on Linux with the seventh post in our comprehensive series. This post explores the capabilities of PostGreSQL extensions, focusing on full-text search and JSON support. Understand how to enable and utilize full-text search in your database, including creating text search configurations and forming complex search queries. Also, delve into PostGreSQL's robust JSON support to learn how to create, insert, and query JSON data within your database. Stay tuned for our next post where we'll dive deeper into other vital PostGreSQL features like replication and scaling. This post will surely augment your database skills to a whole new level.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Further your knowledge of PostGreSQL on Linux with the seventh post in our comprehensive series. This post explores the capabilities of PostGreSQL extensions, focusing on full-text search and JSON support. Understand how to enable and utilize full-text search in your database, including creating text search configurations and forming complex search queries. Also, delve into PostGreSQL's robust JSON support to learn how to create, insert, and query JSON data within your database. Stay tuned for our next post where we'll dive deeper into other vital PostGreSQL features like replication and scaling. This post will surely augment your database skills to a whole new level.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Further your knowledge of PostGreSQL on Linux with the seventh post in our comprehensive series. This post explores the capabilities of PostGreSQL extensions, focusing on full-text search and JSON support. Understand how to enable and utilize full-text search in your database, including creating text search configurations and forming complex search queries. Also, delve into PostGreSQL's robust JSON support to learn how to create, insert, and query JSON data within your database. Stay tuned for our next post where we'll dive deeper into other vital PostGreSQL features like replication and scaling. This post will surely augment your database skills to a whole new level.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: July 6th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: July 6th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/07_06_23.webp" alt="post" width="250" height="445" />
+                    <h4>July 6th, 2023</h4>
+                    <div class='title'>Exploring PostGreSQL Extensions: Full-Text Search and JSON Support on Linux - Part 7</div>
+
+                    <p>
+                        Welcome back to our series on PostGreSQL for Linux users! In our previous post, we covered some PostGreSQL administration topics, including user management and security. In this post, we'll cover some PostGreSQL extensions, including full-text search and JSON support.
+                    </p>
+                    <h5>Step 1: Full-Text Search</h5>
+                    <p>
+                        PostGreSQL includes support for full-text search, which allows you to search for text in your database using complex search queries. To enable full-text search in your database, you'll need to create a text search configuration.
+                    </p>
+                    <p>
+                        To create a text search configuration, you can use the <code>CREATE TEXT SEARCH CONFIGURATION</code> command. Here's an example command to create a text search configuration called "english":
+                    </p>
+                    <p><pre>CREATE TEXT SEARCH CONFIGURATION english (COPY = english);</pre></p>
+                    <p>
+                        This command will create a text search configuration called "english" that's based on the default English text search configuration.
+                    </p>
+                    <p>
+                        Once you've created a text search configuration, you can use the <code>@@</code> operator to perform full-text searches. Here's an example command to search for all rows in the "people" table that contain the word "example":
+                    </p>
+                    <p><pre>SELECT * FROM people WHERE to_tsvector('english', name || ' ' || email) @@ to_tsquery('english', 'example');</pre></p>
+                    <p>
+                        This command will search for all rows in the "people" table where the "name" or "email" columns contain the word "example".
+                    </p>
+                    <h5>Step 2: JSON Support</h5>
+                    <p>
+                        PostGreSQL also includes support for working with JSON data. You can store JSON data in a column of type <code>json</code>, and PostGreSQL includes a number of functions for working with JSON data.
+                    </p>
+                    <p>
+                        Here's an example command to create a table with a JSON column:
+                    </p>
+                    <p><pre>CREATE TABLE products (id SERIAL PRIMARY KEY, data JSON);</pre></p>
+                    <p>
+                        This command will create a table called "products" with two columns: "id" and "data". The "data" column is of type <code>json</code>.
+                    </p>
+                    <p>
+                        Here's an example command to insert a new row into the "products" table with some JSON data:
+                    </p>
+                    <p><pre>INSERT INTO products (data) VALUES ('{"name": "Product 1", "price": 10}');</pre></p>
+                    <p>
+                        This command will insert a new row into the "products" table with a JSON object in the "data" column.
+                    </p>
+                    <p>
+                        To query JSON data, you can use the <code>-&gt;</code> and <code>-&gt;&gt;</code> operators. Here's an example command to retrieve the "name" property from the JSON data in the "products" table:
+                    </p>
+                    <p><pre>SELECT data -&gt;&gt; 'name' FROM products;</pre></p>
+                    <p>
+                        This command will retrieve the "name" property from the JSON data in the "data" column of the "products" table.
+                    </p>
+                    <p>
+                        That's it for this post! In the next post in this series, we'll cover some additional PostGreSQL features, including replication and scaling.
+                    </p>
+
+
+                    <button><a href="./07_07_2023.html">Next Post in Series</a></button>
+                    <button><a href="./07_05_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: Further your knowledge of PostGreSQL on Linux with the seventh post in our comprehensive series. This post explores the capabilities of PostGreSQL extensions, focusing on full-text search and JSON support. Understand how to enable and utilize full-text search in your database, including creating text search configurations and forming complex search queries. Also, delve into PostGreSQL's robust JSON support to learn how to create, insert, and query JSON data within your database. Stay tuned for our next post where we'll dive deeper into other vital PostGreSQL features like replication and scaling. This post will surely augment your database skills to a whole new level.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
