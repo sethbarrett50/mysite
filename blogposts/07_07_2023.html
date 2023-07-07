@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Concluding our in-depth series on PostGreSQL for Linux users, this final installment delves into the crucial aspects of replication and scaling. Learn how to enhance your database's availability and performance through PostGreSQL's support for replication. Discover how to configure primary and replica databases, create a replication user, and monitor the replication status. Additionally, the blog covers various strategies to scale your PostGreSQL database for handling larger workloads, including connection pooling, horizontal and vertical scaling, and data partitioning. This post aims to provide you with the final set of tools needed in your PostGreSQL toolkit, bringing you to full proficiency.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Concluding our in-depth series on PostGreSQL for Linux users, this final installment delves into the crucial aspects of replication and scaling. Learn how to enhance your database's availability and performance through PostGreSQL's support for replication. Discover how to configure primary and replica databases, create a replication user, and monitor the replication status. Additionally, the blog covers various strategies to scale your PostGreSQL database for handling larger workloads, including connection pooling, horizontal and vertical scaling, and data partitioning. This post aims to provide you with the final set of tools needed in your PostGreSQL toolkit, bringing you to full proficiency.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Concluding our in-depth series on PostGreSQL for Linux users, this final installment delves into the crucial aspects of replication and scaling. Learn how to enhance your database's availability and performance through PostGreSQL's support for replication. Discover how to configure primary and replica databases, create a replication user, and monitor the replication status. Additionally, the blog covers various strategies to scale your PostGreSQL database for handling larger workloads, including connection pooling, horizontal and vertical scaling, and data partitioning. This post aims to provide you with the final set of tools needed in your PostGreSQL toolkit, bringing you to full proficiency.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: July 7th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: July 7th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/07_07_23.webp" alt="post" width="250" height="445" />
+                    <h4>July 7th, 2023</h4>
+                    <div class='title'>Mastering PostGreSQL Replication and Scaling on Linux - Final Part</div>
+
+                    <p>
+                        Welcome back to our series on PostGreSQL for Linux users! In our previous post, we covered some PostGreSQL extensions, including full-text search and JSON support. In this post, we'll cover some additional PostGreSQL features, including replication and scaling.
+                    </p>
+                    <h5>Step 1: Replication</h5>
+                    <p>
+                        PostGreSQL includes support for replication, which allows you to create one or more "replicas" of your database for improved availability and performance. Replicas can be used for read-only queries or for failover in case of a primary database failure.
+                    </p>
+                    <p>
+                        To set up replication, you'll need to configure a "primary" database and one or more "replica" databases. Here are the basic steps:
+                    </p>
+                    <p>
+                        1) Enable replication on the primary database by adding the following lines to the <code>postgresql.conf</code> configuration file:
+                    </p>
+<p><pre>listen_addresses = '*'
+wal_level = replica
+max_wal_senders = 5</pre></p>
+                    <p>
+                        These lines enable the primary database to send "write-ahead logs" (WAL) to replica databases.
+                    </p>
+                    <p>
+                        2) Create a replication user on the primary database and grant it the <code>REPLICATION</code> role. Here's an example command to create a replication user called "replica":
+                    </p>
+                    <p><pre>CREATE USER replica REPLICATION LOGIN PASSWORD 'password';</pre></p>
+                    <p>
+                        3) Configure each replica database to connect to the primary database and receive WAL data. Here's an example command to configure a replica database:
+                    </p>
+                    <p><pre>pg_basebackup -h primary.host -D /var/lib/postgresql/13/main -U replica -P --wal-method=stream</pre></p>
+                    <p>
+                        This command copies the primary database to the replica database and sets up streaming replication.
+                    </p>
+                    <p>
+                        4) Start the replica database and monitor its replication status using the <code>pg_stat_replication</code> view.
+                    </p>
+                    <h5>Step 2: Scaling</h5>
+                    <p>
+                        PostGreSQL also includes features for scaling your database to handle large workloads. Here are a few techniques you can use to scale your PostGreSQL database:
+                    </p>
+                    <p><ul>
+                        <li>Use connection pooling to improve performance and reduce resource usage.</li>
+                        <li>Use horizontal scaling by sharding your database across multiple servers.</li>
+                        <li>Use vertical scaling by upgrading your hardware or adding more resources (such as RAM or storage) to your database server.</li>
+                        <li>Use PostGreSQL's built-in partitioning features to distribute your data across multiple tables or databases.</li>
+                    </ul></p>
+                    <p>
+                        That's it for this post! In this series, we've covered a variety of topics related to PostGreSQL for Linux users, from basic commands and setup to advanced features like replication and scaling. We hope you've found this series helpful in your PostGreSQL journey!
+                    </p>
+                    
+
+
+                    <button><a href="./07_06_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: Concluding our in-depth series on PostGreSQL for Linux users, this final installment delves into the crucial aspects of replication and scaling. Learn how to enhance your database's availability and performance through PostGreSQL's support for replication. Discover how to configure primary and replica databases, create a replication user, and monitor the replication status. Additionally, the blog covers various strategies to scale your PostGreSQL database for handling larger workloads, including connection pooling, horizontal and vertical scaling, and data partitioning. This post aims to provide you with the final set of tools needed in your PostGreSQL toolkit, bringing you to full proficiency.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
