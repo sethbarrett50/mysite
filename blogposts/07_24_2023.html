@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome back to our SQL blog series! In this installment, we delve into the realm of establishing secure and reliable connections to a MySQL database using PHP and the PDO (PHP Data Objects) extension. Follow along as we guide you through the step-by-step process of connecting to a MySQL database from your PHP application. From defining the host, database name, username, and password, to creating a Data Source Name (DSN) string, we leave no stone unturned. We'll also explore essential connection options, such as error handling and prepared statement emulation. By the end of this post, you'll have a solid understanding of how to establish a robust connection to a MySQL database and leverage the power of SQL queries using prepared statements. Stay tuned for our next post, where we'll uncover the process of creating a simple web application that interacts with a MySQL database using PHP.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome back to our SQL blog series! In this installment, we delve into the realm of establishing secure and reliable connections to a MySQL database using PHP and the PDO (PHP Data Objects) extension. Follow along as we guide you through the step-by-step process of connecting to a MySQL database from your PHP application. From defining the host, database name, username, and password, to creating a Data Source Name (DSN) string, we leave no stone unturned. We'll also explore essential connection options, such as error handling and prepared statement emulation. By the end of this post, you'll have a solid understanding of how to establish a robust connection to a MySQL database and leverage the power of SQL queries using prepared statements. Stay tuned for our next post, where we'll uncover the process of creating a simple web application that interacts with a MySQL database using PHP.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome back to our SQL blog series! In this installment, we delve into the realm of establishing secure and reliable connections to a MySQL database using PHP and the PDO (PHP Data Objects) extension. Follow along as we guide you through the step-by-step process of connecting to a MySQL database from your PHP application. From defining the host, database name, username, and password, to creating a Data Source Name (DSN) string, we leave no stone unturned. We'll also explore essential connection options, such as error handling and prepared statement emulation. By the end of this post, you'll have a solid understanding of how to establish a robust connection to a MySQL database and leverage the power of SQL queries using prepared statements. Stay tuned for our next post, where we'll uncover the process of creating a simple web application that interacts with a MySQL database using PHP.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: July 24th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: July 24th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/07_24_23.webp" alt="post" width="250" height="445" />
+                    <h4>July 24th, 2023</h4>
+                    <div class='title'>Secure Database Connections: Connecting to MySQL Using PHP PDO</div>
+
+                    <p>
+                        Welcome back to our SQL blog series! In the last post, we covered how to use prepared statements in SQL to help prevent SQL injection attacks. In this post, we will cover how to connect to a MySQL database using PHP.
+                    </p>
+                    <h5>Connecting to a MySQL Database</h5>
+                    <p>
+                        To connect to a MySQL database using PHP, you can use the PDO (PHP Data Objects) extension. Here's an example:
+                    </p>
+<p><pre>$host = 'localhost';
+$dbname = 'mydatabase';
+$username = 'myusername';
+$password = 'mypassword';
+
+$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+
+$options = [
+    PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES =&gt; false,
+];
+
+try {
+    $pdo = new PDO($dsn, $username, $password, $options);
+} catch (\PDOException $e) {
+    throw new \PDOException($e-&gt;getMessage(), (int)$e-&gt;getCode());
+}</pre></p>
+                    <p>
+                        In this example, we first define the host, database name, username, and password for our MySQL database. We then create a Data Source Name (DSN) string that contains the necessary information to connect to our database.
+                    </p>
+                    <p>
+                        Next, we define some options for our PDO connection, including setting the error mode to throw exceptions, setting the default fetch mode to associative arrays, and disabling emulation of prepared statements.
+                    </p>
+                    <p>
+                        Finally, we create a new PDO object with our DSN, username, password, and options, and catch any exceptions that may be thrown during the connection process.
+                    </p>
+                    <h5>Using the Connection</h5>
+                    <p>
+                        Once we have established a connection to our MySQL database, we can execute SQL queries using prepared statements. Here's an example:
+                    </p>
+<p><pre>$stmt = $pdo-&gt;prepare('SELECT * FROM mytable WHERE name = :name');
+$stmt-&gt;execute(['name' =&gt; $name]);
+$rows = $stmt-&gt;fetchAll();</pre></p>
+                    <p>
+                        In this example, we use the prepare() method to create a prepared statement that selects all rows from the "mytable" table where the "name" column matches the "name" parameter. We then use the execute() method to execute the prepared statement with the "name" parameter. Finally, we use the fetchAll() method to retrieve all rows returned by the query.
+                    </p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        In this post, we covered how to connect to a MySQL database using PHP and the PDO extension. By establishing a secure connection to our database, we can execute SQL queries using prepared statements and prevent SQL injection attacks. In the next post, we will cover how to use PHP to create a simple web application that interacts with a MySQL database. Stay tuned!
+                    </p>
+                    
+                    
+
+
+                    <button><a href="./07_25_2023.html">Next Post in Series</a></button>
+                    <button><a href="./07_23_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: Welcome back to our SQL blog series! In this installment, we delve into the realm of establishing secure and reliable connections to a MySQL database using PHP and the PDO (PHP Data Objects) extension. Follow along as we guide you through the step-by-step process of connecting to a MySQL database from your PHP application. From defining the host, database name, username, and password, to creating a Data Source Name (DSN) string, we leave no stone unturned. We'll also explore essential connection options, such as error handling and prepared statement emulation. By the end of this post, you'll have a solid understanding of how to establish a robust connection to a MySQL database and leverage the power of SQL queries using prepared statements. Stay tuned for our next post, where we'll uncover the process of creating a simple web application that interacts with a MySQL database using PHP.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
