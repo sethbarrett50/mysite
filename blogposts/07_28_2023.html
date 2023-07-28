@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to the next installment of our Kotlin tutorial series! This post demystifies the basics of Kotlin syntax, offering a user-friendly guide to its fundamental programming concepts. We'll explore the declaration of variables and data types, the construction and usage of functions, control flow mechanics, and the role of objects and classes in Kotlin's object-oriented structure. With examples provided for each concept, we aim to make Kotlin more accessible for beginners and serve as a quick refresher for experienced coders. Join us in our subsequent post where we will tackle advanced programming concepts and database connectivity using Kotlin.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to the next installment of our Kotlin tutorial series! This post demystifies the basics of Kotlin syntax, offering a user-friendly guide to its fundamental programming concepts. We'll explore the declaration of variables and data types, the construction and usage of functions, control flow mechanics, and the role of objects and classes in Kotlin's object-oriented structure. With examples provided for each concept, we aim to make Kotlin more accessible for beginners and serve as a quick refresher for experienced coders. Join us in our subsequent post where we will tackle advanced programming concepts and database connectivity using Kotlin.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to the next installment of our Kotlin tutorial series! This post demystifies the basics of Kotlin syntax, offering a user-friendly guide to its fundamental programming concepts. We'll explore the declaration of variables and data types, the construction and usage of functions, control flow mechanics, and the role of objects and classes in Kotlin's object-oriented structure. With examples provided for each concept, we aim to make Kotlin more accessible for beginners and serve as a quick refresher for experienced coders. Join us in our subsequent post where we will tackle advanced programming concepts and database connectivity using Kotlin.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: July 28th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: July 28th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/07_28_23.webp" alt="post" width="250" height="445" />
+                    <h4>July 28th, 2023</h4>
+                    <div class='title'>Unlocking Kotlin: A Deep Dive into Syntax and Fundamental Programming Concepts</div>
+
+                    <p>
+                        Great, let's continue with the Kotlin tutorial series! In this post, we'll cover the basics of Kotlin syntax and some fundamental programming concepts.
+                    </p>
+                    <p>
+                        Kotlin is a modern programming language that is concise, expressive, and designed to be type-safe. The syntax is very similar to Java, but Kotlin also has some unique features that make it more powerful and easier to use.
+                    </p>
+                    <h5>Variables and Data Types</h5>
+                    <p>
+                        In Kotlin, variables are declared using the keyword <code>var</code> or <code>val</code>. The <code>var</code> keyword is used to declare mutable variables, while <code>val</code> is used to declare read-only variables. Here's an example:
+                    </p>
+<p><pre>var x = 10 // mutable variable
+val y = 20 // read-only variable</pre></p>
+                    <p>
+                        Kotlin also has a number of data types, including <code>Int</code>, <code>Double</code>, <code>Boolean</code>, and <code>String</code>. Here's an example of declaring a variable with a data type:
+                    </p>
+                    <p><pre>var age: Int = 25</pre></p>
+                    <h5>Functions</h5>
+                    <p>
+                        Functions are a key concept in programming, and Kotlin makes it easy to define and use functions. Here's an example of a simple function that takes two parameters and returns their sum:
+                    </p>
+<p><pre>fun sum(a: Int, b: Int): Int {
+    return a + b
+}</pre></p>
+                    <p>
+                        You can call this function by passing in two integers and getting back their sum:
+                    </p>
+                    <p><pre>val result = sum(5, 10) // result is 15</pre></p>
+                    <h5>Control Flow</h5>
+                    <p>
+                        Control flow statements are used to control the order in which statements are executed in a program. Kotlin has several control flow statements, including <code>if</code>, <code>when</code>, and <code>for</code> loops. Here's an example of using an <code>if</code> statement:
+                    </p>
+<p><pre>val x = 10
+val y = 20
+
+if (x &gt; y) {
+    println("x is greater than y")
+} else {
+    println("y is greater than x")
+}
+</pre></p>
+                    <p>
+                        This will output <code>y is greater than x</code> because <code>y</code> is greater than <code>x</code>.
+                    </p>
+                    <h5>Objects and Classes</h5>
+                    <p>Kotlin is an object-oriented language, which means that it supports classes and objects. Here's an example of defining a class in Kotlin:</p>
+<p><pre>class Person(val name: String, var age: Int) {
+    fun speak() {
+        println("My name is $name and I am $age years old.")
+    }
+}
+</pre></p>
+                    <p>
+                        You can create an instance of this class and call its methods like this:
+                    </p>
+<p><pre>val person = Person("John", 30)
+person.speak() // Output: My name is John and I am 30 years old.</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        That's it for this post! We covered some of the basics of Kotlin syntax and fundamental programming concepts. In the next post, we'll dive into some more advanced programming concepts and show you how to connect to databases using Kotlin.
+                    </p>
+
+
+                    <button><a href="./07_29_2023.html">Next Post in Series</a></button>
+                    <button><a href="./07_27_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: Welcome to the next installment of our Kotlin tutorial series! This post demystifies the basics of Kotlin syntax, offering a user-friendly guide to its fundamental programming concepts. We'll explore the declaration of variables and data types, the construction and usage of functions, control flow mechanics, and the role of objects and classes in Kotlin's object-oriented structure. With examples provided for each concept, we aim to make Kotlin more accessible for beginners and serve as a quick refresher for experienced coders. Join us in our subsequent post where we will tackle advanced programming concepts and database connectivity using Kotlin.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
