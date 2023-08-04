@@ -142,9 +142,9 @@ send_obj(sock, obj)
 received_obj = recv_obj(sock)
 print(received_obj)</pre></p>
                     <p>
-                        This example defines two functions, <code>send_obj()</code> and <code>send_obj()</code>>, that can be used to send and receive objects over a socket. 
+                        This example defines two functions, <code>send_obj()</code> and <code>send_obj()</code>, that can be used to send and receive objects over a socket. 
                         The <code>send_obj()</code> function uses the <code>pickle.dumps()</code> function to convert the object to a byte stream and then sends it over the socket using the <code>sock.sendall()</code> method. 
-                        The <code>send_obj()</code>> function receives bytes from the socket and then uses the <code>pickle.loads()</code> function to convert the byte stream back into an object.
+                        The <code>send_obj()</code> function receives bytes from the socket and then uses the <code>pickle.loads()</code> function to convert the byte stream back into an object.
                     </p>
                     <p>
                         It's important to note that pickling is not safe, it can be manipulated by malicious actors. 
