@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this sixth blog post of our Advanced Machine Learning series, we'll dive into the powerful technique of Transfer Learning. Transfer Learning allows us to harness the knowledge learned from pre-trained models on vast datasets and apply it to new tasks with limited data. Join us as we explore the benefits of Transfer Learning, its various approaches, and how it has become a game-changer in accelerating AI development and improving model performance.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this sixth blog post of our Advanced Machine Learning series, we'll dive into the powerful technique of Transfer Learning. Transfer Learning allows us to harness the knowledge learned from pre-trained models on vast datasets and apply it to new tasks with limited data. Join us as we explore the benefits of Transfer Learning, its various approaches, and how it has become a game-changer in accelerating AI development and improving model performance.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this sixth blog post of our Advanced Machine Learning series, we'll dive into the powerful technique of Transfer Learning. Transfer Learning allows us to harness the knowledge learned from pre-trained models on vast datasets and apply it to new tasks with limited data. Join us as we explore the benefits of Transfer Learning, its various approaches, and how it has become a game-changer in accelerating AI development and improving model performance.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: August 7th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: August 7th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/08_07_23.webp" alt="ML" width="250" height="445" />
+                    <h4>August 7th, 2023</h4>
+                    <div class='title'>Transfer Learning: Leveraging Pre-trained Models for Faster and More Accurate AI</div>
+
+                    <p>
+                        Welcome back to our Advanced Machine Learning series! In this blog post, we'll delve into the exciting world of Transfer Learning, a technique that has transformed the landscape of AI by enabling faster model development and improved performance.
+                    </p>
+                    <h5>What is Transfer Learning?</h5>
+                    <p>
+                        Transfer Learning is a machine learning technique where knowledge gained from training a model on one task is transferred and applied to a related but different task. Instead of training a model from scratch, we start with a pre-trained model, often developed on large-scale datasets like ImageNet for image-related tasks, and fine-tune it on the new task with a smaller dataset. By doing so, we can leverage the pre-trained model's feature extraction capabilities and general knowledge, effectively speeding up the learning process and enhancing the model's performance.
+                    </p>
+                    <h5>The Three Transfer Learning Scenarios</h5>
+                    <p>
+                        There are three common scenarios in Transfer Learning:
+                        <ol>
+                            <li><b>Feature Extraction:</b>
+                                In this scenario, we use the pre-trained model as a fixed feature extractor. We remove the final classification layer of the pre-trained model and add a new layer specific to the new task. During training, we only update the parameters of the new layer while keeping the pre-trained model's parameters frozen.</li>
+                            <li><b>Fine-Tuning:</b>
+                                Fine-tuning is a more aggressive approach where we adapt the pre-trained model to the new task by updating some of its earlier layers in addition to the new task-specific layers. By allowing the early layers to adjust, the model can learn more task-specific features while still retaining some of the pre-trained knowledge.</li>
+                            <li><b>One-Shot Learning:</b>
+                                In cases where we have very limited data for the new task, One-Shot Learning can be employed. Instead of fine-tuning the entire model, we keep the pre-trained model fixed and learn a mapping from the pre-trained model's output to the new task's output.</li>
+                        </ol>
+                    </p>  
+                    <h5>Benefits of Transfer Learning</h5>  
+                    <p>
+                        Transfer Learning offers several advantages, including:
+                        <ul>
+                            <li><b>Faster Model Development:</b>
+                                Transfer Learning reduces the time and computational resources required for training models, as we can start with pre-trained models that have already learned generic features.</li>
+                            <li><b>Improved Performance:</b>
+                                By leveraging pre-trained models, models tend to perform better on the new task, especially when the new dataset is limited, as the model already possesses knowledge from a large, diverse dataset.</li>
+                            <li><b>Handling Real-World Data:</b>
+                                Pre-trained models are often trained on vast amounts of real-world data, making them more robust and adaptable to real-world scenarios.</li>
+                        </ul>
+                    </p>  
+                    <h5>Implementing Transfer Learning with Julia and Flux.jl</h5>  
+                    <p>
+                        Let's explore how to use Transfer Learning with Julia and Flux.jl to fine-tune a pre-trained image classification model on a new dataset.
+                    </p>       
+<p><pre># Load required packages
+using Flux
+using Flux.Data.ImageNet2012
+using Metalhead
+using Flux: onecold
+
+# Load pre-trained model (e.g., ResNet)
+pretrained_model = ResNet()
+imagenet_model = pretrained_model |&gt; x -&gt; Metalhead.imagenetordered(x) |&gt; first
+
+# Load new dataset
+new_dataset = load(new_dataset_path)
+
+# Remove the final classification layer from the pre-trained model
+new_model = imagenet_model[1:end-1]
+
+# Define new task-specific layer(s) for fine-tuning
+new_task_layer = Dense(2048, num_classes)
+
+# Combine the pre-trained model and new layer(s)
+combined_model = Chain(new_model, new_task_layer)
+
+# Define loss function and optimizer for fine-tuning
+loss(x, y) = Flux.crossentropy(combined_model(x), y)
+optimizer = ADAM(0.001)
+
+# Fine-tune the model on the new dataset
+Flux.train!(loss, params(combined_model), new_dataset, optimizer)</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        Transfer Learning has emerged as a key technique in accelerating AI development and improving model performance, enabling us to leverage pre-trained knowledge for new tasks. In this blog post, we've explored the three Transfer Learning scenarios and implemented fine-tuning with Julia and Flux.jl.
+                    </p>
+                    <p>
+                        In the next blog post, we'll venture into the realm of Bayesian Machine Learning, where uncertainty estimation and probabilistic modeling play a crucial role in tackling real-world challenges. Stay tuned for more exciting content on our Advanced Machine Learning journey!
+                    </p>
+
+
+                    <button><a href="./08_08_2023.html">Next Post in Series</a></button>
+                    <button><a href="./08_06_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: In this sixth blog post of our Advanced Machine Learning series, we'll dive into the powerful technique of Transfer Learning. Transfer Learning allows us to harness the knowledge learned from pre-trained models on vast datasets and apply it to new tasks with limited data. Join us as we explore the benefits of Transfer Learning, its various approaches, and how it has become a game-changer in accelerating AI development and improving model performance.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
