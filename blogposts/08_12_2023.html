@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this eleventh blog post of our Advanced Machine Learning series, we'll dive into the captivating world of Reinforcement Learning (RL). Reinforcement Learning enables agents to learn from their environment through trial and error, aiming to maximize cumulative rewards. Join us as we explore the core components of RL, including the Markov Decision Process (MDP), policy learning, and value iteration. Discover how RL has revolutionized game playing, robotics, and decision-making in dynamic environments.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this eleventh blog post of our Advanced Machine Learning series, we'll dive into the captivating world of Reinforcement Learning (RL). Reinforcement Learning enables agents to learn from their environment through trial and error, aiming to maximize cumulative rewards. Join us as we explore the core components of RL, including the Markov Decision Process (MDP), policy learning, and value iteration. Discover how RL has revolutionized game playing, robotics, and decision-making in dynamic environments.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this eleventh blog post of our Advanced Machine Learning series, we'll dive into the captivating world of Reinforcement Learning (RL). Reinforcement Learning enables agents to learn from their environment through trial and error, aiming to maximize cumulative rewards. Join us as we explore the core components of RL, including the Markov Decision Process (MDP), policy learning, and value iteration. Discover how RL has revolutionized game playing, robotics, and decision-making in dynamic environments.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: August 12th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: August 12th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/08_12_23.webp" alt="ML" width="250" height="445" />
+                    <h4>August 12th, 2023</h4>
+                    <div class='title'>Reinforcement Learning: Navigating the World through Trial and Error</div>
+
+                    <p>
+                        Welcome back to our Advanced Machine Learning series! In this blog post, we'll explore the fascinating world of Reinforcement Learning (RL), where AI agents learn to interact with their environment through trial and error, guided by the pursuit of rewards.
+                    </p>
+                    <h5>What is Reinforcement Learning?</h5>
+                    <p>
+                        Reinforcement Learning is a type of machine learning that deals with sequential decision-making problems. In RL, an agent interacts with an environment, taking actions to maximize cumulative rewards. The agent learns from the feedback provided by the environment, adjusting its actions to achieve its objectives.
+                    </p>
+                    <h5>Core Components of Reinforcement Learning</h5>
+                    <p><ol>
+                        <li><b>Markov Decision Process (MDP):</b>
+                            MDP is a formal framework used to model sequential decision-making problems in RL. It consists of states, actions, a transition model, rewards, and a discount factor. The agent aims to find a policy that maps states to actions, maximizing the expected cumulative reward.</li>
+                        <li><b>Policy Learning:</b>
+                            A policy in RL is a strategy that defines the agent's actions in each state. Policy learning algorithms, such as Q-learning and Deep Q Networks (DQNs), aim to find the optimal policy that maximizes the expected rewards.</li>
+                        <li><b>Value Iteration:</b>
+                            Value iteration is an algorithm used to compute the value function of states in an MDP. The value function represents the expected cumulative reward that the agent can achieve from each state</li>
+                    </ol></p>
+                    <h5>Applications of Reinforcement Learning</h5>
+                    <p>
+                        Reinforcement Learning has found numerous applications, including:
+                        <li><b>Game Playing:</b>
+                            RL agents have achieved superhuman performance in games like Chess, Go, and video games.</li>
+                        <li><b>Robotics:</b>
+                            RL is used to train robots to perform complex tasks, such as grasping objects and navigation.</li>
+                        <li><b>Recommendation Systems:</b>
+                            RL can optimize recommendation systems by learning from user interactions.</li>
+                        <li><b>Autonomous Vehicles:</b>
+                            RL enables autonomous vehicles to make decisions in dynamic environments.</li>
+                    </p>
+                    <h5>Implementing Reinforcement Learning with Julia and Flux.jl</h5>
+                    <p>Let's explore how to implement Q-learning, a popular RL algorithm, using Julia and Flux.jl.</p>
+<p><pre># Load required packages
+using Flux
+using Random
+
+# Define Q-learning function
+function q_learning(env, α, γ, ε, episodes)
+    q_values = Dict()
+    for episode in 1:episodes
+        state = env.reset()
+        done = false
+        while !done
+            if rand() &lt; ε
+                action = rand(1:env.n_actions)
+            else
+                action = argmax(get_q_value(q_values, state, env.n_actions))
+            end
+            new_state, reward, done = env.step(action)
+            q_values[(state, action)] = get_q_value(q_values, state, action) + α * (reward + γ * maximum(get_q_value(q_values, new_state, env.n_actions)) - get_q_value(q_values, state, action))
+            state = new_state
+        end
+    end
+    return q_values
+end</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        Reinforcement Learning allows AI agents to navigate the world through trial and error, learning to make decisions that lead to the highest rewards. In this blog post, we've explored the core components of RL, including the Markov Decision Process, policy learning, and value iteration, and implemented Q-learning with Julia and Flux.jl.
+                    </p>
+                    <p>
+                        In the next blog post, we'll venture into the realm of Generative Models, where we'll explore techniques like Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs) to create new data samples and unleash creativity in AI. Stay tuned for more exciting content on our Advanced Machine Learning journey!
+                    </p>
+
+                    <button><a href="./08_13_2023.html">Next Post in Series</a></button>
+                    <button><a href="./08_11_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: In this eleventh blog post of our Advanced Machine Learning series, we'll dive into the captivating world of Reinforcement Learning (RL). Reinforcement Learning enables agents to learn from their environment through trial and error, aiming to maximize cumulative rewards. Join us as we explore the core components of RL, including the Markov Decision Process (MDP), policy learning, and value iteration. Discover how RL has revolutionized game playing, robotics, and decision-making in dynamic environments.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
