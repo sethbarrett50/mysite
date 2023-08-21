@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this twentieth blog post of our Advanced Machine Learning series, we'll delve into the dynamic world of Reinforcement Learning with Continuous Actions. Unlike discrete action spaces, continuous action spaces allow AI agents to make precise and fine-grained decisions. Join us as we explore policy gradients, actor-critic methods, and how RL with continuous actions has revolutionized robotics, autonomous vehicles, and control systems in complex and dynamic environments.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this twentieth blog post of our Advanced Machine Learning series, we'll delve into the dynamic world of Reinforcement Learning with Continuous Actions. Unlike discrete action spaces, continuous action spaces allow AI agents to make precise and fine-grained decisions. Join us as we explore policy gradients, actor-critic methods, and how RL with continuous actions has revolutionized robotics, autonomous vehicles, and control systems in complex and dynamic environments.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this twentieth blog post of our Advanced Machine Learning series, we'll delve into the dynamic world of Reinforcement Learning with Continuous Actions. Unlike discrete action spaces, continuous action spaces allow AI agents to make precise and fine-grained decisions. Join us as we explore policy gradients, actor-critic methods, and how RL with continuous actions has revolutionized robotics, autonomous vehicles, and control systems in complex and dynamic environments.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: August 21st, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: August 21st, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/08_21_23.webp" alt="ML" width="250" height="445" />
+                    <h4>August 21st, 2023</h4>
+                    <div class='title'>Reinforcement Learning with Continuous Actions: Navigating Dynamic Environments with Precision</div>
+
+                    <p>
+                        Welcome back to our Advanced Machine Learning series! In this blog post, we'll explore the dynamic realm of Reinforcement Learning (RL) with Continuous Actions, where AI agents navigate complex environments by making precise and continuous decisions.
+                    </p>
+                    <h5>The Challenge of Continuous Action Spaces</h5>
+                    <p>
+                        In many real-world scenarios, AI agents need to perform actions with continuous values, such as controlling a robotic arm or steering an autonomous vehicle. RL with Continuous Actions tackles the challenge of learning optimal policies in such continuous action spaces.
+                    </p>
+                    <h5>Key Techniques in Reinforcement Learning with Continuous Actions</h5>
+                    <p><ol>
+                        <li><b>Policy Gradients:</b>
+                            Policy Gradients is a popular approach in RL with Continuous Actions. It involves directly optimizing the policy function to maximize the expected rewards. Gradient-based optimization techniques, such as stochastic gradient descent, are used to update the policy parameters.</li>
+                        <li><b>Actor-Critic Methods:</b>
+                            Actor-Critic methods combine the advantages of both value-based (Critic) and policy-based (Actor) RL. The Critic estimates the value function, providing guidance to the Actor for improving the policy. This two-component architecture enhances the stability and efficiency of the learning process.</li>
+                        <li><b>Deterministic Policy Gradients (DPG):</b>
+                            DPG is an extension of Policy Gradients for deterministic policies. Instead of learning a stochastic policy, DPG aims to learn a deterministic mapping from states to actions. This approach is beneficial in applications where determinism is desirable, such as robotic control.</li>
+                    </ol></p>
+                    <h5>Applications of Reinforcement Learning with Continuous Actions</h5>
+                    <p>
+                        RL with Continuous Actions finds applications in various domains, including:
+                        <ul>
+                            <li><b>Robotics: </b>
+                                AI agents control robotic arms and perform precise manipulation tasks in complex environments.</li>
+                            <li><b>Autonomous Vehicles: </b>
+                                RL enables autonomous vehicles to make continuous steering and speed decisions for safe and efficient navigation.</li>
+                            <li><b>Process Control: </b>
+                                RL with continuous actions is used to optimize processes and control systems in manufacturing and industry.</li>
+                            <li><b>Finance: </b>
+                                AI agents make continuous decisions in portfolio optimization and trading strategies.</li>
+                        </ul>
+                    </p>
+                    <h5>Implementing Reinforcement Learning with Continuous Actions with Julia and Flux.jl</h5>
+                    <p>Let's explore how to implement Deep Deterministic Policy Gradients (DDPG) with Julia and Flux.jl.</p>
+<p><pre># Load required packages
+using Flux
+using Flux: mse
+
+# Define the Actor and Critic networks
+function actor_network(input_dim, output_dim)
+    return Chain(
+        Dense(input_dim, 128, relu),
+        Dense(128, 64, relu),
+        Dense(64, output_dim, tanh)
+    )
+end
+
+function critic_network(input_dim, output_dim)
+    return Chain(
+        Dense(input_dim, 128, relu),
+        Dense(128, 64, relu),
+        Dense(64, output_dim)
+    )
+end
+
+# Define the DDPG model
+function DDPG(actor, critic, target_actor, target_critic, γ, τ)
+    return actor, critic, target_actor, target_critic, γ, τ
+end
+
+# Define the DDPG loss function
+function ddpg_loss(actor, critic, target_actor, target_critic, state, action, reward, next_state, done)
+    next_action = target_actor(next_state)
+    q_value = reward + γ * target_critic(next_state, next_action) * (1 - done)
+    actor_loss = -mean(critic(state, actor(state)))
+    critic_loss = mse(critic(state, action), q_value)
+
+    return actor_loss, critic_loss
+end</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        Reinforcement Learning with Continuous Actions equips AI agents with the capability to navigate complex and dynamic environments by making precise and continuous decisions. In this blog post, we've explored policy gradients, actor-critic methods, and deterministic policy gradients, all of which have advanced the field of RL with continuous actions.
+                    </p>
+                    <p>
+                        In the next blog post, we'll venture into the world of Generative Models, where we explore AI systems capable of generating new data samples, images, and even creative art. Stay tuned for more exciting content on our Advanced Machine Learning journey!
+                    </p>
+
+                    <button><a href="./08_22_2023.html">Next Post in Series</a></button>
+                    <button><a href="./08_20_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: In this twentieth blog post of our Advanced Machine Learning series, we'll delve into the dynamic world of Reinforcement Learning with Continuous Actions. Unlike discrete action spaces, continuous action spaces allow AI agents to make precise and fine-grained decisions. Join us as we explore policy gradients, actor-critic methods, and how RL with continuous actions has revolutionized robotics, autonomous vehicles, and control systems in complex and dynamic environments.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
