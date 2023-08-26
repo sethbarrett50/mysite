@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this twenty-fifth blog post of our Advanced Machine Learning series, we'll dive into the cutting-edge technology of Federated Learning. Federated Learning enables AI models to collaborate and learn from decentralized data sources, such as devices and edge servers, without sharing raw data. Join us as we explore model aggregation, secure multi-party computation, and how Federated Learning has revolutionized personalized recommendations, healthcare diagnostics, and smart IoT devices while preserving privacy and security.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this twenty-fifth blog post of our Advanced Machine Learning series, we'll dive into the cutting-edge technology of Federated Learning. Federated Learning enables AI models to collaborate and learn from decentralized data sources, such as devices and edge servers, without sharing raw data. Join us as we explore model aggregation, secure multi-party computation, and how Federated Learning has revolutionized personalized recommendations, healthcare diagnostics, and smart IoT devices while preserving privacy and security.">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this twenty-fifth blog post of our Advanced Machine Learning series, we'll dive into the cutting-edge technology of Federated Learning. Federated Learning enables AI models to collaborate and learn from decentralized data sources, such as devices and edge servers, without sharing raw data. Join us as we explore model aggregation, secure multi-party computation, and how Federated Learning has revolutionized personalized recommendations, healthcare diagnostics, and smart IoT devices while preserving privacy and security.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: August 26th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: August 26th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/08_26_23.webp" alt="ML" width="250" height="445" />
+                    <h4>August 26th, 2023</h4>
+                    <div class='title'>Federated Learning: Advancing AI Collaboration while Preserving Privacy</div>
+
+                    <p>
+                        Welcome back to our Advanced Machine Learning series! In this blog post, we'll explore the innovative world of Federated Learning, where AI models collaborate and learn from decentralized data sources while maintaining data privacy and security.
+                    </p>
+                    <h5>The Paradigm of Federated Learning</h5>
+                    <p>
+                        Traditional machine learning relies on centralized data collection, which may raise privacy concerns and hinder the sharing of sensitive information. Federated Learning offers an alternative approach where AI models are deployed on devices or servers with local data, and updates are aggregated without sharing raw data.
+                    </p>
+                    <h5>Key Techniques in Federated Learning</h5>
+                    <p><ol>
+                        <li><b>Model Aggregation:</b>
+                            In Federated Learning, local AI models on devices or servers independently learn from their data. Periodically, the models send updates to a central server, where they are aggregated to create a global model. The global model is then shared back with the local models for further improvement.</li>
+                        <li><b>Secure Multi-Party Computation (MPC):</b>
+                            Secure Multi-Party Computation is a cryptographic technique used to ensure that data remains private even during the aggregation process. Local models send encrypted updates to the central server, and the server can perform computations on the encrypted data without knowing the raw data.</li>
+                        <li><b>Differential Privacy:</b>
+                            Differential Privacy is another privacy-preserving technique in Federated Learning. It adds random noise to the local updates before aggregation, making it difficult to extract individual information from the global model.</li>
+                    </ol></p>
+                    <h5>Applications of Federated Learning</h5>
+                    <p>
+                        Federated Learning finds applications in various domains, including:
+                        <ul>
+                            <li><b>Personalized Recommendations: </b>
+                                Federated Learning enables AI models to learn user preferences from individual devices while maintaining user privacy for personalized recommendations.</li>
+                            <li><b>Healthcare Diagnostics: </b>
+                                Medical institutions can collaborate on diagnostics using Federated Learning without sharing sensitive patient data.</li>
+                            <li><b>Smart IoT Devices: </b>
+                                Federated Learning allows IoT devices to learn collectively for improved performance without compromising user data.</li>
+                            <li><b>Natural Disaster Prediction: </b>
+                                Federated Learning facilitates the collaboration of meteorological agencies for more accurate natural disaster predictions.</li>
+                        </ul>
+                    </p>
+                    <h5>Implementing Federated Learning with Julia and PySyft</h5>
+                    <p>Let's explore how to implement Federated Learning for a simple image classification task using Julia and the PySyft library for secure multi-party computation.</p>
+<p><pre># Load required packages
+using Flux
+using PySyft
+
+# Define the local and central models
+local_model = Chain(Dense(784, 128, relu), Dense(128, 10))
+central_model = deepcopy(local_model)
+
+# Encrypt local model parameters
+local_model_encrypted = encrypt_model(local_model)
+
+# Perform local training on each device
+for device_data in devices_data
+    local_update = train_local_model(local_model_encrypted, device_data)
+    local_update_encrypted = encrypt_model(local_update)
+    send_update_to_central_server(local_update_encrypted)
+end
+
+# Aggregate updates on the central server
+central_model = aggregate_updates(central_model, received_updates)
+
+# Share the updated central model with the local models
+central_model_encrypted = encrypt_model(central_model)
+for device_data in devices_data
+    receive_updated_model(device_data, central_model_encrypted)
+end</pre></p>
+                    <h5>Conclusion</h5>
+                    <p>
+                        Federated Learning has transformed AI collaboration by enabling models to learn from decentralized data sources while preserving privacy and security. In this blog post, we've explored model aggregation, secure multi-party computation, and differential privacy, all of which play essential roles in Federated Learning.
+                    </p>
+                    <p>
+                        In the next blog post, we'll venture into the realm of Explainable AI, where AI systems provide transparent and interpretable insights, bridging the gap between complex models and human understanding. Stay tuned for more exciting content on our Advanced Machine Learning journey!
+                    </p>
+                    
+
+                    <button><a href="./08_27_2023.html">Next Post in Series</a></button>
+                    <button><a href="./08_25_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc: In this twenty-fifth blog post of our Advanced Machine Learning series, we'll dive into the cutting-edge technology of Federated Learning. Federated Learning enables AI models to collaborate and learn from decentralized data sources, such as devices and edge servers, without sharing raw data. Join us as we explore model aggregation, secure multi-party computation, and how Federated Learning has revolutionized personalized recommendations, healthcare diagnostics, and smart IoT devices while preserving privacy and security.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
