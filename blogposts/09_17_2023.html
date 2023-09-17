@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 16 of our Getting Started with Zig on MacOS series, where we've explored GUI development in Zig. Although Zig doesn't have a native GUI library, you've learned how to integrate Zig with existing GUI libraries like Dear ImGui. By leveraging C interoperability features, you can create cross-platform graphical applications with user interfaces. In this example, you've built a simple GUI application that displays a button and responds to user interaction. As you delve deeper into GUI development, consider experimenting with other GUI libraries, creating more complex interfaces, and integrating your Zig programs with rich graphical experiences. GUI development is an exciting realm of software development, and Zig's versatility makes it a promising choice for building user-friendly applications. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 16 of our Getting Started with Zig on MacOS series, where we've explored GUI development in Zig. Although Zig doesn't have a native GUI library, you've learned how to integrate Zig with existing GUI libraries like Dear ImGui. By leveraging C interoperability features, you can create cross-platform graphical applications with user interfaces. In this example, you've built a simple GUI application that displays a button and responds to user interaction. As you delve deeper into GUI development, consider experimenting with other GUI libraries, creating more complex interfaces, and integrating your Zig programs with rich graphical experiences. GUI development is an exciting realm of software development, and Zig's versatility makes it a promising choice for building user-friendly applications. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 16 of our Getting Started with Zig on MacOS series, where we've explored GUI development in Zig. Although Zig doesn't have a native GUI library, you've learned how to integrate Zig with existing GUI libraries like Dear ImGui. By leveraging C interoperability features, you can create cross-platform graphical applications with user interfaces. In this example, you've built a simple GUI application that displays a button and responds to user interaction. As you delve deeper into GUI development, consider experimenting with other GUI libraries, creating more complex interfaces, and integrating your Zig programs with rich graphical experiences. GUI development is an exciting realm of software development, and Zig's versatility makes it a promising choice for building user-friendly applications. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 17th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 17th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_17_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 17th, 2023</h4>
+                    <div class='title'>Part 16: GUI Development in Zig</div>
+
+                    <p>
+                        Welcome to the sixteenth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll explore GUI development in Zig, including an introduction to GUI libraries and a hands-on example of building a simple GUI application.
+                    </p>
+                    <h5>Introduction to GUI Libraries in Zig</h5>
+                    <p>
+                        Graphical User Interfaces (GUIs) are a crucial aspect of modern software applications, providing a visual and interactive way for users to interact with software. Zig, being a versatile and systems programming language, allows you to create GUI applications by integrating with existing GUI libraries.
+                    </p>
+                    <p>
+                        While Zig itself does not have a native GUI library, you can leverage GUI libraries written in C or other languages through Zig's C interoperability features. Some popular GUI libraries for this purpose include:
+                        <ul>
+                            <li>GTK: The GIMP Toolkit (GTK) is a widely used open-source GUI library known for its flexibility and cross-platform support.</li>
+                            <li>Qt: Qt is a popular C++ framework for creating cross-platform applications with a rich set of GUI components.</li>
+                            <li>Dear ImGui: Dear ImGui is a lightweight and highly customizable GUI library that can be used for creating developer tools, debugging interfaces, and more.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        To use one of these libraries in Zig, you typically follow these steps:
+                        <ol>
+                            <li>Include Headers: Include the necessary library headers using the <code>@cInclude</code> directive.</li>
+                            <li>Link Library: Link the library's binary object files (<code>.o</code> or <code>.a</code> files) during the build process.</li>
+                            <li>Call GUI Functions: Use the library's functions and widgets to create the GUI.</li>
+                        </ol>
+                    </p>
+                    <h5>Building a Simple GUI Application</h5>
+                    <p>
+                        Let's create a simple GUI application using the Dear ImGui library, which is known for its ease of integration. First, you'll need to install Dear ImGui and GLFW (a library for creating windows with OpenGL contexts) if you haven't already. You can find installation instructions in the <a href="https://github.com/ocornut/imgui">Dear ImGui repository</a>.
+                    </p>
+                    <p>
+                        Here's a basic example of a Zig program that uses Dear ImGui to create a graphical window with a button:
+                    </p>
+<p><pre>const std = @import("std");
+
+const c = @cImport({
+    @cInclude("imgui.h");
+    @cInclude("imgui_impl_glfw.h");
+    @cInclude("imgui_impl_opengl3.h");
+});
+
+const imgui = c.extern @cImport({
+    pub const ImGui_ImplGlfw_InitForOpenGL: fn(glfwWindow: c.GLFWwindow, installCallbacks: bool) void;
+    pub const ImGui_ImplOpenGL3_Init: fn() void;
+    pub const ImGui_ImplOpenGL3_NewFrame: fn() void;
+    pub const ImGui_ImplGlfw_NewFrame: fn() void;
+    pub const ImGui_ImplOpenGL3_RenderDrawData: fn(drawData: c.ImDrawData) void;
+    pub const ImGui_ImplGlfw_Shutdown: fn() void;
+    pub const ImGui_ImplOpenGL3_Shutdown: fn() void;
+    pub const ImGui_CreateContext: fn() c.ImGuiContext;
+    pub const ImGui_DestroyContext: fn(ctx: *c.ImGuiContext) void;
+});
+    
+pub fn main() !void {
+    const glfw = c.Glfw;
+    const winWidth = 800;
+    const winHeight = 600;
+
+    try glfw.Init();
+
+    const window = try glfw.CreateWindow(
+        winWidth,
+        winHeight,
+        "Zig ImGui Example",
+        null,
+        null,
+    );
+    defer window.Destroy();
+
+    glfw.MakeContextCurrent(window);
+
+    const ctx = imgui.ImGui_CreateContext();
+    defer imgui.ImGui_DestroyContext(ctx);
+
+    imgui.ImGui_ImplGlfw_InitForOpenGL(window, true);
+    imgui.ImGui_ImplOpenGL3_Init();
+
+    const io = imgui.ImGui_GetIO();
+    defer io.destroy();
+
+    while (!glfw.WindowShouldClose(window)) {
+        glfw.PollEvents();
+
+        imgui.ImGui_ImplOpenGL3_NewFrame();
+        imgui.ImGui_ImplGlfw_NewFrame();
+        imgui.ImGui_NewFrame();
+
+        imgui.ImGui_Text("Hello, Zig!");
+        if (imgui.ImGui_Button("Quit")) {
+            break;
+        }
+
+        imgui.ImGui_Render();
+        glfw.SwapBuffers(window);
+    }
+
+    imgui.ImGui_ImplOpenGL3_Shutdown();
+    imgui.ImGui_ImplGlfw_Shutdown();
+    imgui.ImGui_DestroyContext(ctx);
+
+    glfw.Terminate();
+}</pre></p>
+                    <p>This example creates a graphical window using Dear ImGui and GLFW and displays a button with the text "Quit." When you click the button, the application closes.</p>
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've been introduced to GUI development in Zig and how to integrate existing GUI libraries into Zig projects. Creating GUI applications is an exciting area of software development, and Zig's interoperability with C libraries opens up opportunities for building cross-platform, user-friendly applications.
+                    </p>
+                    <p>
+                        As you explore GUI development further, consider experimenting with different GUI libraries, creating more complex user interfaces, and integrating user interaction with your Zig programs. Happy coding!
+                    </p>
+
+
+
+                    <button><a href="./09_18_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_16_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 16 of our Getting Started with Zig on MacOS series, where we've explored GUI development in Zig. Although Zig doesn't have a native GUI library, you've learned how to integrate Zig with existing GUI libraries like Dear ImGui. By leveraging C interoperability features, you can create cross-platform graphical applications with user interfaces. In this example, you've built a simple GUI application that displays a button and responds to user interaction. As you delve deeper into GUI development, consider experimenting with other GUI libraries, creating more complex interfaces, and integrating your Zig programs with rich graphical experiences. GUI development is an exciting realm of software development, and Zig's versatility makes it a promising choice for building user-friendly applications. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

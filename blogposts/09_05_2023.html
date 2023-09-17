@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 4 of our Getting Started with Zig on MacOS series, where we dive into control flow in Zig. This vital aspect of programming allows you to make informed decisions and repeat actions in your code. We cover conditional statements like if, else, and switch, demonstrating how to execute specific blocks of code based on conditions. Additionally, we explore looping constructs such as for and while, which are essential for iterating through data. As you learn to navigate Zig's control flow features, you'll gain the ability to create more dynamic and responsive programs. Stay tuned for Part 5, where we'll shift our focus to functions and procedures, empowering you to organize your code efficiently and handle errors effectively. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 4 of our Getting Started with Zig on MacOS series, where we dive into control flow in Zig. This vital aspect of programming allows you to make informed decisions and repeat actions in your code. We cover conditional statements like if, else, and switch, demonstrating how to execute specific blocks of code based on conditions. Additionally, we explore looping constructs such as for and while, which are essential for iterating through data. As you learn to navigate Zig's control flow features, you'll gain the ability to create more dynamic and responsive programs. Stay tuned for Part 5, where we'll shift our focus to functions and procedures, empowering you to organize your code efficiently and handle errors effectively. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 4 of our Getting Started with Zig on MacOS series, where we dive into control flow in Zig. This vital aspect of programming allows you to make informed decisions and repeat actions in your code. We cover conditional statements like if, else, and switch, demonstrating how to execute specific blocks of code based on conditions. Additionally, we explore looping constructs such as for and while, which are essential for iterating through data. As you learn to navigate Zig's control flow features, you'll gain the ability to create more dynamic and responsive programs. Stay tuned for Part 5, where we'll shift our focus to functions and procedures, empowering you to organize your code efficiently and handle errors effectively. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 5th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 5th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_05_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 5th, 2023</h4>
+                    <div class='title'>Part 4: Control Flow in Zig</div>
+
+                    <p>
+                        Welcome to the fourth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll explore control flow in Zig, which allows you to make decisions and repeat actions in your programs. We'll cover conditional statements such as <code>if</code>, <code>else</code>, and <code>switch</code>, as well as looping constructs like <code>for</code> and <code>while</code>.
+                    </p>
+                    <h5>Conditional Statements</h5>
+                    <p><b>The <code>if</code> Statement</b></p>
+                    <p>
+                        The <code>if</code> statement is used for conditional branching in your code. It allows you to execute a block of code if a specified condition is true. Here's a basic example:
+                    </p>
+<p><pre>const x: i32 = 10;
+
+if x > 5 {
+    // Code inside this block will execute because x is greater than 5
+    const result = "x is greater than 5";
+    // You can also use result in subsequent code
+}</pre></p>
+                    <p><b>The <code>else</code> Statement</b></p>
+                    <p>
+                        You can extend the <code>if</code> statement with an <code>else</code> clause to provide an alternative code block to execute when the condition is false:
+                    </p>
+<p><pre>const y: i32 = 3;
+
+if y &gt; 5 {
+    // This block will not execute because y is not greater than 5
+    const result = "y is greater than 5";
+} else {
+    // This block will execute when the condition is false
+    const result = "y is not greater than 5";
+}</pre></p>                    
+                    <p><b>The <code>switch</code> Statement</b></p>
+                    <p>
+                        The <code>switch</code> statement is used to perform different actions based on the value of an expression. It's particularly useful when you have multiple conditions to check:
+                    </p>
+<p><pre>const day_of_week = "Monday";
+
+switch (day_of_week) {
+    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" =&gt; {
+        const result = "It's a workday!";
+    }
+    "Saturday", "Sunday" =&gt; {
+        const result = "It's the weekend!";
+    }
+    else =&gt; {
+        const result = "Invalid day";
+    }
+}</pre></p>
+                    <h5>Loops</h5>
+                    <p><b>The <code>for</code> Loop</b></p>
+                    <p>
+                        Zig provides a C-style <code>for</code> loop for iterating over a range of values. Here's an example:
+                    </p>
+<p><pre>const max = 5;
+
+    for (var i: i32 = 0; i &lt; max; i += 1) {
+        // This block will execute 5 times with i values from 0 to 4
+    }</pre></p>
+                    <p><b>The <code>while</code> Loop</b></p>
+                    <p>The while loop repeatedly executes a block of code while a given condition is true:</p>
+<p><pre>const target = 10;
+var current = 0;
+
+while (current &lt; target) {
+    // This block will execute until current is no longer less than 10
+    current += 1;
+}</pre></p>
+                    <h5>Control Flow Best Practices</h5>
+                    <p><ul>
+                        <li>Use meaningful variable and function names to improve code readability.</li>
+                        <li>Avoid deeply nested control structures; consider breaking down complex logic into smaller functions.</li>
+                        <li>Use <code>if</code>, <code>else</code>, and <code>switch</code> to make your code more expressive and self-documenting.</li>
+                        <li>Be cautious with infinite loops; ensure there's a way to exit the loop.</li>
+                        <li>Use looping constructs that best fit your task, whether it's a fixed iteration count (<code>for</code>) or a condition-based loop (<code>while</code>).</li>
+                    </ul></p>
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've explored the essential aspects of control flow in Zig, including conditional statements (<code>if</code>, <code>else</code>, <code>switch</code>) and loops (<code>for</code>, <code>while</code>). These constructs are fundamental for making your programs perform specific actions based on conditions and iterating over data.
+                    </p>
+                    <p>
+                        In Part 5, we'll delve into functions and procedures in Zig, allowing you to encapsulate code into reusable modules and handle errors effectively. Stay tuned for more Zig insights and practical examples. Happy coding!
+                    </p>
+                    
+                    
+                    
+
+                    <button><a href="./09_06_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_04_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 4 of our Getting Started with Zig on MacOS series, where we dive into control flow in Zig. This vital aspect of programming allows you to make informed decisions and repeat actions in your code. We cover conditional statements like if, else, and switch, demonstrating how to execute specific blocks of code based on conditions. Additionally, we explore looping constructs such as for and while, which are essential for iterating through data. As you learn to navigate Zig's control flow features, you'll gain the ability to create more dynamic and responsive programs. Stay tuned for Part 5, where we'll shift our focus to functions and procedures, empowering you to organize your code efficiently and handle errors effectively. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 6 of our Getting Started with Zig on MacOS series. In this segment, we've delved into essential data structures in Zig, encompassing arrays, slices, structures (structs), enums, and tagged unions. These constructs are pivotal for efficient data organization and manipulation within your Zig programs. In the next installment, Part 7, we'll explore pointers and memory management, equipping you with the knowledge to work with pointers, allocate and deallocate memory, and grasp Zig's safety mechanisms. Stay tuned for further Zig insights and hands-on examples. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 6 of our Getting Started with Zig on MacOS series. In this segment, we've delved into essential data structures in Zig, encompassing arrays, slices, structures (structs), enums, and tagged unions. These constructs are pivotal for efficient data organization and manipulation within your Zig programs. In the next installment, Part 7, we'll explore pointers and memory management, equipping you with the knowledge to work with pointers, allocate and deallocate memory, and grasp Zig's safety mechanisms. Stay tuned for further Zig insights and hands-on examples. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 6 of our Getting Started with Zig on MacOS series. In this segment, we've delved into essential data structures in Zig, encompassing arrays, slices, structures (structs), enums, and tagged unions. These constructs are pivotal for efficient data organization and manipulation within your Zig programs. In the next installment, Part 7, we'll explore pointers and memory management, equipping you with the knowledge to work with pointers, allocate and deallocate memory, and grasp Zig's safety mechanisms. Stay tuned for further Zig insights and hands-on examples. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 7th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 7th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_07_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 7th, 2023</h4>
+                    <div class='title'>Part 6: Data Structures in Zig</div>
+
+                    <p>
+                        Welcome to the sixth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll explore the essential data structures in Zig, including arrays, slices, structures (structs), enums, and tagged unions. Understanding these data structures is crucial for organizing and manipulating data effectively in your Zig programs.
+                    </p>
+                    <h5>Arrays and Slices</h5>
+                    <p><b>Arrays</b></p>
+                    <p>
+                        An array in Zig is a fixed-size collection of elements of the same data type. You declare an array by specifying its type, size, and optionally initializing its elements:
+                        <p><pre>const myArray: [5]i32 = [1, 2, 3, 4, 5];</pre></p>
+                        In this example, we declare an integer array of size 5 and initialize it with values.
+                    </p>
+                    <p><b>Slices</b></p>
+                    <p>
+                        Slices are a more flexible way to work with arrays in Zig. A slice represents a portion of an array, and it can change in size dynamically. You can create a slice from an array or another slice:
+                    </p>
+<p><pre>const myArray: [5]i32 = [1, 2, 3, 4, 5];
+const mySlice = myArray[1..4]; // Creates a slice containing [2, 3, 4]</pre></p>
+                    <p>
+                        Slices are particularly useful for working with arrays of unknown or variable sizes.
+                    </p>
+                    <h5>Structures (Structs)</h5>
+                    <p>
+                        Structures, often referred to as structs, allow you to create custom data types by combining multiple variables of different types into a single entity. Here's an example of defining and using a struct in Zig:
+                    </p>
+<p><pre>const std = @import("std");
+
+const Person = struct {
+    name: []const u8,
+    age: i32,
+};
+
+fn main() void {
+    const alice = Person{ .name = "Alice", .age = 30 };
+    const bob = Person{ .name = "Bob", .age = 25 };
+
+    std.debug.print("Name: {}, Age: {}\n", .{alice.name, alice.age});
+    std.debug.print("Name: {}, Age: {}\n", .{bob.name, bob.age});
+}</pre></p>
+                    <p>In this example, we define a <code>Person</code> struct with <code>name</code> and <code>age</code> fields and create two instances of it.</p>
+                    <h5>Enums and Tagged Unions</h5>
+                    <p><b>Enums</b></p>
+                    <p>Enums, short for enumerations, are a way to define a type with a fixed set of named values. They are often used to represent a limited set of options or states. Here's an example:</p>
+<p><pre>const Status = enum {
+    OK,
+    Error,
+};
+
+const status = Status.OK;</pre></p>
+                    <p>In this example, we define an enum Status with two values: <code>OK</code> and <code>Error</code>.</p>
+
+                    <p><b>Tagged Unions</b></p>
+                    <p>
+                        Tagged unions are a powerful feature in Zig that allows you to define a type that can hold one of several different values. Each value is associated with a tag that identifies its type. Tagged unions are particularly useful for handling complex data structures and error handling:
+                    </p>
+<p><pre>const std = @import("std");
+
+const Result = union {
+    Ok: i32,
+    Err: []const u8,
+};
+
+fn divide(a: i32, b: i32) Result {
+    if (b == 0) {
+        return Result.Err("Division by zero");
+    }
+    return Result.Ok(a / b);
+}
+
+fn main() void {
+    const result1 = divide(10, 2);
+    const result2 = divide(8, 0);
+
+    std.debug.print("Result 1: {}\n", .{result1.Ok});
+    std.debug.print("Result 2: {}\n", .{result2.Err});
+}</pre></p>
+                    <p>In this example, we define a tagged union <code>Result</code> that can hold either an <code>Ok</code> value of type <code>i32</code> or an <code>Err</code> value of type <code>[]const u8</code>.</p>
+
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've explored the fundamental data structures in Zig, including arrays, slices, structs, enums, and tagged unions. These data structures provide you with the tools to organize and manipulate data effectively in your Zig programs.
+                    </p>
+                    <p>
+                        In Part 7, we'll dive into pointers and memory management in Zig. You'll learn how to work with pointers, allocate and deallocate memory, and gain a deeper understanding of Zig's safety features. Stay tuned for more Zig insights and practical examples. Happy coding!
+                    </p>
+                    
+
+                    <button><a href="./09_08_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_06_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 6 of our Getting Started with Zig on MacOS series. In this segment, we've delved into essential data structures in Zig, encompassing arrays, slices, structures (structs), enums, and tagged unions. These constructs are pivotal for efficient data organization and manipulation within your Zig programs. In the next installment, Part 7, we'll explore pointers and memory management, equipping you with the knowledge to work with pointers, allocate and deallocate memory, and grasp Zig's safety mechanisms. Stay tuned for further Zig insights and hands-on examples. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

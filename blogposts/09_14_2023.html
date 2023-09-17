@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 13 of our Getting Started with Zig on MacOS series, where we delve into the world of interoperability in Zig. You've learned how to use C libraries in Zig, leverage Zig's C-compatible ABI, and even call Zig code from other programming languages like C. Zig's robust interoperability capabilities enable you to integrate existing codebases, libraries, and languages seamlessly into your Zig projects, opening up a world of possibilities for collaboration and code reuse. As you continue to explore Zig, consider how these interoperability features can help you tap into the extensive ecosystem of C libraries and work harmoniously with other programming languages. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 13 of our Getting Started with Zig on MacOS series, where we delve into the world of interoperability in Zig. You've learned how to use C libraries in Zig, leverage Zig's C-compatible ABI, and even call Zig code from other programming languages like C. Zig's robust interoperability capabilities enable you to integrate existing codebases, libraries, and languages seamlessly into your Zig projects, opening up a world of possibilities for collaboration and code reuse. As you continue to explore Zig, consider how these interoperability features can help you tap into the extensive ecosystem of C libraries and work harmoniously with other programming languages. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 13 of our Getting Started with Zig on MacOS series, where we delve into the world of interoperability in Zig. You've learned how to use C libraries in Zig, leverage Zig's C-compatible ABI, and even call Zig code from other programming languages like C. Zig's robust interoperability capabilities enable you to integrate existing codebases, libraries, and languages seamlessly into your Zig projects, opening up a world of possibilities for collaboration and code reuse. As you continue to explore Zig, consider how these interoperability features can help you tap into the extensive ecosystem of C libraries and work harmoniously with other programming languages. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 14th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 14th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_14_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 14th, 2023</h4>
+                    <div class='title'>Part 13: Interoperability in Zig</div>
+
+                    <p>
+                        Welcome to the thirteenth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll explore the topic of interoperability in Zig, which involves using C libraries in Zig, leveraging Zig's C-compatible ABI, and calling Zig code from other programming languages.
+                    </p>
+                    <h5>Using C Libraries in Zig</h5>
+                    <p>
+                        Zig has strong support for interoperability with C libraries, making it easy to integrate existing C code into your Zig projects. To use a C library in Zig, you typically follow these steps:
+                        <ol>
+                            <li>Include Headers: Include the necessary C library headers using the <code>@cInclude</code> directive.</li>
+                            <li>Link C Libraries: Link the C library's binary object files (<code>.o</code> or <code>.a</code> files) during the build process.</li>
+                            <li>Declare C Functions: Declare C functions in Zig using the <code>@cImport</code> directive to access them from Zig code.</li>
+                        </ol>
+                    </p>
+                    <p>Here's a simplified example of using the C standard library's <code>printfprintf</code> function in Zig:</p>
+<p><pre>const std = @import("std");
+
+const libc = @cImport({
+    @cInclude("stdio.h");
+});
+
+fn main() void {
+    const message = "Hello, Zig!\n";
+    libc.printf("%s", .{@cstring(message)});
+}</pre></p>
+                    <p>In this example, we import the C standard library's <code>printf</code> function and use it to print a message.</p>
+                    <h5>Zig's C-Compatible ABI</h5>
+                    <p>
+                        Zig is designed to have a C-compatible ABI, which means you can call Zig functions from C and vice versa. This compatibility simplifies integration with other languages and systems that use C as a common interface.
+                    </p>
+                    <p>
+                        To expose Zig functions for use in C code, you can mark them with the <code>@cDefine</code> attribute. For example:
+                    </p>
+<p><pre>const std = @import("std");
+
+@cDefine
+pub fn add(a: i32, b: i32) i32 {
+    return a + b;
+}</pre></p>
+                    <p>This allows you to call the <code>add</code> function from C code as if it were a regular C function.</p>
+                    <h5>Calling Zig from Other Languages</h5>
+                    <p>
+                        Zig's C-compatible ABI also enables you to call Zig code from other programming languages like C, C++, and even languages with foreign function interfaces (FFI). To do this, you need to create a Zig library that exports functions using the <code>@cDefine</code> attribute and then link it with the target language.
+                    </p>
+                    <p>Here's an example of using a Zig function from a C program:</p>
+<p><pre>const std = @import("std");
+
+@cDefine
+pub fn zig_add(a: i32, b: i32) i32 {
+    return a + b;
+}
+
+int main() {
+    int result = zig_add(3, 4);
+    printf("Result: %d\n", result);
+    return 0;
+}</pre></p>
+                    <p>In this example, we define a Zig function <code>zig_add</code> and call it from a C program.</p>
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've learned about interoperability in Zig, including using C libraries in Zig, Zig's C-compatible ABI, and calling Zig code from other programming languages. Zig's compatibility with C opens up a wide range of possibilities for integrating existing codebases, libraries, and languages into your Zig projects.
+                    </p>
+                    <p>
+                        As you continue to explore Zig, consider how these interoperability features can help you leverage the extensive ecosystem of C libraries and work seamlessly with other programming languages. Happy coding!
+                    </p>
+
+
+
+                    <button><a href="./09_15_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_13_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 13 of our Getting Started with Zig on MacOS series, where we delve into the world of interoperability in Zig. You've learned how to use C libraries in Zig, leverage Zig's C-compatible ABI, and even call Zig code from other programming languages like C. Zig's robust interoperability capabilities enable you to integrate existing codebases, libraries, and languages seamlessly into your Zig projects, opening up a world of possibilities for collaboration and code reuse. As you continue to explore Zig, consider how these interoperability features can help you tap into the extensive ecosystem of C libraries and work harmoniously with other programming languages. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 2 of our Getting Started with Zig on MacOS series, where we dive into practical Zig programming. This installment guides you through writing your inaugural Zig program, the timeless Hello, World! example, and demonstrates how to compile and run it on your MacOS system. We break down the code, explaining key concepts like importing the standard library, obtaining a writer for output, and error handling. After successfully compiling and running the program, you've taken your first steps in Zig programming. Stay tuned for Part 3, where we'll delve into variables and data types, continuing your journey into the world of Zig. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 2 of our Getting Started with Zig on MacOS series, where we dive into practical Zig programming. This installment guides you through writing your inaugural Zig program, the timeless Hello, World! example, and demonstrates how to compile and run it on your MacOS system. We break down the code, explaining key concepts like importing the standard library, obtaining a writer for output, and error handling. After successfully compiling and running the program, you've taken your first steps in Zig programming. Stay tuned for Part 3, where we'll delve into variables and data types, continuing your journey into the world of Zig. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 2 of our Getting Started with Zig on MacOS series, where we dive into practical Zig programming. This installment guides you through writing your inaugural Zig program, the timeless Hello, World! example, and demonstrates how to compile and run it on your MacOS system. We break down the code, explaining key concepts like importing the standard library, obtaining a writer for output, and error handling. After successfully compiling and running the program, you've taken your first steps in Zig programming. Stay tuned for Part 3, where we'll delve into variables and data types, continuing your journey into the world of Zig. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 3rd, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 3rd, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_03_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 3rd, 2023</h4>
+                    <div class='title'>Part 2: Your First Zig Program</div>
+
+                    <p>
+                        Welcome to the second installment of our "Getting Started with Zig on MacOS" series. In this part, we'll dive right into the practical side of Zig programming by writing your very first Zig program. We'll start with the classic "Hello, World!" example and then guide you through the process of compiling and running Zig code on your MacOS system.
+                    </p>
+                    <h5>Writing a "Hello, World!" Program in Zig</h5>
+                    <p>
+                        The "Hello, World!" program is a time-honored tradition when learning a new programming language. It's a simple yet essential example that demonstrates the basics of printing text to the screen.
+                    </p>
+                    <p>
+                        Open your favorite text editor (such as Visual Studio Code, Sublime Text, or even the built-in Terminal text editor, nano) and create a new file named <code>hello.zig</code>.
+                    </p>
+                    <p>Now, let's write the "Hello, World!" program in Zig:</p>
+<p><pre>const std = @import("std");
+
+pub fn main() void {
+    const stdout = std.io.getStdOut().writer();
+    try stdout.print("Hello, World!\n");
+}</pre></p>
+                    <p>Let's break down what's happening here:</p>
+                    <ul>
+                        <li>We import the <code>std</code> module, which is Zig's standard library, to access essential functionality like I/O.</li>
+                        <li>Inside the <code>main</code> function, we obtain a writer for standard output (stdout) using <code>std.io.getStdOut().writer()</code>.</li>
+                        <li>We then use <code>try</code> to handle any potential errors that might occur during the printing process.</li>
+                        <li>Finally, we print "Hello, World!\n" to stdout, followed by a newline character to ensure a clean output.</li>
+                    </ul>
+                    <h5>Compiling and Running Zig Code</h5>
+                    <p>Now that we've written our "Hello, World!" program, let's compile and run it:</p>
+                    <p><b>Step 1: Compile the Program</b></p>
+                    <p>
+                        Open your terminal and navigate to the directory where you saved <code>hello.zig</code>. To compile the program, use the following command:
+                    </p>
+                    <p><pre>zig build-exe hello.zig</pre></p>
+                    <p>This command tells Zig to build an executable file named <code>hello</code> from the <code>hello.zig</code> source code.</p>
+                    <p><b>Step 2: Run the Program</b></p>
+                    <p>After successfully compiling the program, you can run it with the following command:</p>
+                    <p><pre>./hello</pre></p>
+                    <p>You should see the output:</p>
+                    <p><pre>Hello, World!</pre></p>
+                    <p>Congratulations! You've just created, compiled, and executed your first Zig program on MacOS.</p>
+                    <h5>What's Next?</h5>
+                    <p>In this part, you've taken your first steps in Zig programming by writing a "Hello, World!" program and understanding the basics of compilation and execution. In the upcoming posts, we'll delve deeper into Zig's features, data types, control flow, and more. Stay tuned for Part 3, where we'll explore variables and data types in Zig. Happy coding!</p>
+                    
+                    
+
+                    <button><a href="./09_04_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_02_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 2 of our Getting Started with Zig on MacOS series, where we dive into practical Zig programming. This installment guides you through writing your inaugural Zig program, the timeless Hello, World! example, and demonstrates how to compile and run it on your MacOS system. We break down the code, explaining key concepts like importing the standard library, obtaining a writer for output, and error handling. After successfully compiling and running the program, you've taken your first steps in Zig programming. Stay tuned for Part 3, where we'll delve into variables and data types, continuing your journey into the world of Zig. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 8 of our Getting Started with Zig on MacOS series, where we explore the world of error handling in Zig. Zig offers robust error handling mechanisms, including error sets and error union types, which enable you to categorize and manage potential issues in your code effectively. You've learned how to define error sets, handle errors using the try keyword and catch blocks, and propagate errors intelligently. In the upcoming Part 9, we'll shift our focus to modules and packages in Zig, providing insights into structuring your code into reusable components and libraries. Stay tuned for more valuable Zig insights and practical examples. Happy coding!.">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 8 of our Getting Started with Zig on MacOS series, where we explore the world of error handling in Zig. Zig offers robust error handling mechanisms, including error sets and error union types, which enable you to categorize and manage potential issues in your code effectively. You've learned how to define error sets, handle errors using the try keyword and catch blocks, and propagate errors intelligently. In the upcoming Part 9, we'll shift our focus to modules and packages in Zig, providing insights into structuring your code into reusable components and libraries. Stay tuned for more valuable Zig insights and practical examples. Happy coding!.">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 8 of our Getting Started with Zig on MacOS series, where we explore the world of error handling in Zig. Zig offers robust error handling mechanisms, including error sets and error union types, which enable you to categorize and manage potential issues in your code effectively. You've learned how to define error sets, handle errors using the try keyword and catch blocks, and propagate errors intelligently. In the upcoming Part 9, we'll shift our focus to modules and packages in Zig, providing insights into structuring your code into reusable components and libraries. Stay tuned for more valuable Zig insights and practical examples. Happy coding!.">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 9th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 9th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_09_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 9th, 2023</h4>
+                    <div class='title'>Part 8: Error Handling in Zig</div>
+
+                    <p>
+                        Welcome to the eighth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll delve into the world of error handling in Zig. Zig provides robust mechanisms for dealing with errors, including error sets, error union types, and techniques for handling and propagating errors effectively.
+                    </p>
+                    <h5>Zig's Error Sets</h5>
+                    <p>
+                        Error sets are a fundamental feature of Zig's error handling system. They allow you to define a set of errors that a function can return. Error sets provide a way to categorize and document potential issues your code may encounter. Here's how you can define and use an error set:
+                    </p>
+<p><pre>const std = @import("std");
+
+const ErrorSet = error{
+    FileNotFound,
+    PermissionDenied,
+    InvalidInput,
+};
+
+fn openFile(filePath: []const u8) !File {
+    const file = try std.fs.cwd().openFile(filePath, .{});
+    if (file == null) {
+        return ErrorSet.FileNotFound;
+    }
+    if (file.err != null) {
+        return ErrorSet.PermissionDenied;
+    }
+    return file.ok;
+}</pre></p>
+                    <p>
+                        In this example, we define an error set <code>ErrorSet</code> with three possible error reasons: <code>FileNotFound</code>, <code>PermissionDenied</code>, and <code>InvalidInput</code>. The <code>openFile</code> function uses error sets to indicate various error conditions when attempting to open a file.
+                    </p>
+                    <h5>Error Union Types</h5>
+                    <p>
+                        Error union types in Zig are used to return either a value or an error from a function. They are declared using the <code>!</code> symbol. Functions that may return errors are annotated with <code>!</code> to indicate that they return an error union type. Here's an example:
+                    </p>
+<p><pre>fn divide(a: i32, b: i32) !f64 {
+    if (b == 0) {
+        return error{
+            .StandardError = .DivByZero,
+            .name = "Division by zero",
+        };
+    }
+    return f64(a) / f64(b);
+}</pre></p>
+                    <p>
+                        In this example, the <code>divide</code> function returns a value of type <code>f64</code> if the division is successful or an error union type if a division by zero occurs.
+                    </p>
+                    <h5>Handling and Propagating Errors</h5>
+                    <p>
+                        To handle errors in Zig, you can use the <code>try</code> keyword to attempt a potentially error-producing operation and then handle the error using a <code>catch</code> block. Here's an example of error handling and propagation:
+                    </p>
+<p><pre>const std = @import("std");
+
+fn main() void {
+    const filePath = "nonexistent.txt";
+    
+    const result = try openFile(filePath);
+    switch (result) {
+        ErrorSet.FileNotFound =&gt; {
+            std.debug.print("File not found: {}\n", .{filePath});
+        },
+        ErrorSet.PermissionDenied =&gt; {
+            std.debug.print("Permission denied: {}\n", .{filePath});
+        },
+        else =&gt; {
+            std.debug.print("File opened successfully\n");
+            // Work with the open file
+        },
+    }
+}</pre></p>
+                    <p>
+                        In this example, we attempt to open a file using the <code>openFile</code> function and handle various error conditions using a <code>switch</code> statement.
+                    </p>
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've learned about Zig's error handling mechanisms, including error sets, error union types, and techniques for handling and propagating errors effectively. Error handling is a critical aspect of writing robust and reliable software.
+                    </p>
+                    <p>
+                        In Part 9, we'll dive into modules and packages in Zig, helping you organize and structure your code into reusable components and libraries. Stay tuned for more Zig insights and practical examples. Happy coding!
+                    </p>
+
+
+
+
+                    <button><a href="./09_10_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_08_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 8 of our Getting Started with Zig on MacOS series, where we explore the world of error handling in Zig. Zig offers robust error handling mechanisms, including error sets and error union types, which enable you to categorize and manage potential issues in your code effectively. You've learned how to define error sets, handle errors using the try keyword and catch blocks, and propagate errors intelligently. In the upcoming Part 9, we'll shift our focus to modules and packages in Zig, providing insights into structuring your code into reusable components and libraries. Stay tuned for more valuable Zig insights and practical examples. Happy coding!.  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
