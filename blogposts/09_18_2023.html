@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 17 of our Getting Started with Zig on MacOS series, where we've explored the fascinating world of graphics and multimedia in Zig. Zig's versatility empowers you to work with images, audio, and video processing in various ways, from basic image manipulation to advanced multimedia applications. You can use Zig's standard library for simple tasks or integrate with powerful C libraries like FFmpeg for complex multimedia processing. Additionally, Zig's low-level capabilities and support for graphics libraries make it a promising choice for game development, where you can create immersive gaming experiences, handle user input, and manage audio and video components. As you dive deeper into multimedia development, consider exploring specific libraries and frameworks to suit your project's needs, whether you're crafting multimedia applications, games, or multimedia processing tools. Zig's performance and adaptability make it an excellent choice for unleashing your creativity in the world of graphics and multimedia. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 17 of our Getting Started with Zig on MacOS series, where we've explored the fascinating world of graphics and multimedia in Zig. Zig's versatility empowers you to work with images, audio, and video processing in various ways, from basic image manipulation to advanced multimedia applications. You can use Zig's standard library for simple tasks or integrate with powerful C libraries like FFmpeg for complex multimedia processing. Additionally, Zig's low-level capabilities and support for graphics libraries make it a promising choice for game development, where you can create immersive gaming experiences, handle user input, and manage audio and video components. As you dive deeper into multimedia development, consider exploring specific libraries and frameworks to suit your project's needs, whether you're crafting multimedia applications, games, or multimedia processing tools. Zig's performance and adaptability make it an excellent choice for unleashing your creativity in the world of graphics and multimedia. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 17 of our Getting Started with Zig on MacOS series, where we've explored the fascinating world of graphics and multimedia in Zig. Zig's versatility empowers you to work with images, audio, and video processing in various ways, from basic image manipulation to advanced multimedia applications. You can use Zig's standard library for simple tasks or integrate with powerful C libraries like FFmpeg for complex multimedia processing. Additionally, Zig's low-level capabilities and support for graphics libraries make it a promising choice for game development, where you can create immersive gaming experiences, handle user input, and manage audio and video components. As you dive deeper into multimedia development, consider exploring specific libraries and frameworks to suit your project's needs, whether you're crafting multimedia applications, games, or multimedia processing tools. Zig's performance and adaptability make it an excellent choice for unleashing your creativity in the world of graphics and multimedia. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 18th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 18th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_18_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 18th, 2023</h4>
+                    <div class='title'>Part 17: Graphics and Multimedia in Zig</div>
+
+                    <p>
+                        Welcome to the seventeenth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll delve into graphics and multimedia in Zig, including working with images and graphics, audio and video processing, and even game development.
+                    </p>
+                    <h5>Working with Images and Graphics</h5>
+                    <p>
+                        Zig's versatility allows you to work with images and graphics in various ways. You can utilize external libraries for advanced graphics operations or create your own image processing tools.
+                    </p>
+                    <p>
+                        For simple image processing tasks, you can use Zig's standard library, which includes functions for reading and writing image files in formats like PNG and JPEG. You can manipulate pixel data, apply filters, and generate images programmatically.
+                    </p>
+                    <p>
+                        Here's a basic example of reading and writing an image using Zig's standard library:
+                    </p>
+<p><pre>const std = @import("std");
+
+fn main() !void {
+    const image = try std.fs.cwd().readFile("input.png");
+    const decodedImage = try std.io.readAllAlloc(u8, image);
+    
+    // Perform image processing here...
+
+    const outputFile = try std.fs.cwd().createFile("output.png");
+    defer outputFile.close();
+    try outputFile.writeAll(decodedImage);
+}</pre></p>
+                    <p>
+                        In this example, we read an image, perform image processing (which can include resizing, filtering, or any desired operation), and then save the processed image to a new file.
+                    </p>
+                    <p>
+                        For more complex graphics tasks like 2D and 3D rendering, game development, or interactive graphics applications, you may consider using graphics libraries like SDL (Simple DirectMedia Layer) or OpenGL.
+                    </p>
+                    <h5>Audio and Video Processing</h5>
+                    <p>
+                        Audio and video processing are crucial aspects of multimedia applications. Zig can interface with C libraries like FFmpeg, libsoundio, and more to handle multimedia tasks. Whether you're building a video player, audio editor, or multimedia streaming application, Zig's capabilities can help you achieve your goals.
+                    </p>
+                    <p>
+                        Here's a high-level example of decoding an audio file using the FFmpeg library:
+                    </p>
+<p><pre>const std = @import("std");
+
+const c = @cImport({
+    @cInclude("libavformat/avformat.h");
+    @cInclude("libavutil/avutil.h");
+    // Include other FFmpeg headers...
+});
+
+pub fn main() !void {
+    try c.av_register_all();
+
+    const inputFileName = "input.mp3";
+    const outputFileName = "output.wav";
+
+    const formatContext = c.avformat_alloc_context();
+    defer c.avformat_free_context(formatContext);
+
+    try c.avformat_open_input(formatContext, inputFileName, null, null);
+    try c.avformat_find_stream_info(formatContext, null);
+
+    // Decode audio frames, perform processing...
+
+    // Save processed audio to outputFileName...
+}</pre></p>
+                    <p>In this example, we initialize FFmpeg, open an audio file, decode audio frames, perform audio processing, and save the processed audio to a new file.</p>
+                    <h5>Game Development in Zig</h5>
+                    <p>Zig's low-level capabilities make it suitable for game development. You can create 2D or 3D games using graphics libraries like SDL or OpenGL, implement game logic, handle user input, and manage audio and video components.</p>
+                    <p>Zig also provides multithreading support, which can be beneficial for optimizing game performance and handling complex game logic.</p>
+                    <p>Here's a simplified example of a simple game loop in Zig:</p>
+<p><pre>const std = @import("std");
+
+const sdl = @cImport({
+    @cInclude("SDL.h");
+});
+
+pub fn main() !void {
+    try sdl.SDL_Init(sdl.SDL_INIT_VIDEO);
+
+    const window = try sdl.SDL_CreateWindow(
+        "Zig Game",
+        sdl.SDL_WINDOWPOS_UNDEFINED,
+        sdl.SDL_WINDOWPOS_UNDEFINED,
+        800,
+        600,
+        sdl.SDL_WINDOW_SHOWN
+    );
+    defer sdl.SDL_DestroyWindow(window);
+
+    const renderer = try sdl.SDL_CreateRenderer(window, -1, sdl.SDL_RENDERER_ACCELERATED);
+    defer sdl.SDL_DestroyRenderer(renderer);
+
+    while (true) {
+        // Handle user input, update game state...
+
+        // Clear screen, render game objects...
+
+        sdl.SDL_RenderPresent(renderer);
+
+        // Implement game loop control...
+    }
+
+    sdl.SDL_Quit();
+}</pre></p>
+                    <p>In this example, we initialize an SDL window and renderer, create a game loop to handle user input and rendering, and then clean up resources when the game exits.</p>
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've explored graphics and multimedia capabilities in Zig, including working with images and graphics, audio and video processing, and game development. Zig's flexibility, performance, and ability to interface with C libraries make it a compelling choice for a wide range of multimedia applications.
+                    </p>
+                    <p>
+                        As you continue your journey in multimedia development with Zig, consider exploring specific libraries, frameworks, or tools that align with your project goals. Whether you're building multimedia applications, games, or multimedia processing tools, Zig provides a powerful platform for your creative endeavors. Happy coding!
+                    </p>
+
+
+                    <button><a href="./09_19_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_17_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 17 of our Getting Started with Zig on MacOS series, where we've explored the fascinating world of graphics and multimedia in Zig. Zig's versatility empowers you to work with images, audio, and video processing in various ways, from basic image manipulation to advanced multimedia applications. You can use Zig's standard library for simple tasks or integrate with powerful C libraries like FFmpeg for complex multimedia processing. Additionally, Zig's low-level capabilities and support for graphics libraries make it a promising choice for game development, where you can create immersive gaming experiences, handle user input, and manage audio and video components. As you dive deeper into multimedia development, consider exploring specific libraries and frameworks to suit your project's needs, whether you're crafting multimedia applications, games, or multimedia processing tools. Zig's performance and adaptability make it an excellent choice for unleashing your creativity in the world of graphics and multimedia. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
