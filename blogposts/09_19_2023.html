@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="Welcome to Part 18 of our Getting Started with Zig on MacOS series, where we delve into Zig's role in web development. Zig is a versatile language that can be employed for both server-side and client-side web applications. On the server side, Zig's networking and concurrency capabilities enable you to build web servers and dynamic web applications. While Zig doesn't have dedicated web frameworks, you can create your own or interface with existing C-based frameworks. On the client side, Zig's role is more limited, but it can be used when targeting WebAssembly (Wasm) or interacting with the browser's Web API. While Zig's web development ecosystem is less mature, the active community continues to contribute libraries and tools. As you explore web development with Zig, keep an eye on evolving libraries and the language's development in this domain. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="Welcome to Part 18 of our Getting Started with Zig on MacOS series, where we delve into Zig's role in web development. Zig is a versatile language that can be employed for both server-side and client-side web applications. On the server side, Zig's networking and concurrency capabilities enable you to build web servers and dynamic web applications. While Zig doesn't have dedicated web frameworks, you can create your own or interface with existing C-based frameworks. On the client side, Zig's role is more limited, but it can be used when targeting WebAssembly (Wasm) or interacting with the browser's Web API. While Zig's web development ecosystem is less mature, the active community continues to contribute libraries and tools. As you explore web development with Zig, keep an eye on evolving libraries and the language's development in this domain. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="Welcome to Part 18 of our Getting Started with Zig on MacOS series, where we delve into Zig's role in web development. Zig is a versatile language that can be employed for both server-side and client-side web applications. On the server side, Zig's networking and concurrency capabilities enable you to build web servers and dynamic web applications. While Zig doesn't have dedicated web frameworks, you can create your own or interface with existing C-based frameworks. On the client side, Zig's role is more limited, but it can be used when targeting WebAssembly (Wasm) or interacting with the browser's Web API. While Zig's web development ecosystem is less mature, the active community continues to contribute libraries and tools. As you explore web development with Zig, keep an eye on evolving libraries and the language's development in this domain. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 19th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 19th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_19_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 19th, 2023</h4>
+                    <div class='title'>Part 18: Web Development with Zig</div>
+
+                    <p>
+                        Welcome to the eighteenth installment of our "Getting Started with Zig on MacOS" series. In this part, we'll explore Zig's role in web development, covering both server-side and client-side web applications, as well as web frameworks and tooling.
+                    </p>
+                    <h5>Zig's Role in Web Development</h5>
+                    <p>
+                        Zig is primarily designed as a systems programming language, making it a strong choice for low-level tasks like operating system development, game engines, and system utilities. However, it can also play a role in web development, albeit with some caveats.
+                    </p>
+                    <p><b>Server-Side Web Applications</b></p>
+                    <p>
+                        Zig can be used to build server-side web applications by leveraging its capabilities in networking and concurrency. You can create web servers that handle HTTP requests, process data, and generate dynamic content. While Zig doesn't have a dedicated web framework like other languages (e.g., Django for Python or Express for Node.js), you can build your own using Zig's libraries or interface with C-based web frameworks.
+                    </p>
+                    <p>Here's a basic example of a Zig HTTP server:</p>
+<p><pre>const std = @import("std");
+const http = @import("std").http;
+
+pub fn main() !void {
+    const listener = try http.listen(":8080");
+    defer listener.close();
+
+    while (true) {
+        const conn = try listener.accept();
+        const writer = conn.writer();
+        
+        const response = http.Response.init(writer);
+        response.status = .Ok;
+        response.setBody("Hello, Zig!");
+
+        try response.send();
+    }
+}</pre></p>
+                    <p>In this example, we create a simple HTTP server that listens on port 8080 and responds with "Hello, Zig!" to incoming requests.</p>
+                    <p><b>Client-Side Web Applications</b></p>
+                    <p>
+                        For client-side web applications, Zig's role is more limited. Web development for the browser typically involves languages like HTML, CSS, and JavaScript. While it's possible to compile Zig to WebAssembly (Wasm) and use it in the browser, this approach is less common compared to using JavaScript or other languages specifically designed for browser scripting.
+                    </p>
+                    <p>
+                        Zig's strength in web development often shines when you're dealing with WebAssembly-based applications or integrating with existing web services through APIs. You can write Zig code to interact with the browser's Web API or work with JavaScript libraries through WebAssembly.
+                    </p>
+                    <h5>Web Frameworks and Tooling</h5>
+                    <p>
+                        Zig does not have as mature and well-established web development frameworks and tooling as other languages like JavaScript, Python, or Ruby. However, Zig's active community is continuously working on developing new libraries and tools.
+                    </p>
+                    <p>
+                        When working on web projects with Zig, you may need to build some components from scratch or interface with C libraries and tools. Keep an eye on Zig's official repositories, community-contributed projects, and forums for updates and new developments in the web development space.
+                    </p>
+                    <h5>What's Next?</h5>
+                    <p>
+                        In this part, you've explored Zig's role in web development, including its use in server-side and client-side web applications. While Zig may not have as extensive a web development ecosystem as other languages, its capabilities in networking and low-level programming make it a unique choice for certain web-related tasks.
+                    </p>
+                    <p>
+                        As you dive deeper into web development with Zig, consider exploring Zig's growing ecosystem of web-related libraries and tools, and keep an eye on the language's development to see how it evolves in the web development space. Happy coding!
+                    </p>
+                    
+
+
+                    <button><a href="./09_20_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_18_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  Welcome to Part 18 of our Getting Started with Zig on MacOS series, where we delve into Zig's role in web development. Zig is a versatile language that can be employed for both server-side and client-side web applications. On the server side, Zig's networking and concurrency capabilities enable you to build web servers and dynamic web applications. While Zig doesn't have dedicated web frameworks, you can create your own or interface with existing C-based frameworks. On the client side, Zig's role is more limited, but it can be used when targeting WebAssembly (Wasm) or interacting with the browser's Web API. While Zig's web development ecosystem is less mature, the active community continues to contribute libraries and tools. As you explore web development with Zig, keep an eye on evolving libraries and the language's development in this domain. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
