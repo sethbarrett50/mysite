@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="description"
+        content="In this installment, we've delved into the fascinating world of concurrency in Zig. Zig offers powerful concurrency features like coroutines, message-passing with channels, mutexes, and atomics, making it well-suited for building concurrent applications and harnessing the full potential of multi-core processors. As you continue exploring Zig's concurrency capabilities, consider delving into advanced topics such as parallelism, thread pools, and more advanced synchronization techniques to create scalable and efficient concurrent applications. Thank you for joining us in this exploration of advanced topics in Zig, and we wish you success in your concurrent programming endeavors. Happy coding!">
+    <meta name="keywords"
+        content="Seth, Seth Barrett, Augusta, Augusta University, AU, SCCS, School of Computer and Cyber Science, Barrett, Dorai, PhD, Computer science, Cybersecurity, Digital forensics, Machine learning, Bioinformatics, Internet of things, Networking, Vulnerability analysis, Research, Education, PhD degree, Cyber sciences, Data science, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Cybersecurity education, Digital forensics education, Machine learning education, Bioinformatics education, Internet of things education, Networking education, Vulnerability analysis education, Computer science education, PhD program, Cybersecurity program, Digital forensics program, Machine learning program, Bioinformatics program, Internet of things program, Networking program, Vulnerability analysis program, Computer science program, Graduate studies, Cybersecurity graduate studies, Digital forensics graduate studies, Machine learning graduate studies, Bioinformatics graduate studies, Internet of things graduate studies, Networking graduate studies, Vulnerability analysis graduate studies, Computer science graduate studies, PhD studies, Cybersecurity studies, Digital forensics studies, Machine learning studies, Bioinformatics studies, Internet of things studies, Networking studies, Vulnerability analysis studies, Computer science studies, Academic research, Cybersecurity research, Digital forensics research, Machine learning research, Bioinformatics research, Internet of things research, Networking research, Vulnerability analysis research, Computer science research, Professional development, Cybersecurity professional development, Digital forensics professional development, Machine learning professional development, Bioinformatics professional development, Internet of things professional development, Networking professional development, Vulnerability analysis professional development, Computer science professional development, Continuing education, Cybersecurity continuing education, Digital forensics continuing education, Machine learning continuing education, Bioinformatics continuing education, Internet of things continuing education, Networking continuing education, Vulnerability analysis continuing education, Computer science continuing education, Career advancement, Cybersecurity career advancement, Digital forensics career advancement, Machine learning career advancement, Bioinformatics career advancement, Internet of things career advancement, Networking career advancement, Vulnerability analysis career advancement, Computer science career advancement, Professional portfolio, Cybersecurity portfolio, Digital forensics portfolio, Machine learning portfolio, Bioinformatics portfolio, Internet of things portfolio, Networking portfolio">
+    <meta name="author" content="Seth Barrett">
+
+
+    <meta property="og:site_name" content="Seth Barrett - Home">
+    <meta name="twitter:domain" property="twitter:domain" content="sethbarrett.xyz">
+    <meta name="og:title" property="og:title" content="Seth Barrett - Home">
+    <meta property="og:description"
+        content="In this installment, we've delved into the fascinating world of concurrency in Zig. Zig offers powerful concurrency features like coroutines, message-passing with channels, mutexes, and atomics, making it well-suited for building concurrent applications and harnessing the full potential of multi-core processors. As you continue exploring Zig's concurrency capabilities, consider delving into advanced topics such as parallelism, thread pools, and more advanced synchronization techniques to create scalable and efficient concurrent applications. Thank you for joining us in this exploration of advanced topics in Zig, and we wish you success in your concurrent programming endeavors. Happy coding!">
+    <meta name="twitter:description" property="twitter:description"
+        content="In this installment, we've delved into the fascinating world of concurrency in Zig. Zig offers powerful concurrency features like coroutines, message-passing with channels, mutexes, and atomics, making it well-suited for building concurrent applications and harnessing the full potential of multi-core processors. As you continue exploring Zig's concurrency capabilities, consider delving into advanced topics such as parallelism, thread pools, and more advanced synchronization techniques to create scalable and efficient concurrent applications. Thank you for joining us in this exploration of advanced topics in Zig, and we wish you success in your concurrent programming endeavors. Happy coding!">
+    <meta name="og:image" content="https://sethbarrett.xyz/photos/me.webp">
+
+
+    <meta property="twitter:card" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image:src" property="twitter:image:src" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="twitter:image" property="twitter:image" content="https://sethbarrett.xyz/photos/me.webp">
+    <meta name="og:image:alt" property="og:image:alt" content="Me">
+
+    <meta property="og:url" content="sethbarrett.xyz">
+    <meta property="og:type" content="website">
+    <title>Daily Blog Post: September 24th, 2023</title>
+
+
+    <!-- Update CSS Versions when changed -->
+    <link rel="stylesheet" href="../selfie.css?v=1.0.8" />
+    <link rel="stylesheet" href="../selfie_tablet.css?v=1.0.8" media="only screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="../selfie_mobile.css?v=1.0.8" media="only screen and (max-width: 600px)" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Seth Barrett</h1>
+            <h2>Daily Blog Post: September 24th, 2023</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../education.html">Education</a></li> 
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="blog">
+                
+                <div class="blog">
+                    <img src="photos/09_24_23.webp" alt="Zig" width="250" height="445" />
+                    <h4>September 24th, 2023</h4>
+                    <div class='title'>Part 23: Advanced Topics in Zig</div>
+
+                    <p>
+                        Welcome to the twenty-third installment of our exploration of advanced topics in Zig. In this installment, we have the freedom to choose an advanced topic to delve into, and today, we'll focus on Concurrency in Zig.
+                    </p>
+                    <h5>Concurrency in Zig</h5>
+                    <p>
+                        Concurrency is a critical aspect of modern software development, enabling programs to perform multiple tasks simultaneously and efficiently utilize modern hardware with multiple cores and threads. Zig provides robust support for concurrency, making it suitable for building concurrent applications and taking full advantage of multi-core processors. Let's explore some key concepts and techniques for concurrency in Zig:
+                    </p>
+                    <p><b>Coroutines and <code>async</code>/<code>await</code></b></p>
+                    <p>
+                        Zig introduces coroutines, a powerful concurrency feature that enables asynchronous programming using the <code>async</code> and <code>await</code> keywords. Coroutines allow you to write non-blocking code that can pause and resume execution, making it easier to work with I/O operations and perform concurrent tasks.
+                    </p>
+                    <p>
+                        Here's a simple example of using <code>async</code>/<code>await</code> in Zig:
+                    </p>
+<p><pre>const std = @import("std");
+
+pub fn main() !void {
+    const result = asyncTask();
+    try result.await();
+    std.debug.print("Task completed.\n");
+}
+
+async fn asyncTask() !void {
+    std.debug.print("Starting async task...\n");
+    await std.os.sleep(std.duration.seconds(2));
+    std.debug.print("Async task completed.\n");
+}</pre></p>
+                    <p>
+                        In this example, the <code>asyncTask</code> function performs an asynchronous operation, and the <code>main</code> function awaits its completion, allowing other tasks to run concurrently.
+                    </p>
+                    <p><b>Message-Passing Concurrency</b></p>
+                    <p>
+                        Zig provides a message-passing concurrency model using channels. Channels allow you to send and receive messages between threads or coroutines, facilitating safe communication and synchronization. This model is useful for building concurrent systems where different components need to communicate without shared memory access.
+                    </p>
+                    <p>Here's an example of using channels in Zig:</p>
+<p><pre>const std = @import("std");
+
+pub fn main() void {
+    const myChannel = std.concurrent.Channel(i32).init(10); // Buffer size 10
+    const producer = std.spawn(asyncProducer, .{myChannel.writer()});
+    const consumer = std.spawn(asyncConsumer, .{myChannel.reader()});
+    std.thread.join(producer);
+    std.thread.join(consumer);
+}
+
+async fn asyncProducer(writer: *std.concurrent.Writer(i32)) !void {
+    for (i in 0..10) {
+        try writer.send(i);
+    }
+    try writer.close();
+}
+
+async fn asyncConsumer(reader: *std.concurrent.Reader(i32)) !void {
+    while (true) {
+        const value = try reader.receive();
+        if (value == null) {
+            break;
+        }
+        std.debug.print("Received: {}\n", .{value});
+    }
+}</pre></p>
+                    <p>
+                        In this example, a producer coroutine sends integers to a channel, and a consumer coroutine receives and processes them concurrently.
+                    </p>
+                    <p><b>Mutexes and Atomics</b></p>
+                    <p>
+                        Zig provides primitives for working with mutexes and atomics to manage shared data and synchronize access to resources. Mutexes allow you to protect critical sections of code, ensuring that only one thread can access them at a time. Atomics provide lock-free operations for variables shared among multiple threads, reducing contention and improving performance.
+                    </p>
+                    <p>
+                        Here's a simple example of using a mutex in Zig:
+                    </p>
+<p><pre>const std = @import("std");
+
+pub fn main() void {
+    var sharedValue: i32 = 0;
+    const myMutex = std.concurrent.Mutex.init;
+    const threads: [4]std.Thread = undefined;
+    
+    for (threads) |thread, i| {
+        thread = std.spawn(asyncIncrement, .{&sharedValue, &myMutex});
+    }
+    
+    for (threads) |thread, i| {
+        std.thread.join(thread);
+    }
+    
+    std.debug.print("Final shared value: {}\n", .{sharedValue});
+}
+
+async fn asyncIncrement(sharedValue: *volatile i32, mutex: *std.concurrent.Mutex) void {
+    std.withLock(mutex) |lock| {
+        for (0..1000) |i| {
+            sharedValue.* += 1;
+        }
+    }
+}</pre></p>
+                    <p>
+                        In this example, multiple threads increment a shared value while protecting it with a mutex to prevent data races.
+                    </p>
+                    <h5>Explore More Concurrency</h5>
+                    <p>
+                        Concurrency is a vast topic with many advanced aspects, including parallelism, thread pools, and advanced synchronization techniques. As you continue your journey in Zig, consider exploring these advanced concurrency topics to build scalable and efficient concurrent applications.
+                        <br>
+                        Thank you for joining us on this exploration of advanced topics in Zig. Happy coding!
+                    </p>
+
+
+
+
+                    <button><a href="./09_25_2023.html">Next Post in Series</a></button>
+                    <button><a href="./09_23_2023.html">Previous Post in Series</a></button>
+
+
+                    
+                    <!-- Desc  In this installment, we've delved into the fascinating world of concurrency in Zig. Zig offers powerful concurrency features like coroutines, message-passing with channels, mutexes, and atomics, making it well-suited for building concurrent applications and harnessing the full potential of multi-core processors. As you continue exploring Zig's concurrency capabilities, consider delving into advanced topics such as parallelism, thread pools, and more advanced synchronization techniques to create scalable and efficient concurrent applications. Thank you for joining us in this exploration of advanced topics in Zig, and we wish you success in your concurrent programming endeavors. Happy coding!  -->
+                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright &copy; [2023], [Seth Barrett]
+            <br /> -->
+            <b>
+                Email:
+            </b>
+            <a href="mailto:sebarrett@augusta.edu">sebarrett@augusta.edu</a>
+            <br />
+            <b>
+                Blog RSS Feed:
+            </b>
+            <a href="sethbarrett.xyz/blogposts/rss.xml">sethbarrett.xyz/blogposts/rss.xml</a>
+            <br />
+            <b>
+                Linkedin Profile:
+            </b>
+            <a href="https://www.linkedin.com/in/975833b14567812q">LinkedIn</a>
+            <br />
+            <b>
+                GitHub:
+            </b>
+            <a href="https://github.com/sethbarrett50">GitHub</a>
+            <br />
+            <b>
+                Privacy Policy:
+            </b>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
